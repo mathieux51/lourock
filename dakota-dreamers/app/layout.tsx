@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Dakota Dreamers" }],
   viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
+  icons: {
+    icon: "/favicon.png",
+  },
   openGraph: {
     title: "Dakota Dreamers - Country Rock Duo",
     description: "Authentic American West spirit meets Southern France. Country rock duo bringing cowboy soul to the Occitanie region.",

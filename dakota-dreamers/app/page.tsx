@@ -67,7 +67,6 @@ export default function Home() {
             <a href="#epk" className="hover:text-accent transition-colors">EPK</a>
             <a href="#tour" className="hover:text-accent transition-colors">Tour</a>
             <a href="#contact" className="hover:text-accent transition-colors">Contact</a>
-            <Link href="/design-system" className="hover:text-accent transition-colors">Design</Link>
           </div>
           <a 
             href="https://lourock.com" 
@@ -144,16 +143,16 @@ export default function Home() {
                   From intimate venues in the Occitanie region to festival stages across Southern France, Dakota Dreamers delivers performances that transport audiences to dusty highways and endless horizons, proving that the American West lives in the hearts of all who dare to dream.
                 </p>
               </div>
-              <div className="border-2 border-primary/30 p-8 rounded-lg">
+              <div className="border-2 border-primary/30 bg-background/40 backdrop-blur-md p-8 rounded-lg">
                 <h3 className="font-heading text-2xl mb-6 text-primary">Band Members</h3>
                 <div className="space-y-4">
                   <div className="border-l-4 border-accent pl-4">
                     <h4 className="font-heading text-lg text-sand">Rob</h4>
-                    <p className="text-ash">Lead vocals, acoustic guitar and piano</p>
+                    <p className="text-cream font-medium">Lead vocals, acoustic guitar and piano</p>
                   </div>
                   <div className="border-l-4 border-accent pl-4">
                     <h4 className="font-heading text-lg text-sand">Mathieu</h4>
-                    <p className="text-ash">Side vocals, lead guitar, bouzouki and banjo</p>
+                    <p className="text-cream font-medium">Side vocals, lead guitar, bouzouki and banjo</p>
                   </div>
                 </div>
               </div>
@@ -197,7 +196,7 @@ export default function Home() {
             </div>
 
             {/* Music Samples */}
-            <div className="border-2 border-primary/30 p-8 rounded-lg">
+            <div className="border-2 border-primary/30 bg-background/40 backdrop-blur-md p-8 rounded-lg">
               <h3 className="font-heading text-2xl mb-6 text-primary">Music Samples</h3>
               <div className="space-y-4">
                 {musicSamples.map((track, index) => (
@@ -209,7 +208,7 @@ export default function Home() {
                     onClick={() => setCurrentTrack(index)}
                   >
                     <h4 className="font-heading text-lg text-sand">{track.title}</h4>
-                    <p className="text-ash text-sm mb-2">{track.description}</p>
+                    <p className="text-cream text-sm mb-2 font-medium">{track.description}</p>
                     <p className="text-primary text-xs">{track.duration}</p>
                   </div>
                 ))}
