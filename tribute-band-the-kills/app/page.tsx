@@ -6,9 +6,9 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState('biography');
 
   const setlist = [
-    "Midnight Boom", "DNA", "U.R.A. Fever", "Fried My Little Brains",
-    "Future Starts Slow", "Black Balloon", "Heart of a Dog", "Doing It to Death",
-    "Monkey 23", "Tape Song", "Pull a U", "No Wow",
+    "Doing It to Death", "Impossible Tracks", "Tape Song", "Whirling Eyes",
+    "Future Starts Slow", "Black Balloon", "Heart of a Dog", "DNA",
+    "Monkey 23", "U.R.A. Fever", "Pull a U", "No Wow",
     "Love Is a Deserter", "Kissy Kissy", "Wait", "Satellite"
   ];
 
@@ -111,13 +111,13 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="kills-heading text-2xl mb-6 text-kills-red">
-                RAW GARAGE ROCK AUTHENTICITY
+                RAW GARAGE ROCK TRIBUTE
               </h3>
               <p className="kills-body text-lg mb-6 text-kills-light-gray leading-relaxed">
-                We are Tribute Band The Kills, a professional duo dedicated to recreating the raw, minimalist garage rock sound that made The Kills legendary. Based in Occitanie, we bring the explosive energy of Alison Mosshart's vocals and Jamie Hince's distinctive guitar work to venues across the region.
+                We don't just play The Kills' songs - we resurrect their primal energy. Every performance is a sonic assault of minimalist garage rock, where two guitars become an army and silence is as powerful as sound. We capture the danger, the tension, and the raw sexuality that defines The Kills' legendary live shows.
               </p>
               <p className="kills-body text-lg mb-6 text-kills-light-gray leading-relaxed">
-                Our performances capture the essence of The Kills' stripped-down aesthetic - two people, maximum impact. From the haunting melodies of "Future Starts Slow" to the driving rhythm of "DNA," we deliver an authentic tribute experience that honors the original while bringing our own raw energy to the stage.
+                From the feedback-drenched chaos of their early work to the sophisticated darkness of their later albums, we deliver an authentic experience that goes beyond mere imitation. This is about channeling the spirit of garage rock rebellion, bringing that same confrontational intimacy that made The Kills one of the most influential acts of the 21st century.
               </p>
             </div>
             <div className="bg-kills-charcoal p-8 border-2 border-kills-dark-gray">
@@ -189,16 +189,16 @@ export default function Home() {
                 <h3 className="kills-heading text-2xl mb-6 text-kills-red">BAND BIOGRAPHY</h3>
                 <div className="kills-body text-kills-light-gray space-y-4 leading-relaxed">
                   <p>
-                    Tribute Band The Kills emerged from the vibrant music scene of Occitanie with a singular mission: to honor and recreate the raw, minimalist garage rock sound that defined The Kills' legendary career. Formed by two passionate musicians who share a deep appreciation for Alison Mosshart and Jamie Hince's groundbreaking work, the duo has quickly established themselves as the definitive Kills tribute act in Southern France.
+                    Our story began at an open mic night in Montpellier, where fate brought together three musicians with a shared passion. When Mathieu heard the raw power of Lucie and Francis performing, he knew he'd found something special. That night sparked the formation of Tribute Band The Kills.
                   </p>
                   <p>
-                    Drawing inspiration from The Kills' entire discography - from the raw energy of "Keep On Your Mean Side" to the refined aggression of "Blood Pressures" - our performances capture both the musical precision and explosive stage presence that made the original duo iconic. We meticulously recreate the stripped-down aesthetic that became The Kills' signature: two people, maximum impact.
+                    United by our love for The Kills' minimalist garage rock sound and a mutual appreciation for sunglasses on stage, we channel the explosive energy and stripped-down aesthetic that made the original duo legendary. From Montpellier to venues across Occitanie, we bring that same raw, unfiltered intensity to every performance.
                   </p>
                   <p>
-                    Since our formation, we have performed across Occitanie's most respected venues, bringing the garage rock revival to both intimate clubs and festival stages. Our commitment to authenticity extends beyond just the music - we embody the visual aesthetic, the raw energy, and the uncompromising artistic vision that made The Kills pioneers of modern garage rock.
+                    Drawing inspiration from The Kills' entire discography - from the raw energy of "Keep On Your Mean Side" to the refined aggression of "Blood Pressures" - our performances capture both the musical precision and explosive stage presence that made Alison Mosshart and Jamie Hince iconic. We meticulously recreate the stripped-down aesthetic that became The Kills' signature, delivering authentic recreations of their minimalist setup.
                   </p>
                   <p>
-                    Available for festivals, club shows, and private events, Tribute Band The Kills delivers a professional, high-energy performance that celebrates one of garage rock's most influential acts while bringing our own passionate interpretation to every show.
+                    Available for festivals, club shows, and private events across Occitanie and beyond, Tribute Band The Kills delivers professional, high-energy performances with professional grade equipment and sound. We bring the garage rock revival to both intimate clubs and festival stages, celebrating one of garage rock's most influential acts.
                   </p>
                 </div>
               </div>
@@ -208,32 +208,20 @@ export default function Home() {
               <div>
                 <h3 className="kills-heading text-2xl mb-6 text-kills-red">PERFORMANCE SETLIST</h3>
                 <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="kills-mono text-lg mb-4 text-kills-white">MAIN SET</h4>
-                    <ul className="kills-body space-y-2 text-kills-light-gray">
-                      {setlist.slice(0, 8).map((song, index) => (
-                        <li key={index} className="flex items-center">
-                          <span className="text-kills-red mr-3 kills-mono">
-                            {String(index + 1).padStart(2, '0')}
-                          </span>
-                          {song}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="kills-mono text-lg mb-4 text-kills-white">ENCORE</h4>
-                    <ul className="kills-body space-y-2 text-kills-light-gray">
-                      {setlist.slice(8).map((song, index) => (
-                        <li key={index} className="flex items-center">
-                          <span className="text-kills-red mr-3 kills-mono">
-                            {String(index + 9).padStart(2, '0')}
-                          </span>
-                          {song}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  {[0, 1].map((colIndex) => (
+                    <div key={colIndex}>
+                      <ul className="kills-body space-y-2 text-kills-light-gray">
+                        {setlist.slice(colIndex * 8, colIndex * 8 + 8).map((song, index) => (
+                          <li key={index} className="flex items-center">
+                            <span className="text-kills-red mr-3 kills-mono">
+                              {String(colIndex * 8 + index + 1).padStart(2, '0')}
+                            </span>
+                            {song}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
                 </div>
                 <p className="kills-body text-sm text-kills-gray mt-8">
                   * Setlist can be customized for specific venues and event requirements
@@ -297,43 +285,16 @@ export default function Home() {
           <h2 className="kills-heading text-4xl md:text-6xl mb-16 text-center">
             UPCOMING SHOWS
           </h2>
-          <div className="space-y-6">
-            {shows.map((show, index) => (
-              <div key={index} className="bg-kills-black border-2 border-kills-dark-gray p-6 hover:border-kills-red transition-colors">
-                <div className="flex flex-col md:flex-row md:items-center justify-between">
-                  <div className="flex-1">
-                    <div className="flex flex-col md:flex-row md:items-center gap-4">
-                      <span className="kills-mono text-kills-red text-lg">
-                        {new Date(show.date).toLocaleDateString('en-US', { 
-                          weekday: 'short', 
-                          year: 'numeric', 
-                          month: 'short', 
-                          day: 'numeric' 
-                        })}
-                      </span>
-                      <span className="kills-body text-xl text-kills-white">{show.venue}</span>
-                      <span className="kills-body text-kills-light-gray">{show.city}</span>
-                    </div>
-                  </div>
-                  <div className="mt-4 md:mt-0">
-                    <span className={`kills-mono text-sm px-3 py-1 border ${
-                      show.status === 'confirmed' 
-                        ? 'text-kills-white border-kills-red' 
-                        : 'text-kills-gray border-kills-gray'
-                    }`}>
-                      {show.status.toUpperCase()}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-12">
+          <div className="bg-kills-black border-2 border-kills-dark-gray p-16 text-center">
+            <h3 className="kills-heading text-3xl text-kills-red mb-6">COMING SOON</h3>
+            <p className="kills-body text-kills-light-gray text-lg mb-8">
+              New tour dates will be announced soon. Stay tuned for upcoming tribute performances.
+            </p>
             <a 
-              href="mailto:booking@tributebandthekills.com" 
+              href="mailto:contact@lourock.com" 
               className="kills-mono uppercase bg-kills-red hover:bg-kills-dark-red text-kills-white px-8 py-4 transition-colors border-2 border-kills-red hover:border-kills-dark-red inline-block"
             >
-              Book Performance
+              CONTACT FOR BOOKINGS
             </a>
           </div>
         </div>
@@ -346,20 +307,12 @@ export default function Home() {
             TRIBUTE BAND THE KILLS
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center gap-6 mb-6">
-            <a href="mailto:booking@tributebandthekills.com" className="kills-body hover:text-kills-red transition-colors">
-              booking@tributebandthekills.com
-            </a>
-            <a href="tel:+33123456789" className="kills-body hover:text-kills-red transition-colors">
-              +33 1 23 45 67 89
+            <a href="mailto:contact@lourock.com" className="kills-body hover:text-kills-red transition-colors">
+              contact@lourock.com
             </a>
           </div>
           <div className="kills-body text-kills-gray text-sm">
             <p>Professional tribute to The Kills • Occitanie, France</p>
-            <p className="mt-2">
-              <a href="https://lourock.com" className="hover:text-kills-red transition-colors">
-                Part of the LOUROCK network
-              </a>
-            </p>
           </div>
         </div>
       </footer>
