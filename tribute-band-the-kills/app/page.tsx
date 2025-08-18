@@ -14,9 +14,10 @@ export default function Home() {
 
   const technicalRequirements = [
     "2x Vocal microphones (SM58 or equivalent)",
-    "Guitar amplifier (minimum 50W tube amp preferred)",
-    "Drum kit with full monitoring",
-    "Direct input for guitar effects/drum machine",
+    "2x Microphone stands",
+    "PA system with adequate power for venue",
+    "2x Direct inputs for guitars",
+    "Direct input for drum machine/effects",
     "Basic stage lighting (red/white spots preferred)",
     "Minimum stage size: 4m x 3m"
   ];
@@ -114,7 +115,7 @@ export default function Home() {
                 RAW GARAGE ROCK TRIBUTE
               </h3>
               <p className="kills-body text-lg mb-6 text-kills-light-gray leading-relaxed">
-                We don't just play The Kills' songs - we resurrect their primal energy. Every performance is a sonic assault of minimalist garage rock, where two guitars become an army and silence is as powerful as sound. We capture the danger, the tension, and the raw sexuality that defines The Kills' legendary live shows.
+                We don't just play The Kills' songs - we resurrect their primal energy. Every performance is a sonic assault of minimalist garage rock, where two guitars become an army and silence is as powerful as sound. We capture the danger, the tension, and the raw intensity that defines The Kills' legendary live shows.
               </p>
               <p className="kills-body text-lg mb-6 text-kills-light-gray leading-relaxed">
                 From the feedback-drenched chaos of their early work to the sophisticated darkness of their later albums, we deliver an authentic experience that goes beyond mere imitation. This is about channeling the spirit of garage rock rebellion, bringing that same confrontational intimacy that made The Kills one of the most influential acts of the 21st century.
@@ -153,7 +154,7 @@ export default function Home() {
             </video>
           </div>
           <p className="kills-body text-lg text-kills-light-gray">
-            Watch us perform "Future Starts Slow" live at Le Rockstore, Montpellier
+            Watch us perform "Whirling Eyes" live at The Black Sheep
           </p>
         </div>
       </section>
