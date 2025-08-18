@@ -1,8 +1,5 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
-  "framework": "nextjs",
-  "domains": [
-    "the-kills.lourock.com"
-  ]
+  "framework": "nextjs"
 }
