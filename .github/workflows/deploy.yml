@@ -1,0 +1,102 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    environment: production
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        lfs: true
+    
+    - name: Checkout LFS objects
+      run: git lfs checkout
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: |
+          landing/package-lock.json
+          dakota-dreamers/package-lock.json
+          tribute-band-the-kills/package-lock.json
+          mathieu-schmidt/package-lock.json
+    
+    - name: Install Vercel CLI
+      run: npm install -g vercel@latest
+    
+    - name: Detect changed projects
+      id: changes
+      run: |
+        # Get the list of changed projects from the script
+        chmod +x ./deploy.sh
+        
+        # Run the script in dry-run mode to get changed projects
+        if git rev-parse --verify HEAD~1 >/dev/null 2>&1; then
+          changed_files=$(git diff --name-only HEAD~1 HEAD)
+        elif git rev-parse --verify origin/main >/dev/null 2>&1; then
+          changed_files=$(git diff --name-only origin/main HEAD)
+        else
+          changed_files=""
+        fi
+        
+        echo "Changed files:"
+        echo "$changed_files"
+        
+        # Check for changes in each project
+        projects=("landing" "dakota-dreamers" "tribute-band-the-kills" "mathieu-schmidt")
+        changed_projects=()
+        
+        for project in "${projects[@]}"; do
+          if echo "$changed_files" | grep -q "^$project/"; then
+            changed_projects+=("$project")
+          fi
+        done
+        
+        # Always deploy if deploy.sh, GitHub workflows, or deployment docs changed
+        if echo "$changed_files" | grep -qE "(deploy\.sh|\.github/workflows/|DEPLOYMENT\.md)"; then
+          changed_projects=("${projects[@]}")
+        fi
+        
+        if [ ${#changed_projects[@]} -eq 0 ]; then
+          echo "has_changes=false" >> $GITHUB_OUTPUT
+          echo "projects=" >> $GITHUB_OUTPUT
+        else
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+          echo "projects=${changed_projects[*]}" >> $GITHUB_OUTPUT
+        fi
+        
+        echo "Changed projects: ${changed_projects[*]}"
+    
+    - name: Install dependencies for changed projects
+      if: steps.changes.outputs.has_changes == 'true'
+      run: |
+        projects="${{ steps.changes.outputs.projects }}"
+        for project in $projects; do
+          echo "Installing dependencies for $project..."
+          cd $project
+          npm ci
+          cd ..
+        done
+    
+    - name: Deploy to Vercel Production
+      if: steps.changes.outputs.has_changes == 'true'
+      env:
+        VERCEL_TOKEN: ${{ secrets.NOW_TOKEN }}
+      run: |
+        projects="${{ steps.changes.outputs.projects }}"
+        ./deploy.sh $projects
+    
+    - name: No changes detected
+      if: steps.changes.outputs.has_changes == 'false'
+      run: |
+        echo "✨ No changes detected. Skipping deployment."

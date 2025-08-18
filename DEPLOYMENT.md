@@ -8,7 +8,60 @@ This monorepo contains 4 Next.js applications:
 - **tribute-band-the-kills/** - Tribute Band The Kills site (the-kills.lourock.com)  
 - **mathieu-schmidt/** - Mathieu Schmidt artist site (mathieu-schmidt.lourock.com)
 
-## Vercel Deployment Instructions
+## Automated Deployment (Recommended)
+
+### Using the Deployment Script
+
+A `deploy.sh` script is provided with intelligent selective deployment:
+
+```bash
+# Deploy only changed projects (detects changes automatically)
+./deploy.sh
+
+# Deploy all projects
+./deploy.sh --all
+
+# Deploy specific projects
+./deploy.sh dakota-dreamers landing
+```
+
+**Smart Change Detection:**
+- Automatically detects which projects have changed files
+- Only deploys projects that actually need updating
+- Deploys all projects if deployment configuration changes
+- Skips deployment if no changes are detected
+
+The script will:
+- Analyze git changes to determine which projects need deployment
+- Install dependencies only for projects being deployed
+- Deploy each changed project to Vercel production
+- Show production URLs for deployed projects
+- Provide a post-deployment checklist
+
+### GitHub Actions (CI/CD)
+
+Automatic selective deployments are configured via GitHub Actions:
+
+- **On Push to `main`**: Analyzes changes and deploys only affected projects
+- **Manual Trigger**: Allows manual deployment via GitHub Actions UI
+- **Smart Detection**: Only runs deployments when files actually change
+- **Efficient**: Skips deployment entirely if no relevant changes are detected
+
+#### Setup Requirements
+
+1. Add `NOW_TOKEN` as a repository secret:
+   - Go to your repository settings → Secrets and variables → Actions
+   - Add new secret: `NOW_TOKEN` with your Vercel token value
+   - Get your token from: https://vercel.com/account/tokens
+
+2. The workflow will automatically:
+   - Detect which projects have changes
+   - Install dependencies only for changed projects
+   - Handle Git LFS files
+   - Deploy only the projects that need updating
+   - Skip deployment if no changes are detected
+
+## Manual Vercel Deployment Instructions
 
 ### Option 1: Deploy as Separate Projects (Recommended)
 
@@ -84,7 +137,23 @@ Value: cname.vercel-dns.com
 
 ## Environment Variables
 
-No environment variables are required for the basic deployment.
+### Required for Automated Deployment
+
+- `NOW_TOKEN` - Vercel authentication token (required for GitHub Actions and CI)
+  - Get your token from: https://vercel.com/account/tokens
+  - Set as environment variable locally or repository secret for GitHub Actions
+
+### Local Usage
+
+```bash
+# Set the token in your environment
+export NOW_TOKEN=your_vercel_token_here
+
+# Then run the deployment script
+./deploy.sh
+```
+
+No other environment variables are required for the basic deployment.
 
 ## Build Commands
 
