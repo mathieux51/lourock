@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+:root {
+  /* Western/Country Color Palette */
+  --background: #1a1611;
+  --foreground: #f7f1e8;
+  
+  /* Brand Colors */
+  --primary: #d2691e;     /* Saddle Brown */
+  --secondary: #cd853f;   /* Peru */
+  --accent: #ff6347;      /* Sunset Orange */
+  --rust: #b7410e;        /* Rust */
+  --cream: #f5f5dc;       /* Beige */
+  --sand: #f4a460;        /* Sandy Brown */
+  --leather: #8b4513;     /* Leather Brown */
+  --gold: #daa520;        /* Goldenrod */
+  
+  /* Neutral Colors */
+  --charcoal: #2f2f2f;
+  --smoke: #696969;
+  --ash: #a9a9a9;
+  
+  /* Surface Colors */
+  --surface-dark: #0f0d0a;
+  --surface-medium: #1f1c17;
+  --surface-light: #2a251f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-rust: var(--rust);
+  --color-cream: var(--cream);
+  --color-sand: var(--sand);
+  --color-leather: var(--leather);
+  --color-gold: var(--gold);
+  --color-charcoal: var(--charcoal);
+  --color-smoke: var(--smoke);
+  --color-ash: var(--ash);
+  --color-surface-dark: var(--surface-dark);
+  --color-surface-medium: var(--surface-medium);
+  --color-surface-light: var(--surface-light);
+  --font-heading: var(--font-oswald);
+  --font-body: var(--font-merriweather);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #f7f1e8;
+    --foreground: #1a1611;
+    --surface-dark: #e8dcc6;
+    --surface-medium: #f0e6d2;
+    --surface-light: #f7f1e8;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Typography */
+.font-heading {
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.font-body {
+  font-family: var(--font-body), serif;
+}
+
+/* Western/Country Gradients */
+.gradient-sunset {
+  background: linear-gradient(135deg, #ff6347 0%, #d2691e 50%, #b7410e 100%);
+}
+
+.gradient-desert {
+  background: linear-gradient(135deg, #f4a460 0%, #cd853f 50%, #8b4513 100%);
+}
+
+.gradient-dusk {
+  background: linear-gradient(135deg, #2f2f2f 0%, #1a1611 50%, #0f0d0a 100%);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}

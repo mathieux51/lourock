@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+:root {
+  /* The Kills inspired color palette */
+  --kills-black: #000000;
+  --kills-deep-black: #0a0a0a;
+  --kills-charcoal: #1a1a1a;
+  --kills-dark-gray: #2a2a2a;
+  --kills-gray: #666666;
+  --kills-light-gray: #999999;
+  --kills-white: #ffffff;
+  --kills-off-white: #f5f5f5;
+  
+  /* Accent colors */
+  --kills-red: #cc0000;
+  --kills-dark-red: #990000;
+  --kills-pink: #ff6b9d;
+  --kills-hot-pink: #ff1744;
+  
+  /* Main theme variables */
+  --background: var(--kills-black);
+  --foreground: var(--kills-white);
+  --accent: var(--kills-red);
+  --accent-secondary: var(--kills-pink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-secondary: var(--accent-secondary);
+  
+  /* Custom colors for Tailwind */
+  --color-kills-black: var(--kills-black);
+  --color-kills-deep-black: var(--kills-deep-black);
+  --color-kills-charcoal: var(--kills-charcoal);
+  --color-kills-dark-gray: var(--kills-dark-gray);
+  --color-kills-gray: var(--kills-gray);
+  --color-kills-light-gray: var(--kills-light-gray);
+  --color-kills-white: var(--kills-white);
+  --color-kills-off-white: var(--kills-off-white);
+  --color-kills-red: var(--kills-red);
+  --color-kills-dark-red: var(--kills-dark-red);
+  --color-kills-pink: var(--kills-pink);
+  --color-kills-hot-pink: var(--kills-hot-pink);
+  
+  /* Typography */
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--kills-charcoal);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--kills-red);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--kills-dark-red);
+}
+
+/* Selection styling */
+::selection {
+  background: var(--kills-red);
+  color: var(--kills-white);
+}
+
+::-moz-selection {
+  background: var(--kills-red);
+  color: var(--kills-white);
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--kills-red);
+  outline-offset: 2px;
+}
+
+/* Typography classes */
+.kills-heading {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.kills-body {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.kills-mono {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* Utility classes */
+.text-shadow-red {
+  text-shadow: 2px 2px 4px var(--kills-red);
+}
+
+.glow-red {
+  box-shadow: 0 0 20px var(--kills-red);
+}
+
+.border-gradient-red {
+  background: linear-gradient(var(--kills-black), var(--kills-black)) padding-box,
+              linear-gradient(45deg, var(--kills-red), var(--kills-pink)) border-box;
+  border: 2px solid transparent;
+}

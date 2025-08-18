@@ -1,0 +1,138 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+
+:root {
+  /* Lonely prairie color palette */
+  --sage-green: #9CAF88;
+  --dusty-brown: #8B7355;
+  --warm-sand: #D4C4A8;
+  --weathered-stone: #A8A196;
+  --prairie-sky: #B8C5D1;
+  --twilight-blue: #6B7C8C;
+  --russet-earth: #A0725E;
+  --faded-denim: #7A8BA3;
+  --bone-white: #F5F3F0;
+  --charcoal: #3C3835;
+  --deep-brown: #2C2621;
+  
+  /* Main theme colors */
+  --background: var(--bone-white);
+  --foreground: var(--deep-brown);
+  --accent: var(--sage-green);
+  --muted: var(--weathered-stone);
+  --border: var(--warm-sand);
+  --card: rgba(245, 243, 240, 0.8);
+  --card-foreground: var(--charcoal);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Crimson Text', Georgia, serif;
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--deep-brown);
+    --foreground: var(--bone-white);
+    --accent: var(--sage-green);
+    --muted: var(--dusty-brown);
+    --border: var(--charcoal);
+    --card: rgba(44, 38, 33, 0.9);
+    --card-foreground: var(--bone-white);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+/* Utility classes for lonely cowboy aesthetic */
+.text-sage { color: var(--sage-green); }
+.text-dusty { color: var(--dusty-brown); }
+.text-sand { color: var(--warm-sand); }
+.text-stone { color: var(--weathered-stone); }
+.text-prairie { color: var(--prairie-sky); }
+.text-twilight { color: var(--twilight-blue); }
+.text-russet { color: var(--russet-earth); }
+.text-denim { color: var(--faded-denim); }
+
+.bg-sage { background-color: var(--sage-green); }
+.bg-dusty { background-color: var(--dusty-brown); }
+.bg-sand { background-color: var(--warm-sand); }
+.bg-stone { background-color: var(--weathered-stone); }
+.bg-prairie { background-color: var(--prairie-sky); }
+.bg-twilight { background-color: var(--twilight-blue); }
+.bg-russet { background-color: var(--russet-earth); }
+.bg-denim { background-color: var(--faded-denim); }
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles */
+:focus {
+  outline: 2px solid var(--sage-green);
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background-color: var(--sage-green);
+  color: var(--bone-white);
+}
+
+/* Responsive font sizes */
+@media (max-width: 768px) {
+  p {
+    font-size: 1rem;
+  }
+}
