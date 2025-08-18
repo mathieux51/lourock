@@ -144,14 +144,14 @@ export default function Home() {
             LIVE PERFORMANCE
           </h2>
           <div className="relative aspect-video bg-kills-black border-2 border-kills-red mb-8">
-            <video 
-              className="w-full h-full object-cover"
-              controls
-              poster="/video-poster.jpg"
-            >
-              <source src="/whirling-eyes.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <iframe 
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/q9bZG09xVm4"
+              title="Whirling Eyes - Live at The Black Sheep"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
           </div>
           <p className="kills-body text-lg text-kills-light-gray">
             Watch us perform "Whirling Eyes" live at The Black Sheep
