@@ -69,17 +69,31 @@ export default function DesignSystem() {
 </button>`,
     },
     {
-      name: "Card",
+      name: "Disabled Button",
+      code: `<button disabled className="bg-accent/50 px-8 py-3 rounded font-heading cursor-not-allowed opacity-50">
+  Disabled Action
+</button>`,
+    },
+    {
+      name: "Background Card",
       code: `<div className="bg-surface-light p-8 rounded-lg">
   <h3 className="font-heading text-2xl mb-6 text-primary">Card Title</h3>
-  <p className="font-body">Card content goes here...</p>
+  <p className="font-body">Card content with background...</p>
 </div>`,
     },
     {
-      name: "Tour Date Item",
-      code: `<div className="bg-surface-light p-6 rounded-lg border-l-4 border-accent hover:bg-surface-dark transition-colors">
-  <h3 className="font-heading text-xl text-sand">Venue Name</h3>
-  <p className="text-ash">City, Region</p>
+      name: "Bordered Card",
+      code: `<div className="border-2 border-primary/30 p-8 rounded-lg">
+  <h3 className="font-heading text-2xl mb-6 text-primary">Card Title</h3>
+  <p className="font-body">Card content with transparent background...</p>
+</div>`,
+    },
+    {
+      name: "Coming Soon",
+      code: `<div className="bg-surface-light p-16 rounded-lg border-2 border-accent/30 text-center">
+  <h3 className="font-heading text-4xl text-gold mb-6">Coming Soon</h3>
+  <p className="font-body text-lg text-sand mb-8">Content will be available soon...</p>
+  <button className="bg-accent hover:bg-rust px-8 py-3 rounded font-heading transition-colors">Contact Us</button>
 </div>`,
     },
   ];
@@ -215,16 +229,28 @@ export default function DesignSystem() {
                           Secondary Action
                         </button>
                       )}
-                      {component.name === "Card" && (
+                      {component.name === "Disabled Button" && (
+                        <button disabled className="bg-accent/50 px-8 py-3 rounded font-heading cursor-not-allowed opacity-50">
+                          Disabled Action
+                        </button>
+                      )}
+                      {component.name === "Background Card" && (
                         <div className="bg-surface-light p-8 rounded-lg max-w-md">
                           <h3 className="font-heading text-2xl mb-6 text-primary">Card Title</h3>
-                          <p className="font-body">Card content goes here...</p>
+                          <p className="font-body">Card content with background...</p>
                         </div>
                       )}
-                      {component.name === "Tour Date Item" && (
-                        <div className="bg-surface-light p-6 rounded-lg border-l-4 border-accent hover:bg-surface-dark transition-colors max-w-md">
-                          <h3 className="font-heading text-xl text-sand">Venue Name</h3>
-                          <p className="text-ash">City, Region</p>
+                      {component.name === "Bordered Card" && (
+                        <div className="border-2 border-primary/30 p-8 rounded-lg max-w-md">
+                          <h3 className="font-heading text-2xl mb-6 text-primary">Card Title</h3>
+                          <p className="font-body">Card content with transparent background...</p>
+                        </div>
+                      )}
+                      {component.name === "Coming Soon" && (
+                        <div className="bg-surface-light p-12 rounded-lg border-2 border-accent/30 text-center max-w-md">
+                          <h3 className="font-heading text-3xl text-gold mb-4">Coming Soon</h3>
+                          <p className="font-body text-sand mb-6">Content will be available soon...</p>
+                          <button className="bg-accent hover:bg-rust px-6 py-2 rounded font-heading transition-colors text-sm">Contact Us</button>
                         </div>
                       )}
                     </div>
@@ -242,12 +268,33 @@ export default function DesignSystem() {
           </div>
         </section>
 
+        {/* Background Overlays */}
+        <section className="mb-16">
+          <h2 className="font-heading text-3xl text-gold mb-8">Background Overlays</h2>
+          
+          <div className="bg-surface-light p-8 rounded-lg">
+            <h3 className="font-heading text-2xl text-primary mb-6">Overlay Guidelines</h3>
+            <div className="space-y-4 font-body">
+              <div className="border-l-4 border-accent pl-4">
+                <h4 className="font-heading text-lg text-sand">Standard Overlay</h4>
+                <p className="text-ash">bg-black/65 + bg-background/45 for optimal text readability</p>
+                <code className="text-cream text-sm">Used in: About, EPK, Contact sections</code>
+              </div>
+              <div className="border-l-4 border-accent pl-4">
+                <h4 className="font-heading text-lg text-sand">Bordered Components</h4>
+                <p className="text-ash">border-2 border-primary/30 for transparent backgrounds</p>
+                <code className="text-cream text-sm">Used in: Band Members, Get in Touch, EPK subsections</code>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Brand Guidelines */}
         <section className="mb-16">
           <h2 className="font-heading text-3xl text-gold mb-8">Brand Guidelines</h2>
           
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-surface-light p-8 rounded-lg">
+            <div className="border-2 border-primary/30 p-8 rounded-lg">
               <h3 className="font-heading text-2xl text-primary mb-6">Visual Identity</h3>
               <ul className="space-y-3 font-body">
                 <li className="flex items-start">
@@ -269,7 +316,7 @@ export default function DesignSystem() {
               </ul>
             </div>
 
-            <div className="bg-surface-light p-8 rounded-lg">
+            <div className="border-2 border-primary/30 p-8 rounded-lg">
               <h3 className="font-heading text-2xl text-primary mb-6">Usage Principles</h3>
               <ul className="space-y-3 font-body">
                 <li className="flex items-start">
@@ -297,7 +344,7 @@ export default function DesignSystem() {
         <section>
           <h2 className="font-heading text-3xl text-gold mb-8">Responsive Design</h2>
           
-          <div className="bg-surface-light p-8 rounded-lg">
+          <div className="border-2 border-primary/30 p-8 rounded-lg">
             <h3 className="font-heading text-2xl text-primary mb-6">Breakpoints</h3>
             <div className="grid md:grid-cols-3 gap-6">
               <div>

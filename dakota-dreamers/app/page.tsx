@@ -80,7 +80,15 @@ export default function Home() {
 
       {/* Hero Section */}
       <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 gradient-dusk opacity-80"></div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <img 
+            src="/stage.png" 
+            alt="Stage background" 
+            className="w-[120%] h-[120%] object-cover object-top"
+          />
+        </div>
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 gradient-dusk opacity-60"></div>
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0iIzQzNDAzYyIgZmlsbC1vcGFjaXR5PSIwLjEiLz4KPC9zdmc+')] opacity-20"></div>
         <div className="relative z-10 text-center animate-fade-in-up">
           <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl text-cream mb-6 tracking-wider">
@@ -109,8 +117,17 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-surface-medium">
-        <div className="container mx-auto px-4">
+      <section id="about" className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="/bridge.png" 
+            alt="Bridge background" 
+            className="w-full h-[80%] object-cover object-top"
+          />
+        </div>
+        <div className="absolute inset-0 bg-black/65"></div>
+        <div className="absolute inset-0 bg-surface-medium/45"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-heading text-4xl md:text-5xl text-center mb-12 text-gold">
               About the Band
@@ -118,25 +135,25 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <p className="font-body text-lg leading-relaxed">
-                  Dakota Dreamers emerged from the sun-baked streets of Montpellier with a vision as vast as the American plains. This country rock duo has mastered the art of blending authentic Western storytelling with the passionate spirit of Southern France.
+                  Dakota Dreamers emerged from a deep friendship and shared passion for country rock music, nature, and the traditional culture of Southern France. This duo discovered their musical chemistry through their mutual appreciation for the breathtaking beauty found in the Occitanie region.
                 </p>
                 <p className="font-body text-lg leading-relaxed">
-                  Born from a shared love of wide-open spaces and timeless melodies, the band channels the raw emotion of classic country through a modern rock lens. Their music speaks to the wanderer's heart, the dreamer's soul, and the rebel's spirit.
+                  Born from this connection to both the land and each other, the band channels authentic Western storytelling through the lens of their Mediterranean heritage. Their music speaks to those who find inspiration in wide-open spaces, timeless melodies, and the natural wonders of Southern France.
                 </p>
                 <p className="font-body text-lg leading-relaxed">
                   From intimate venues in the Occitanie region to festival stages across Southern France, Dakota Dreamers delivers performances that transport audiences to dusty highways and endless horizons, proving that the American West lives in the hearts of all who dare to dream.
                 </p>
               </div>
-              <div className="bg-surface-light p-8 rounded-lg">
+              <div className="border-2 border-primary/30 p-8 rounded-lg">
                 <h3 className="font-heading text-2xl mb-6 text-primary">Band Members</h3>
                 <div className="space-y-4">
                   <div className="border-l-4 border-accent pl-4">
-                    <h4 className="font-heading text-lg text-sand">Lead Vocals & Guitar</h4>
-                    <p className="text-ash">The voice that carries the stories of both continents</p>
+                    <h4 className="font-heading text-lg text-sand">Rob</h4>
+                    <p className="text-ash">Lead vocals, acoustic guitar and piano</p>
                   </div>
                   <div className="border-l-4 border-accent pl-4">
-                    <h4 className="font-heading text-lg text-sand">Harmonies & Bass</h4>
-                    <p className="text-ash">The rhythmic foundation that bridges worlds</p>
+                    <h4 className="font-heading text-lg text-sand">Mathieu</h4>
+                    <p className="text-ash">Side vocals, lead guitar, bouzouki and banjo</p>
                   </div>
                 </div>
               </div>
@@ -146,15 +163,24 @@ export default function Home() {
       </section>
 
       {/* Electronic Press Kit */}
-      <section id="epk" className="py-20 bg-background">
-        <div className="container mx-auto px-4">
+      <section id="epk" className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <img 
+            src="/horse.png" 
+            alt="Horse background" 
+            className="w-[120%] h-[120%] object-cover object-top"
+          />
+        </div>
+        <div className="absolute inset-0 bg-black/65"></div>
+        <div className="absolute inset-0 bg-background/45"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <h2 className="font-heading text-4xl md:text-5xl text-center mb-16 text-gold">
             Electronic Press Kit
           </h2>
           
           <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Biography */}
-            <div className="bg-surface-light p-8 rounded-lg">
+            <div className="border-2 border-primary/30 p-8 rounded-lg">
               <h3 className="font-heading text-2xl mb-6 text-primary">Biography</h3>
               <p className="font-body mb-4 leading-relaxed">
                 Dakota Dreamers represents the convergence of two musical worlds: the authentic storytelling tradition of American country music and the passionate artistic heritage of Southern France.
@@ -162,16 +188,16 @@ export default function Home() {
               <p className="font-body mb-4 leading-relaxed">
                 Since forming in Montpellier, the duo has been crafting a unique sound that honors the cowboy spirit while embracing their Mediterranean roots. Their performances capture the essence of wide landscapes and intimate emotions.
               </p>
-              <a 
-                href="#" 
-                className="inline-block bg-accent hover:bg-rust px-4 py-2 rounded text-sm font-heading transition-colors"
+              <button 
+                disabled
+                className="inline-block bg-accent/50 px-4 py-2 rounded text-sm font-heading cursor-not-allowed opacity-50"
               >
                 Download Full Bio
-              </a>
+              </button>
             </div>
 
             {/* Music Samples */}
-            <div className="bg-surface-light p-8 rounded-lg">
+            <div className="border-2 border-primary/30 p-8 rounded-lg">
               <h3 className="font-heading text-2xl mb-6 text-primary">Music Samples</h3>
               <div className="space-y-4">
                 {musicSamples.map((track, index) => (
@@ -188,17 +214,17 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <a 
-                href="#" 
-                className="inline-block bg-accent hover:bg-rust px-4 py-2 rounded text-sm font-heading transition-colors mt-4"
+              <button 
+                disabled
+                className="inline-block bg-accent/50 px-4 py-2 rounded text-sm font-heading cursor-not-allowed opacity-50 mt-4"
               >
                 Download Tracks
-              </a>
+              </button>
             </div>
 
             {/* Technical & Contact */}
             <div className="space-y-8">
-              <div className="bg-surface-light p-8 rounded-lg">
+              <div className="border-2 border-primary/30 p-8 rounded-lg">
                 <h3 className="font-heading text-2xl mb-6 text-primary">Technical Requirements</h3>
                 <ul className="space-y-2 font-body text-sm">
                   <li>• 2 vocal microphones (SM58 or equivalent)</li>
@@ -207,25 +233,25 @@ export default function Home() {
                   <li>• Monitor speakers (2 minimum)</li>
                   <li>• Standard power requirements</li>
                 </ul>
-                <a 
-                  href="#" 
-                  className="inline-block bg-accent hover:bg-rust px-4 py-2 rounded text-sm font-heading transition-colors mt-4"
+                <button 
+                  disabled
+                  className="inline-block bg-accent/50 px-4 py-2 rounded text-sm font-heading cursor-not-allowed opacity-50 mt-4"
                 >
                   Tech Rider PDF
-                </a>
+                </button>
               </div>
 
-              <div className="bg-surface-light p-8 rounded-lg">
+              <div className="border-2 border-primary/30 p-8 rounded-lg">
                 <h3 className="font-heading text-2xl mb-6 text-primary">Press Photos</h3>
                 <p className="font-body text-sm mb-4">
                   High-resolution promotional photos available for press and promotional use.
                 </p>
-                <a 
-                  href="#" 
-                  className="inline-block bg-accent hover:bg-rust px-4 py-2 rounded text-sm font-heading transition-colors"
+                <button 
+                  disabled
+                  className="inline-block bg-accent/50 px-4 py-2 rounded text-sm font-heading cursor-not-allowed opacity-50"
                 >
                   Download Photos
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -239,47 +265,11 @@ export default function Home() {
             Tour Dates
           </h2>
           
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-4">
-              {tourDates.map((show, index) => (
-                <div 
-                  key={index}
-                  className="bg-surface-light p-6 rounded-lg border-l-4 border-accent hover:bg-surface-dark transition-colors"
-                >
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                    <div className="flex-1">
-                      <div className="flex flex-col md:flex-row md:items-center gap-4">
-                        <div className="min-w-0">
-                          <h3 className="font-heading text-xl text-sand">{show.venue}</h3>
-                          <p className="text-ash">{show.city}, {show.region}</p>
-                        </div>
-                        <div className="text-primary font-heading">
-                          {new Date(show.date).toLocaleDateString('en-US', {
-                            weekday: 'short',
-                            year: 'numeric',
-                            month: 'short',
-                            day: 'numeric'
-                          })}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="mt-4 md:mt-0">
-                      <span className={`px-3 py-1 rounded text-xs font-heading uppercase ${
-                        show.status === 'confirmed' ? 'bg-green-600 text-white' :
-                        show.status === 'festival' ? 'bg-gold text-background' :
-                        'bg-smoke text-white'
-                      }`}>
-                        {show.status}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-            <div className="text-center mt-12">
-              <p className="font-body text-lg mb-6">
-                Book Dakota Dreamers for your venue or festival
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="bg-surface-light p-16 rounded-lg border-2 border-accent/30">
+              <h3 className="font-heading text-4xl text-gold mb-6">Coming Soon</h3>
+              <p className="font-body text-lg text-sand mb-8">
+                New tour dates will be announced soon. Stay tuned for upcoming performances across Southern France.
               </p>
               <a 
                 href="#contact" 
@@ -293,44 +283,36 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-background">
-        <div className="container mx-auto px-4">
+      <section id="contact" className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <img 
+            src="/contact.png" 
+            alt="Contact background" 
+            className="w-[120%] h-[120%] object-cover object-center"
+          />
+        </div>
+        <div className="absolute inset-0 bg-black/65"></div>
+        <div className="absolute inset-0 bg-background/45"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <h2 className="font-heading text-4xl md:text-5xl text-center mb-16 text-gold">
             Contact
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="bg-surface-light p-8 rounded-lg text-center">
-              <h3 className="font-heading text-xl mb-4 text-primary">Booking Inquiries</h3>
-              <p className="font-body mb-4">For venue bookings and festival appearances</p>
-              <a 
-                href="mailto:booking@dakotadreamers.com" 
-                className="text-accent hover:text-rust transition-colors font-heading"
+          <div className="max-w-2xl mx-auto">
+            <div className="border-2 border-primary/30 p-12 rounded-lg text-center">
+              <h3 className="font-heading text-2xl mb-6 text-primary">Get in Touch</h3>
+              <p className="font-body text-lg mb-8">
+                For bookings, press inquiries, and all other matters, reach out to us at:
+              </p>
+              <button 
+                onClick={() => {
+                  const email = 'contact' + '@' + 'lourock.com';
+                  window.location.href = 'mailto:' + email;
+                }}
+                className="text-accent hover:text-rust transition-colors font-heading text-xl"
               >
-                booking@dakotadreamers.com
-              </a>
-            </div>
-
-            <div className="bg-surface-light p-8 rounded-lg text-center">
-              <h3 className="font-heading text-xl mb-4 text-primary">Press & Media</h3>
-              <p className="font-body mb-4">Interviews, reviews, and media requests</p>
-              <a 
-                href="mailto:press@dakotadreamers.com" 
-                className="text-accent hover:text-rust transition-colors font-heading"
-              >
-                press@dakotadreamers.com
-              </a>
-            </div>
-
-            <div className="bg-surface-light p-8 rounded-lg text-center md:col-span-2 lg:col-span-1">
-              <h3 className="font-heading text-xl mb-4 text-primary">General Contact</h3>
-              <p className="font-body mb-4">Questions, fan mail, and general inquiries</p>
-              <a 
-                href="mailto:info@dakotadreamers.com" 
-                className="text-accent hover:text-rust transition-colors font-heading"
-              >
-                info@dakotadreamers.com
-              </a>
+                contact at lourock dot com
+              </button>
             </div>
           </div>
 
@@ -351,10 +333,10 @@ export default function Home() {
             </div>
             
             <div className="flex space-x-6">
-              <a href="#" className="text-ash hover:text-accent transition-colors">Spotify</a>
-              <a href="#" className="text-ash hover:text-accent transition-colors">YouTube</a>
-              <a href="#" className="text-ash hover:text-accent transition-colors">Instagram</a>
-              <a href="#" className="text-ash hover:text-accent transition-colors">Facebook</a>
+              <span className="text-ash/50 cursor-not-allowed">Spotify</span>
+              <span className="text-ash/50 cursor-not-allowed">YouTube</span>
+              <span className="text-ash/50 cursor-not-allowed">Instagram</span>
+              <span className="text-ash/50 cursor-not-allowed">Facebook</span>
             </div>
           </div>
           
