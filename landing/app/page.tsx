@@ -129,7 +129,7 @@ export default function Home() {
                 making booking seamless and professional.
               </p>
               <p className="text-lg text-slate-300">
-                Whether you're organizing a corporate event, planning a festival, or booking entertainment for your venue, 
+                Whether you&apos;re organizing a corporate event, planning a festival, or booking entertainment for your venue, 
                 LouRock connects you with the perfect sound for your audience.
               </p>
             </div>
@@ -211,7 +211,7 @@ export default function Home() {
 
       <footer className="py-8 px-6 border-t border-slate-800">
         <div className="container mx-auto text-center text-slate-400">
-          <p>© 2024 LouRock - Connecting Occitanie's Music Scene</p>
+          <p>© 2024 LouRock - Connecting Occitanie&apos;s Music Scene</p>
           <p className="mt-2">Montpellier, France</p>
         </div>
       </footer>
