@@ -22,32 +22,32 @@ export default function Home() {
     "Minimum stage size: 4m x 3m"
   ];
 
-  const shows = [
-    {
-      date: "2024-03-15",
-      venue: "Le Rockstore",
-      city: "Montpellier",
-      status: "confirmed"
-    },
-    {
-      date: "2024-04-20",
-      venue: "La Coopérative",
-      city: "Toulouse",
-      status: "confirmed"
-    },
-    {
-      date: "2024-05-12",
-      venue: "Le Bikini",
-      city: "Toulouse",
-      status: "pending"
-    },
-    {
-      date: "2024-06-08",
-      venue: "Théâtre de Nîmes",
-      city: "Nîmes",
-      status: "confirmed"
-    }
-  ];
+  // const shows = [
+  //   {
+  //     date: "2024-03-15",
+  //     venue: "Le Rockstore",
+  //     city: "Montpellier",
+  //     status: "confirmed"
+  //   },
+  //   {
+  //     date: "2024-04-20",
+  //     venue: "La Coopérative",
+  //     city: "Toulouse",
+  //     status: "confirmed"
+  //   },
+  //   {
+  //     date: "2024-05-12",
+  //     venue: "Le Bikini",
+  //     city: "Toulouse",
+  //     status: "pending"
+  //   },
+  //   {
+  //     date: "2024-06-08",
+  //     venue: "Théâtre de Nîmes",
+  //     city: "Nîmes",
+  //     status: "confirmed"
+  //   }
+  // ];
 
   return (
     <div className="min-h-screen bg-kills-black text-kills-white">
@@ -115,7 +115,7 @@ export default function Home() {
                 RAW GARAGE ROCK TRIBUTE
               </h3>
               <p className="kills-body text-lg mb-6 text-kills-light-gray leading-relaxed">
-                We don't just play The Kills' songs - we resurrect their primal energy. Every performance is a sonic assault of minimalist garage rock, where two guitars become an army and silence is as powerful as sound. We capture the danger, the tension, and the raw intensity that defines The Kills' legendary live shows.
+                We don&apos;t just play The Kills&apos; songs - we resurrect their primal energy. Every performance is a sonic assault of minimalist garage rock, where two guitars become an army and silence is as powerful as sound. We capture the danger, the tension, and the raw intensity that defines The Kills&apos; legendary live shows.
               </p>
               <p className="kills-body text-lg mb-6 text-kills-light-gray leading-relaxed">
                 From the feedback-drenched chaos of their early work to the sophisticated darkness of their later albums, we deliver an authentic experience that goes beyond mere imitation. This is about channeling the spirit of garage rock rebellion, bringing that same confrontational intimacy that made The Kills one of the most influential acts of the 21st century.
@@ -126,7 +126,7 @@ export default function Home() {
                 PERFORMANCE HIGHLIGHTS
               </h4>
               <ul className="kills-body space-y-3 text-kills-light-gray">
-                <li>• Authentic recreation of The Kills' minimalist setup</li>
+                <li>• Authentic recreation of The Kills&apos; minimalist setup</li>
                 <li>• Full repertoire spanning all major albums</li>
                 <li>• Professional grade equipment and sound</li>
                 <li>• High-energy performances across Occitanie</li>
@@ -154,7 +154,7 @@ export default function Home() {
             />
           </div>
           <p className="kills-body text-lg text-kills-light-gray">
-            Watch us perform "Whirling Eyes" live at The Black Sheep
+            Watch us perform &quot;Whirling Eyes&quot; live at The Black Sheep
           </p>
         </div>
       </section>
@@ -190,16 +190,16 @@ export default function Home() {
                 <h3 className="kills-heading text-2xl mb-6 text-kills-red">BAND BIOGRAPHY</h3>
                 <div className="kills-body text-kills-light-gray space-y-4 leading-relaxed">
                   <p>
-                    Our story began at an open mic night in Montpellier, where fate brought together three musicians with a shared passion. When Mathieu heard the raw power of Lucie and Francis performing, he knew he'd found something special. That night sparked the formation of Tribute Band The Kills.
+                    Our story began at an open mic night in Montpellier, where fate brought together three musicians with a shared passion. When Mathieu heard the raw power of Lucie and Francis performing, he knew he&apos;d found something special. That night sparked the formation of Tribute Band The Kills.
                   </p>
                   <p>
-                    United by our love for The Kills' minimalist garage rock sound and a mutual appreciation for sunglasses on stage, we channel the explosive energy and stripped-down aesthetic that made the original duo legendary. From Montpellier to venues across Occitanie, we bring that same raw, unfiltered intensity to every performance.
+                    United by our love for The Kills&apos; minimalist garage rock sound and a mutual appreciation for sunglasses on stage, we channel the explosive energy and stripped-down aesthetic that made the original duo legendary. From Montpellier to venues across Occitanie, we bring that same raw, unfiltered intensity to every performance.
                   </p>
                   <p>
-                    Drawing inspiration from The Kills' entire discography - from the raw energy of "Keep On Your Mean Side" to the refined aggression of "Blood Pressures" - our performances capture both the musical precision and explosive stage presence that made Alison Mosshart and Jamie Hince iconic. We meticulously recreate the stripped-down aesthetic that became The Kills' signature, delivering authentic recreations of their minimalist setup.
+                    Drawing inspiration from The Kills&apos; entire discography - from the raw energy of &quot;Keep On Your Mean Side&quot; to the refined aggression of &quot;Blood Pressures&quot; - our performances capture both the musical precision and explosive stage presence that made Alison Mosshart and Jamie Hince iconic. We meticulously recreate the stripped-down aesthetic that became The Kills&apos; signature, delivering authentic recreations of their minimalist setup.
                   </p>
                   <p>
-                    Available for festivals, club shows, and private events across Occitanie and beyond, Tribute Band The Kills delivers professional, high-energy performances with professional grade equipment and sound. We bring the garage rock revival to both intimate clubs and festival stages, celebrating one of garage rock's most influential acts.
+                    Available for festivals, club shows, and private events across Occitanie and beyond, Tribute Band The Kills delivers professional, high-energy performances with professional grade equipment and sound. We bring the garage rock revival to both intimate clubs and festival stages, celebrating one of garage rock&apos;s most influential acts.
                   </p>
                 </div>
               </div>

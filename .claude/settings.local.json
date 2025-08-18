@@ -10,7 +10,11 @@
       "Bash(git add:*)",
       "Bash(cp:*)",
       "Bash(git push:*)",
-      "Bash(chmod:*)"
+      "Bash(chmod:*)",
+      "Bash(cat:*)",
+      "Bash(npm run lint)",
+      "Bash(npx prettier:*)",
+      "WebFetch(domain:www.colterwall.com)"
     ],
     "deny": [],
     "ask": []

@@ -45,7 +45,7 @@ export default function DesignSystem() {
           COLOR PALETTE
         </h2>
         <p className="kills-body text-kills-light-gray mb-8">
-          Inspired by The Kills' visual identity - predominantly black and white with strategic use of red and pink accents.
+          Inspired by The Kills&apos; visual identity - predominantly black and white with strategic use of red and pink accents.
         </p>
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -295,7 +295,7 @@ export default function DesignSystem() {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-kills-charcoal border border-kills-dark-gray p-6">
             <h3 className="kills-heading text-xl mb-4 text-kills-red">
-              DO'S
+              DO&apos;S
             </h3>
             <ul className="kills-body space-y-2 text-kills-light-gray">
               <li>• Use high contrast between text and backgrounds</li>
@@ -309,14 +309,14 @@ export default function DesignSystem() {
           
           <div className="bg-kills-charcoal border border-kills-dark-gray p-6">
             <h3 className="kills-heading text-xl mb-4 text-kills-red">
-              DON'TS
+              DON&apos;TS
             </h3>
             <ul className="kills-body space-y-2 text-kills-light-gray">
-              <li>• Don't use too many colors</li>
+              <li>• Don&apos;t use too many colors</li>
               <li>• Avoid light backgrounds with light text</li>
-              <li>• Don't overcomplicate the layout</li>
+              <li>• Don&apos;t overcomplicate the layout</li>
               <li>• Avoid using gradients excessively</li>
-              <li>• Don't ignore accessibility guidelines</li>
+              <li>• Don&apos;t ignore accessibility guidelines</li>
               <li>• Avoid cluttered compositions</li>
             </ul>
           </div>

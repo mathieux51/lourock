@@ -1,59 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
 
 :root {
-  /* Lonely prairie color palette */
-  --sage-green: #9CAF88;
-  --dusty-brown: #8B7355;
-  --warm-sand: #D4C4A8;
-  --weathered-stone: #A8A196;
-  --prairie-sky: #B8C5D1;
-  --twilight-blue: #6B7C8C;
-  --russet-earth: #A0725E;
-  --faded-denim: #7A8BA3;
+  /* Cowboy-Nord Gloomy Color Palette */
+  --nord-night: #2e3440;
+  --nord-dark: #3b4252;
+  --nord-darker: #434c5e;
+  --nord-darkest: #4c566a;
+  
+  --nord-snow: #eceff4;
+  --nord-light: #e5e9f0;
+  --nord-lighter: #d8dee9;
+  
+  --cowboy-dust: #8b7355;
+  --cowboy-leather: #654321;
+  --cowboy-rust: #b7472a;
+  --cowboy-sage: #87a96b;
+  --cowboy-sand: #d4c4a8;
+  
+  --nord-frost-light: #8fbcbb;
+  --nord-frost: #88c0d0;
+  --nord-frost-bright: #81a1c1;
+  --nord-frost-deep: #5e81ac;
+  
+  --nord-aurora-red: #bf616a;
+  --nord-aurora-orange: #d08770;
+  --nord-aurora-yellow: #ebcb8b;
+  --nord-aurora-green: #a3be8c;
+  --nord-aurora-purple: #b48ead;
+  
+  /* Prairie-inspired colors for design system */
+  --sage: #9CAF88;
+  --dusty: #8B7355;
+  --sand: #D4C4A8;
+  --stone: #A8A196;
+  --prairie: #B8C5D1;
+  --twilight: #6B7C8C;
+  --russet: #A0725E;
+  --denim: #7A8BA3;
   --bone-white: #F5F3F0;
   --charcoal: #3C3835;
   --deep-brown: #2C2621;
-  
-  /* Main theme colors */
-  --background: var(--bone-white);
-  --foreground: var(--deep-brown);
-  --accent: var(--sage-green);
-  --muted: var(--weathered-stone);
-  --border: var(--warm-sand);
-  --card: rgba(245, 243, 240, 0.8);
-  --card-foreground: var(--charcoal);
+
+  /* Theme Colors */
+  --background: var(--nord-night);
+  --foreground: var(--nord-snow);
+  --card: var(--nord-dark);
+  --card-foreground: var(--nord-light);
+  --border: var(--nord-darker);
+  --muted: var(--nord-lighter);
+  --muted-foreground: var(--nord-darkest);
+  --accent: var(--cowboy-sage);
+  --accent-foreground: var(--nord-night);
+  --destructive: var(--nord-aurora-red);
+  --warning: var(--nord-aurora-orange);
+  --success: var(--nord-aurora-green);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-accent: var(--accent);
-  --color-muted: var(--muted);
-  --color-border: var(--border);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-serif: 'Crimson Text', Georgia, serif;
-  --font-mono: var(--font-geist-mono);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  /* Prairie colors for design system */
+  --color-sage: var(--sage);
+  --color-dusty: var(--dusty);
+  --color-sand: var(--sand);
+  --color-stone: var(--stone);
+  --color-prairie: var(--prairie);
+  --color-twilight: var(--twilight);
+  --color-russet: var(--russet);
+  --color-denim: var(--denim);
+  --color-bone-white: var(--bone-white);
+  --color-charcoal: var(--charcoal);
+  --color-deep-brown: var(--deep-brown);
+  
+  /* Nord colors */
+  --color-nord-night: var(--nord-night);
+  --color-nord-dark: var(--nord-dark);
+  --color-nord-darker: var(--nord-darker);
+  --color-nord-darkest: var(--nord-darkest);
+  --color-nord-snow: var(--nord-snow);
+  --color-nord-light: var(--nord-light);
+  --color-nord-lighter: var(--nord-lighter);
+  
+  /* Cowboy colors */
+  --color-cowboy-dust: var(--cowboy-dust);
+  --color-cowboy-leather: var(--cowboy-leather);
+  --color-cowboy-rust: var(--cowboy-rust);
+  --color-cowboy-sage: var(--cowboy-sage);
+  --color-cowboy-sand: var(--cowboy-sand);
+  
+  /* Nord frost colors */
+  --color-frost-light: var(--nord-frost-light);
+  --color-frost: var(--nord-frost);
+  --color-frost-bright: var(--nord-frost-bright);
+  --color-frost-deep: var(--nord-frost-deep);
+  
+  /* Nord aurora colors */
+  --color-aurora-red: var(--nord-aurora-red);
+  --color-aurora-orange: var(--nord-aurora-orange);
+  --color-aurora-yellow: var(--nord-aurora-yellow);
+  --color-aurora-green: var(--nord-aurora-green);
+  --color-aurora-purple: var(--nord-aurora-purple);
+  
+  /* Fonts */
+  --font-sans: "Source Sans 3", system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  /* Spacing and sizing */
+  --spacing: 0.25rem;
+  --border-radius: 0.375rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--deep-brown);
-    --foreground: var(--bone-white);
-    --accent: var(--sage-green);
-    --muted: var(--dusty-brown);
-    --border: var(--charcoal);
-    --card: rgba(44, 38, 33, 0.9);
-    --card-foreground: var(--bone-white);
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-* {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 body {
@@ -71,6 +229,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: 1rem;
+  color: var(--foreground);
 }
 
 h1 {
@@ -92,26 +251,8 @@ p {
   margin-bottom: 1rem;
   font-size: 1.125rem;
   line-height: 1.7;
+  color: var(--muted);
 }
-
-/* Utility classes for lonely cowboy aesthetic */
-.text-sage { color: var(--sage-green); }
-.text-dusty { color: var(--dusty-brown); }
-.text-sand { color: var(--warm-sand); }
-.text-stone { color: var(--weathered-stone); }
-.text-prairie { color: var(--prairie-sky); }
-.text-twilight { color: var(--twilight-blue); }
-.text-russet { color: var(--russet-earth); }
-.text-denim { color: var(--faded-denim); }
-
-.bg-sage { background-color: var(--sage-green); }
-.bg-dusty { background-color: var(--dusty-brown); }
-.bg-sand { background-color: var(--warm-sand); }
-.bg-stone { background-color: var(--weathered-stone); }
-.bg-prairie { background-color: var(--prairie-sky); }
-.bg-twilight { background-color: var(--twilight-blue); }
-.bg-russet { background-color: var(--russet-earth); }
-.bg-denim { background-color: var(--faded-denim); }
 
 /* Smooth scroll */
 html {
@@ -120,17 +261,79 @@ html {
 
 /* Focus styles */
 :focus {
-  outline: 2px solid var(--sage-green);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
 /* Selection styles */
 ::selection {
-  background-color: var(--sage-green);
-  color: var(--bone-white);
+  background-color: var(--accent);
+  color: var(--accent-foreground);
 }
 
-/* Responsive font sizes */
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--nord-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--nord-darker);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--nord-darkest);
+}
+
+/* Custom components */
+.glow-effect {
+  box-shadow: 0 0 20px rgba(156, 175, 136, 0.3);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--sage), var(--dusty));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Professional enhancements */
+.section-divider {
+  background: linear-gradient(90deg, transparent, var(--sage), transparent);
+  height: 1px;
+  width: 100%;
+  margin: 3rem auto;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive typography */
 @media (max-width: 768px) {
   p {
     font-size: 1rem;
