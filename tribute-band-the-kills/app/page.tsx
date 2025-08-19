@@ -146,8 +146,17 @@ export default function Home() {
       </section>
 
       {/* Video Section */}
-      <section id="video" className="py-20 px-4 bg-kills-charcoal">
-        <div className="max-w-4xl mx-auto text-center">
+      <section id="video" className="py-20 px-4 bg-kills-charcoal relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="/fireworks.png" 
+            alt="Fireworks background" 
+            className="w-full h-auto object-contain object-center mt-16 md:mt-0"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-kills-black/70 via-transparent to-kills-black/70"></div>
+        <div className="absolute inset-0 bg-kills-black/40"></div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="kills-heading text-4xl md:text-6xl mb-16">
             LIVE PERFORMANCE
           </h2>
