@@ -298,8 +298,17 @@ export default function Home() {
       </section>
 
       {/* Shows Section */}
-      <section id="shows" className="py-20 px-4 bg-kills-charcoal">
-        <div className="max-w-4xl mx-auto">
+      <section id="shows" className="py-20 px-4 bg-kills-charcoal relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="/shows.png" 
+            alt="Shows background" 
+            className="w-full h-auto object-contain object-center mt-16 md:mt-0"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-kills-black/70 via-transparent to-kills-black/70"></div>
+        <div className="absolute inset-0 bg-kills-black/40"></div>
+        <div className="max-w-4xl mx-auto relative z-10">
           <h2 className="kills-heading text-4xl md:text-6xl mb-16 text-center">
             UPCOMING SHOWS
           </h2>
