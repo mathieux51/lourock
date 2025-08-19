@@ -76,7 +76,15 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-kills-black via-kills-charcoal to-kills-black opacity-80"></div>
+        <div className="absolute inset-0">
+          <img 
+            src="/stage.png" 
+            alt="Stage background" 
+            className="w-[80%] h-auto object-contain object-center mx-auto"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-kills-black/70 via-transparent to-kills-black/70"></div>
+        <div className="absolute inset-0 bg-kills-black/40"></div>
         <div className="relative text-center z-10">
           <h1 className="kills-heading text-6xl md:text-8xl lg:text-9xl mb-8">
             <span className="block text-kills-white">TRIBUTE</span>

@@ -61,7 +61,7 @@ export default function Home() {
 
               <Link href="https://the-kills.lourock.com" className="group">
                 <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-slate-700 hover:border-purple-500 transition-all duration-300 transform hover:scale-105">
-                  <div className="h-48 bg-gradient-to-br from-red-600 to-pink-700 rounded-lg mb-6"></div>
+                  <div className="h-48 bg-cover bg-center rounded-lg mb-6" style={{backgroundImage: 'url("https://the-kills.lourock.com/stage.png")'}}></div>
                   <h4 className="text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors">Tribute Band The Kills</h4>
                   <p className="text-slate-400 mb-4">Rock Tribute</p>
                   <p className="text-sm text-slate-500">
