@@ -80,21 +80,21 @@ export default function Home() {
           <img 
             src="/stage.png" 
             alt="Stage background" 
-            className="w-[80%] h-auto object-contain object-center mx-auto"
+            className="w-full h-auto object-contain object-center mt-16 md:mt-0"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-kills-black/70 via-transparent to-kills-black/70"></div>
         <div className="absolute inset-0 bg-kills-black/40"></div>
         <div className="relative text-center z-10">
-          <h1 className="kills-heading text-6xl md:text-8xl lg:text-9xl mb-8">
+          <h1 className="kills-heading text-4xl sm:text-6xl md:text-8xl lg:text-9xl mb-8 px-4">
             <span className="block text-kills-white">TRIBUTE</span>
             <span className="block text-kills-red">BAND</span>
             <span className="block text-kills-white">THE KILLS</span>
           </h1>
-          <p className="kills-body text-xl md:text-2xl text-kills-light-gray max-w-2xl mx-auto mb-12 px-4">
+          <p className="kills-body text-lg sm:text-xl md:text-2xl text-kills-light-gray max-w-2xl mx-auto mb-12 px-4">
             Raw garage rock tribute capturing the minimalist sound and explosive energy of Alison Mosshart and Jamie Hince
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 max-w-md sm:max-w-none mx-auto">
             <a 
               href="#about" 
               className="kills-mono uppercase bg-kills-red hover:bg-kills-dark-red text-kills-white px-8 py-4 transition-colors border-2 border-kills-red hover:border-kills-dark-red"
@@ -175,12 +175,12 @@ export default function Home() {
           </h2>
           
           {/* EPK Navigation */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12">
             {['biography', 'setlist', 'technical', 'photos'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`kills-mono uppercase px-6 py-3 border-2 transition-colors ${
+                className={`kills-mono uppercase px-3 py-2 sm:px-6 sm:py-3 border-2 transition-colors text-sm sm:text-base ${
                   activeTab === tab 
                     ? 'bg-kills-red border-kills-red text-kills-white' 
                     : 'border-kills-white hover:border-kills-red hover:text-kills-red text-kills-white'
@@ -192,7 +192,7 @@ export default function Home() {
           </div>
 
           {/* EPK Content */}
-          <div className="bg-kills-charcoal p-8 border-2 border-kills-dark-gray">
+          <div className="bg-kills-charcoal p-4 sm:p-8 border-2 border-kills-dark-gray">
             {activeTab === 'biography' && (
               <div>
                 <h3 className="kills-heading text-2xl mb-6 text-kills-red">BAND BIOGRAPHY</h3>
@@ -272,8 +272,17 @@ export default function Home() {
             {activeTab === 'photos' && (
               <div>
                 <h3 className="kills-heading text-2xl mb-6 text-kills-red">PRESS PHOTOS</h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {[1, 2, 3, 4, 5, 6].map((num) => (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {/* Stage Photo */}
+                  <div className="aspect-square bg-kills-dark-gray border-2 border-kills-gray overflow-hidden">
+                    <img 
+                      src="/stage.png" 
+                      alt="Stage performance" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  {/* Placeholder Photos */}
+                  {[2, 3, 4, 5, 6].map((num) => (
                     <div key={num} className="aspect-square bg-kills-dark-gray border-2 border-kills-gray flex items-center justify-center">
                       <span className="kills-mono text-kills-gray">PHOTO {num}</span>
                     </div>
