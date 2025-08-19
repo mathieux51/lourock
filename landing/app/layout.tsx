@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   description: "Discover and book local bands from Montpellier and the Occitanie region. Professional musicians for concerts, events, and festivals across Southern France.",
   keywords: "bands Montpellier, musicians Occitanie, concert booking, live music France, Dakota Dreamers, The Kills tribute, Mathieu Schmidt",
   icons: {
-    icon: "/lourock-icon.svg",
-    shortcut: "/lourock-icon.svg",
-    apple: "/lourock-icon.svg",
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
   },
   openGraph: {
     title: "LouRock - Montpellier & Occitanie Music Scene",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/lourock-icon.svg",
+        url: "/icon.png",
         width: 200,
         height: 200,
         alt: "LouRock - Rock meets Occitanie",
