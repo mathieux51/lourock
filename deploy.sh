@@ -114,7 +114,7 @@ for project in "${DEPLOY_PROJECTS[@]}"; do
     # Deploy to Vercel production
     echo -e "${BLUE}🔄 Deploying ${project} to Vercel...${NC}"
     
-    DEPLOYMENT_URL=$(vercel --prod --yes)
+    DEPLOYMENT_URL=$(vercel --prod --yes --token "$NOW_TOKEN" --scope mathieus-projects-19f8bd9f)
     echo -e "${GREEN}✅ ${project} deployed to production${NC}"
     echo -e "${BLUE}🌐 Production URL: https://${DOMAIN}${NC}"
     
