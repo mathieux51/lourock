@@ -19,8 +19,11 @@ export const metadata: Metadata = {
   description: "Professional tribute to The Kills performing raw garage rock hits across Occitanie. Experience the minimalist sound and raw energy of Alison Mosshart and Jamie Hince recreated live.",
   keywords: "The Kills tribute band, garage rock, Occitanie, live music, Alison Mosshart, Jamie Hince, VV, Hotel, tribute concert",
   icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
+    icon: [
+      { url: "/icon.png", sizes: "any", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any", type: "image/x-icon" }
+    ],
+    shortcut: "/favicon.ico",
     apple: "/icon.png",
   },
   openGraph: {

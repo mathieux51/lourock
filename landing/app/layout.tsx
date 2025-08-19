@@ -17,8 +17,11 @@ export const metadata: Metadata = {
   description: "Discover and book local bands from Montpellier and the Occitanie region. Professional musicians for concerts, events, and festivals across Southern France.",
   keywords: "bands Montpellier, musicians Occitanie, concert booking, live music France, Dakota Dreamers, The Kills tribute, Mathieu Schmidt",
   icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
+    icon: [
+      { url: "/icon.png", sizes: "any", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any", type: "image/x-icon" }
+    ],
+    shortcut: "/favicon.ico",
     apple: "/icon.png",
   },
   openGraph: {
