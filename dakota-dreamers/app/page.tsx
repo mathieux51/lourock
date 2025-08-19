@@ -79,15 +79,15 @@ export default function Home() {
 
       {/* Hero Section */}
       <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center md:items-start">
           <img 
             src="/stage.png" 
             alt="Stage background" 
-            className="w-[120%] h-[120%] object-cover object-top"
+            className="w-full h-auto object-contain object-center"
           />
         </div>
-        <div className="absolute inset-0 bg-black/50"></div>
-        <div className="absolute inset-0 gradient-dusk opacity-60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-transparent via-60% to-background/70 md:from-background/80 md:to-background/80"></div>
+        <div className="absolute inset-0 bg-black/50 md:bg-black/40"></div>
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0iIzQzNDAzYyIgZmlsbC1vcGFjaXR5PSIwLjEiLz4KPC9zdmc+')] opacity-20"></div>
         <div className="relative z-10 text-center animate-fade-in-up">
           <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl text-cream mb-6 tracking-wider">
@@ -117,15 +117,15 @@ export default function Home() {
 
       {/* About Section */}
       <section id="about" className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 flex items-center justify-center md:items-start">
           <img 
             src="/bridge.png" 
             alt="Bridge background" 
-            className="w-full h-[80%] object-cover object-top"
+            className="w-full h-auto object-contain object-center"
           />
         </div>
-        <div className="absolute inset-0 bg-black/65"></div>
-        <div className="absolute inset-0 bg-surface-medium/45"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-transparent via-60% to-background/70 md:from-background/80 md:to-background/80"></div>
+        <div className="absolute inset-0 bg-black/55 md:bg-black/45"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-heading text-4xl md:text-5xl text-center mb-12 text-gold">
@@ -163,15 +163,15 @@ export default function Home() {
 
       {/* Electronic Press Kit */}
       <section id="epk" className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center md:items-start">
           <img 
             src="/horse.png" 
             alt="Horse background" 
-            className="w-[120%] h-[120%] object-cover object-top"
+            className="w-full h-auto object-contain object-center"
           />
         </div>
-        <div className="absolute inset-0 bg-black/65"></div>
-        <div className="absolute inset-0 bg-background/45"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-transparent via-60% to-background/70 md:from-background/80 md:to-background/80"></div>
+        <div className="absolute inset-0 bg-black/55 md:bg-black/45"></div>
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="font-heading text-4xl md:text-5xl text-center mb-16 text-gold">
             Electronic Press Kit
@@ -272,9 +272,9 @@ export default function Home() {
               </p>
               <a 
                 href="#contact" 
-                className="bg-accent hover:bg-rust px-8 py-3 rounded font-heading transition-colors"
+                className="bg-accent hover:bg-rust px-4 sm:px-8 py-3 rounded font-heading transition-colors inline-block"
               >
-                Contact for Booking
+                <span className="whitespace-normal sm:whitespace-nowrap">Contact for Booking</span>
               </a>
             </div>
           </div>
@@ -287,11 +287,11 @@ export default function Home() {
           <img 
             src="/contact.png" 
             alt="Contact background" 
-            className="w-[120%] h-[120%] object-cover object-center"
+            className="w-full h-auto object-contain object-center"
           />
         </div>
-        <div className="absolute inset-0 bg-black/65"></div>
-        <div className="absolute inset-0 bg-background/45"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-transparent via-60% to-background/70 md:from-background/80 md:to-background/80"></div>
+        <div className="absolute inset-0 bg-black/55 md:bg-black/45"></div>
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="font-heading text-4xl md:text-5xl text-center mb-16 text-gold">
             Contact
