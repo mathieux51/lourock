@@ -1,46 +1,8 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
 
 export default function Home() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    band: '',
-    message: ''
-  })
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        alert('Thank you for your message! We will get back to you soon.')
-        setFormData({ name: '', email: '', band: '', message: '' })
-      } else {
-        alert('Sorry, there was an error sending your message. Please try again.')
-      }
-    } catch (error) {
-      alert('Sorry, there was an error sending your message. Please try again.')
-    }
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
       <header className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-lg border-b border-slate-800">
@@ -49,8 +11,8 @@ export default function Home() {
             <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               LouRock
             </h1>
-            <div className="flex gap-8">
-              <a href="#bands" className="hover:text-purple-400 transition-colors">Bands</a>
+            <div className="hidden md:flex space-x-8">
+              <a href="#bands" className="hover:text-purple-400 transition-colors">Our Bands</a>
               <a href="#about" className="hover:text-purple-400 transition-colors">About</a>
               <a href="#contact" className="hover:text-purple-400 transition-colors">Contact</a>
             </div>
@@ -59,80 +21,80 @@ export default function Home() {
       </header>
 
       <main>
-        <section className="pt-32 pb-20 px-6">
-          <div className="container mx-auto text-center">
-            <h2 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
+        <section className="h-screen flex items-center justify-center px-6">
+          <div className="text-center max-w-4xl">
+            <h2 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent animate-gradient">
               LouRock
             </h2>
-            <p className="text-xl md:text-2xl mb-4 text-slate-300">
-              Showcasing the vibrant music scene of Montpellier & Occitanie
+            <p className="text-xl md:text-2xl text-slate-300 mb-8">
+              The Sound of Southern France
             </p>
-            <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-              Discover local bands, book concerts, and experience the authentic sound of Southern France
+            <p className="text-lg text-slate-400 mb-12">
+              Connecting talented bands from Montpellier & Occitanie with venues across the region
             </p>
-            <div className="mt-10">
-              <a 
-                href="#contact" 
-                className="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-semibold hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-105"
-              >
-                Book a Band
-              </a>
-            </div>
+            <a 
+              href="#bands" 
+              className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-4 rounded-full font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-200 transform hover:scale-105"
+            >
+              Discover Our Artists
+            </a>
           </div>
         </section>
 
-        <section id="bands" className="py-20 px-6 bg-slate-900/50">
+        <section id="bands" className="py-20 px-6">
           <div className="container mx-auto">
-            <h3 className="text-4xl font-bold text-center mb-12">Featured Artists</h3>
-            <div className="grid md:grid-cols-3 gap-8">
+            <h3 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Our Featured Bands
+            </h3>
+            
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               <Link href="https://dakota-dreamers.lourock.com" className="group">
-                <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-slate-700 hover:border-purple-500 transition-all transform hover:scale-105">
-                  <div className="h-48 bg-gradient-to-br from-amber-900 to-amber-700 rounded-lg mb-6 flex items-center justify-center">
-                    <span className="text-6xl">🤠</span>
-                  </div>
-                  <h4 className="text-2xl font-bold mb-3">Dakota Dreamers</h4>
-                  <p className="text-slate-400 mb-4">
-                    Country rock duo bringing the spirit of the American West to Southern France. 
-                    Authentic cowboy ballads meet modern rock energy.
+                <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-slate-700 hover:border-purple-500 transition-all duration-300 transform hover:scale-105">
+                  <div className="h-48 bg-cover bg-center rounded-lg mb-6" style={{backgroundImage: 'url("https://dakota-dreamers.lourock.com/stage.png")'}}></div>
+                  <h4 className="text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors">Dakota Dreamers</h4>
+                  <p className="text-slate-400 mb-4">Country Rock Duo</p>
+                  <p className="text-sm text-slate-500">
+                    Bringing the spirit of the American West to Southern France with authentic country rock performances.
                   </p>
-                  <span className="text-purple-400 group-hover:text-purple-300">Visit Site →</span>
                 </div>
               </Link>
 
               <Link href="https://the-kills.lourock.com" className="group">
-                <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-slate-700 hover:border-purple-500 transition-all transform hover:scale-105">
-                  <div className="h-48 bg-gradient-to-br from-red-900 to-pink-900 rounded-lg mb-6 flex items-center justify-center">
-                    <span className="text-6xl">🎸</span>
-                  </div>
-                  <h4 className="text-2xl font-bold mb-3">Tribute Band The Kills</h4>
-                  <p className="text-slate-400 mb-4">
-                    Electrifying tribute to the legendary garage rock duo. 
-                    Raw energy, minimalist sound, maximum impact.
+                <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-slate-700 hover:border-purple-500 transition-all duration-300 transform hover:scale-105">
+                  <div className="h-48 bg-gradient-to-br from-red-600 to-pink-700 rounded-lg mb-6"></div>
+                  <h4 className="text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors">Tribute Band The Kills</h4>
+                  <p className="text-slate-400 mb-4">Rock Tribute</p>
+                  <p className="text-sm text-slate-500">
+                    A powerful tribute to one of indie rock&apos;s most iconic duos, capturing their raw energy and signature sound.
                   </p>
-                  <span className="text-purple-400 group-hover:text-purple-300">Visit Site →</span>
                 </div>
               </Link>
 
               <Link href="https://mathieu-schmidt.lourock.com" className="group">
-                <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-slate-700 hover:border-purple-500 transition-all transform hover:scale-105">
-                  <div className="h-48 bg-gradient-to-br from-stone-800 to-stone-900 rounded-lg mb-6 flex items-center justify-center">
-                    <span className="text-6xl">🎤</span>
-                  </div>
-                  <h4 className="text-2xl font-bold mb-3">Mathieu Schmidt</h4>
-                  <p className="text-slate-400 mb-4">
-                    Solo artist channeling the lonesome prairie spirit. 
-                    Introspective folk meets atmospheric soundscapes.
+                <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-slate-700 hover:border-purple-500 transition-all duration-300 transform hover:scale-105">
+                  <div className="h-48 bg-cover bg-center rounded-lg mb-6" style={{backgroundImage: 'url("https://mathieu-schmidt.lourock.com/port.png")'}}></div>
+                  <h4 className="text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors">Mathieu Schmidt</h4>
+                  <p className="text-slate-400 mb-4">Solo Artist</p>
+                  <p className="text-sm text-slate-500">
+                    Intimate performances blending folk, indie, and Mediterranean influences into a unique musical journey.
                   </p>
-                  <span className="text-purple-400 group-hover:text-purple-300">Visit Site →</span>
                 </div>
               </Link>
+            </div>
+
+            <div className="text-center mt-12">
+              <p className="text-slate-400">
+                Each band provides a complete Electronic Press Kit for professional booking
+              </p>
             </div>
           </div>
         </section>
 
-        <section id="about" className="py-20 px-6">
+        <section id="about" className="py-20 px-6 bg-slate-900/50">
           <div className="container mx-auto max-w-4xl">
-            <h3 className="text-4xl font-bold text-center mb-12">About LouRock</h3>
+            <h3 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              About LouRock
+            </h3>
             <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-10 border border-slate-700">
               <p className="text-lg text-slate-300 mb-6">
                 LouRock is the premier platform connecting talented local bands from Montpellier and the Occitanie region 
@@ -155,80 +117,64 @@ export default function Home() {
         <section id="contact" className="py-20 px-6 bg-slate-900/50">
           <div className="container mx-auto max-w-2xl">
             <h3 className="text-4xl font-bold text-center mb-12">Book a Performance</h3>
-            <form onSubmit={handleSubmit} className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-10 border border-slate-700">
-              <div className="mb-6">
-                <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
-                />
+            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-10 border border-slate-700 text-center">
+              <p className="text-lg text-slate-300 mb-8">
+                Ready to bring exceptional live music to your venue or event? 
+                Get in touch with us to discuss your requirements and find the perfect band for your audience.
+              </p>
+              
+              <div className="space-y-4 mb-8">
+                <p className="text-slate-400">
+                  <span className="font-semibold text-slate-200">Available Bands:</span>
+                </p>
+                <ul className="text-slate-300 space-y-2">
+                  <li>• Dakota Dreamers - Country Rock Duo</li>
+                  <li>• Tribute Band The Kills - Rock Tribute</li>
+                  <li>• Mathieu Schmidt - Solo Artist</li>
+                </ul>
               </div>
 
-              <div className="mb-6">
-                <label htmlFor="email" className="block text-sm font-medium mb-2">Email Address</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
-                />
-              </div>
+              <a
+                href={`mailto:contact@lourock.com?subject=${encodeURIComponent('Booking Inquiry - LouRock')}&body=${encodeURIComponent(`Hello LouRock Team,
 
-              <div className="mb-6">
-                <label htmlFor="band" className="block text-sm font-medium mb-2">Band of Interest</label>
-                <select
-                  id="band"
-                  name="band"
-                  value={formData.band}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
-                >
-                  <option value="">Select a band...</option>
-                  <option value="dakota-dreamers">Dakota Dreamers</option>
-                  <option value="the-kills-tribute">Tribute Band The Kills</option>
-                  <option value="mathieu-schmidt">Mathieu Schmidt</option>
-                  <option value="multiple">Multiple Bands</option>
-                </select>
-              </div>
+I am interested in booking one of your bands for an upcoming event.
 
-              <div className="mb-6">
-                <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  placeholder="Tell us about your event, venue, and performance requirements..."
-                  className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
-                />
-              </div>
+Event Details:
+- Date: 
+- Venue/Location: 
+- Type of Event: 
+- Expected Audience Size: 
+- Band(s) of Interest: 
 
-              <button
-                type="submit"
-                className="w-full py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-[1.02]"
+Additional Information:
+
+
+Best regards,
+[Your Name]
+[Your Phone Number]`)}`}
+                className="inline-block w-full sm:w-auto px-12 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-200 transform hover:scale-[1.02]"
               >
-                Send Message
-              </button>
-            </form>
+                Contact Us for Booking
+              </a>
+              
+              <p className="text-sm text-slate-400 mt-6">
+                Or email us directly at: <span className="text-purple-400">contact@lourock.com</span>
+              </p>
+            </div>
           </div>
         </section>
       </main>
 
-      <footer className="py-8 px-6 border-t border-slate-800">
-        <div className="container mx-auto text-center text-slate-400">
-          <p>© 2024 LouRock - Connecting Occitanie&apos;s Music Scene</p>
-          <p className="mt-2">Montpellier, France</p>
+      <footer className="bg-slate-950 border-t border-slate-800 py-8 px-6">
+        <div className="container mx-auto text-center">
+          <p className="text-slate-400 mb-4">
+            © 2025 LouRock. Bringing the best of Montpellier&apos;s music scene to your venue.
+          </p>
+          <div className="flex justify-center space-x-6 text-sm text-slate-500">
+            <span>Based in Montpellier, Occitanie</span>
+            <span>•</span>
+            <span>Professional Music Booking Platform</span>
+          </div>
         </div>
       </footer>
     </div>

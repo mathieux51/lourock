@@ -227,7 +227,7 @@ export default function Home() {
 
           <div className="w-24 h-px bg-sage mx-auto mb-8"></div>
           <p className="text-muted text-sm font-light">
-            © 2024 Mathieu Schmidt. Part of the Lou Rock collective.
+            © 2025 Mathieu Schmidt. Part of the Lou Rock collective.
           </p>
         </div>
       </footer>

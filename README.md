@@ -95,4 +95,4 @@ For booking inquiries, visit the main site at [lourock.com](https://lourock.com)
 
 ## 📄 License
 
-© 2024 LouRock - All rights reserved
+© 2025 LouRock - All rights reserved

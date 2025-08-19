@@ -26,28 +26,28 @@ export default function Home() {
 
   const tourDates = [
     {
-      date: "2024-09-15",
+      date: "2025-09-15",
       venue: "Le Rockstore",
       city: "Montpellier",
       region: "Hérault",
       status: "confirmed"
     },
     {
-      date: "2024-09-28",
+      date: "2025-09-28",
       venue: "L'Usine à Musique",
       city: "Toulouse",
       region: "Haute-Garonne",
       status: "confirmed"
     },
     {
-      date: "2024-10-12",
+      date: "2025-10-12",
       venue: "Festival Country Sud",
       city: "Nîmes",
       region: "Gard",
       status: "festival"
     },
     {
-      date: "2024-10-25",
+      date: "2025-10-25",
       venue: "Le Corum",
       city: "Montpellier",
       region: "Hérault",
@@ -341,7 +341,7 @@ export default function Home() {
           
           <div className="border-t border-smoke/20 mt-8 pt-8 text-center">
             <p className="text-smoke text-sm">
-              © 2024 Dakota Dreamers. All rights reserved. | 
+              © 2025 Dakota Dreamers. All rights reserved. | 
               <a href="https://lourock.com" className="text-primary hover:text-accent ml-1">
                 Powered by LouRock
               </a>

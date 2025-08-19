@@ -24,25 +24,25 @@ export default function Home() {
 
   // const shows = [
   //   {
-  //     date: "2024-03-15",
+  //     date: "2025-03-15",
   //     venue: "Le Rockstore",
   //     city: "Montpellier",
   //     status: "confirmed"
   //   },
   //   {
-  //     date: "2024-04-20",
+  //     date: "2025-04-20",
   //     venue: "La Coopérative",
   //     city: "Toulouse",
   //     status: "confirmed"
   //   },
   //   {
-  //     date: "2024-05-12",
+  //     date: "2025-05-12",
   //     venue: "Le Bikini",
   //     city: "Toulouse",
   //     status: "pending"
   //   },
   //   {
-  //     date: "2024-06-08",
+  //     date: "2025-06-08",
   //     venue: "Théâtre de Nîmes",
   //     city: "Nîmes",
   //     status: "confirmed"
