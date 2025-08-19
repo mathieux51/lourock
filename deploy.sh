@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # LouRock Deployment Script
-# Deploys changed projects to Vercel production
+# Deploys specified projects to Vercel production
 # Usage: ./deploy.sh [project1 project2 ...] or ./deploy.sh --all
-# If no arguments, detects changes automatically
+# Requires explicit project names or --all flag
 
 set -e
 
@@ -27,52 +27,38 @@ DOMAINS=(
 ENV="production"
 PROD_FLAG="--prod"
 
-# Function to get changed projects
-get_changed_projects() {
-    local changed_projects=()
-    
-    if git rev-parse --verify HEAD~1 >/dev/null 2>&1; then
-        # Get changed files since last commit
-        changed_files=$(git diff --name-only HEAD~1 HEAD)
-    elif git rev-parse --verify origin/main >/dev/null 2>&1; then
-        # Compare with origin/main if no previous commit
-        changed_files=$(git diff --name-only origin/main HEAD)
-    else
-        # If no git history, deploy all projects
-        echo "${PROJECTS[@]}"
-        return
-    fi
-    
-    for project in "${PROJECTS[@]}"; do
-        if echo "$changed_files" | grep -q "^$project/"; then
-            changed_projects+=("$project")
-        fi
+# Show usage if no arguments provided
+if [ $# -eq 0 ]; then
+    echo -e "${RED}Error: No arguments provided${NC}"
+    echo ""
+    echo -e "${YELLOW}Usage:${NC}"
+    echo "  ./deploy.sh --all                    # Deploy all projects"
+    echo "  ./deploy.sh [project1] [project2]   # Deploy specific projects"
+    echo ""
+    echo -e "${YELLOW}Available projects:${NC}"
+    for i in "${!PROJECTS[@]}"; do
+        echo "  ${PROJECTS[$i]} -> ${DOMAINS[$i]}"
     done
-    
-    # Always deploy if deploy.sh, GitHub workflows, or deployment docs changed
-    if echo "$changed_files" | grep -qE "(deploy\.sh|\.github/workflows/|DEPLOYMENT\.md)"; then
-        echo "${PROJECTS[@]}"
-        return
-    fi
-    
-    echo "${changed_projects[@]}"
-}
+    echo ""
+    exit 1
+fi
 
 # Determine which projects to deploy
 if [ "$1" = "--all" ]; then
     DEPLOY_PROJECTS=("${PROJECTS[@]}")
     echo -e "${YELLOW}📋 Deploying all projects...${NC}"
-elif [ $# -gt 0 ]; then
+else
     DEPLOY_PROJECTS=("$@")
     echo -e "${YELLOW}📋 Deploying specified projects: ${DEPLOY_PROJECTS[*]}${NC}"
-else
-    CHANGED_PROJECTS=($(get_changed_projects))
-    if [ ${#CHANGED_PROJECTS[@]} -eq 0 ]; then
-        echo -e "${GREEN}✨ No changes detected. Nothing to deploy.${NC}"
-        exit 0
-    fi
-    DEPLOY_PROJECTS=("${CHANGED_PROJECTS[@]}")
-    echo -e "${YELLOW}📋 Detected changes in: ${DEPLOY_PROJECTS[*]}${NC}"
+    
+    # Validate project names
+    for project in "${DEPLOY_PROJECTS[@]}"; do
+        if [[ ! " ${PROJECTS[*]} " =~ " ${project} " ]]; then
+            echo -e "${RED}Error: Unknown project '${project}'${NC}"
+            echo -e "${YELLOW}Available projects: ${PROJECTS[*]}${NC}"
+            exit 1
+        fi
+    done
 fi
 
 # Check if Vercel CLI is installed
