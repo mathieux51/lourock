@@ -223,10 +223,10 @@ Best regards,
         <section className="py-20 px-6 bg-gradient-to-b from-slate-900 to-slate-950">
           <div className="container mx-auto max-w-4xl text-center">
             <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Didn't find what you were looking for?
+              Didn&apos;t find what you were looking for?
             </h2>
             <p className="text-xl text-slate-300 mb-8">
-              We're always expanding our roster. Let us know what type of band you need and we'll help you find the perfect match for your event.
+              We&apos;re always expanding our roster. Let us know what type of band you need and we&apos;ll help you find the perfect match for your event.
             </p>
             <a
               href={`mailto:contact@lourock.com?subject=${encodeURIComponent('Band Request - LouRock')}&body=${encodeURIComponent(`Hello LouRock Team,
