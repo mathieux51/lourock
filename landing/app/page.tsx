@@ -1,8 +1,11 @@
 'use client'
 
 import Link from 'next/link'
+import { useState } from 'react'
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
       <header className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-lg border-b border-slate-800">
@@ -11,12 +14,64 @@ export default function Home() {
             <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               LouRock
             </h1>
+            
+            {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
               <a href="#bands" className="hover:text-purple-400 transition-colors">Our Bands</a>
               <a href="#about" className="hover:text-purple-400 transition-colors">About</a>
               <a href="#contact" className="hover:text-purple-400 transition-colors">Contact</a>
             </div>
+
+            {/* Mobile Hamburger Button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2 hover:bg-slate-800 rounded-lg transition-colors"
+              aria-label="Toggle menu"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                {isMenuOpen ? (
+                  <path d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
           </div>
+
+          {/* Mobile Menu */}
+          {isMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 space-y-4">
+              <a 
+                href="#bands" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block py-2 hover:text-purple-400 transition-colors"
+              >
+                Our Bands
+              </a>
+              <a 
+                href="#about" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block py-2 hover:text-purple-400 transition-colors"
+              >
+                About
+              </a>
+              <a 
+                href="#contact" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block py-2 hover:text-purple-400 transition-colors"
+              >
+                Contact
+              </a>
+            </div>
+          )}
         </nav>
       </header>
 
@@ -161,6 +216,42 @@ Best regards,
                 Or email us directly at: <span className="text-purple-400">contact@lourock.com</span>
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Request Missing Band Section */}
+        <section className="py-20 px-6 bg-gradient-to-b from-slate-900 to-slate-950">
+          <div className="container mx-auto max-w-4xl text-center">
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Didn't find what you were looking for?
+            </h2>
+            <p className="text-xl text-slate-300 mb-8">
+              We're always expanding our roster. Let us know what type of band you need and we'll help you find the perfect match for your event.
+            </p>
+            <a
+              href={`mailto:contact@lourock.com?subject=${encodeURIComponent('Band Request - LouRock')}&body=${encodeURIComponent(`Hello LouRock Team,
+
+I'm looking for a specific type of band that I didn't see in your current roster.
+
+Band/Music Style I'm Looking For:
+
+
+Event Details:
+- Date: 
+- Venue/Location: 
+- Type of Event: 
+- Expected Audience Size: 
+
+Additional Requirements:
+
+
+Best regards,
+[Your Name]
+[Your Phone Number]`)}`}
+              className="inline-block px-12 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-200 transform hover:scale-[1.02]"
+            >
+              Request a Band
+            </a>
           </div>
         </section>
       </main>
