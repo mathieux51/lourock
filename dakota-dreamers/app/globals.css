@@ -98,6 +98,51 @@ body {
   background: linear-gradient(135deg, #2f2f2f 0%, #1a1611 50%, #0f0d0a 100%);
 }
 
+/* Western Text Animation - Spaghetti Western Style */
+@keyframes westernTextAppear {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes westernTextAppearSubtitle {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes westernButtonAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.western-text-appear {
+  animation: westernTextAppear 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.8s backwards;
+  animation-fill-mode: both;
+}
+
+.western-text-appear-subtitle {
+  animation: westernTextAppearSubtitle 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.2s backwards;
+  animation-fill-mode: both;
+}
+
+.western-button-appear {
+  animation: westernButtonAppear 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.6s backwards;
+  animation-fill-mode: both;
+}
+
 /* Animations */
 @keyframes fadeInUp {
   from {

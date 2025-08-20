@@ -5,6 +5,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [currentTrack, setCurrentTrack] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   const musicSamples = [
     {
@@ -59,21 +60,89 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-surface-dark/95 backdrop-blur-sm z-50 border-b border-primary/20">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="font-heading text-2xl text-primary">Dakota Dreamers</h1>
-          <div className="hidden md:flex space-x-8">
-            <a href="#home" className="hover:text-accent transition-colors">Home</a>
-            <a href="#about" className="hover:text-accent transition-colors">About</a>
-            <a href="#epk" className="hover:text-accent transition-colors">EPK</a>
-            <a href="#tour" className="hover:text-accent transition-colors">Tour</a>
-            <a href="#contact" className="hover:text-accent transition-colors">Contact</a>
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            <h1 className="font-heading text-2xl text-primary">Dakota Dreamers</h1>
+            
+            {/* Desktop Menu */}
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="#home" className="hover:text-accent transition-colors">Home</a>
+              <a href="#about" className="hover:text-accent transition-colors">About</a>
+              <a href="#epk" className="hover:text-accent transition-colors">EPK</a>
+              <a href="#tour" className="hover:text-accent transition-colors">Tour</a>
+              <a href="#contact" className="hover:text-accent transition-colors">Contact</a>
+              <a 
+                href="https://lourock.com" 
+                className="bg-primary hover:bg-accent px-4 py-2 rounded transition-colors font-heading text-sm ml-4"
+              >
+                Back to LouRock
+              </a>
+            </div>
+
+            {/* Mobile Hamburger Button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2 hover:bg-surface-light rounded transition-colors"
+              aria-label="Toggle menu"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                {isMenuOpen ? (
+                  <path d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
           </div>
-          <a 
-            href="https://lourock.com" 
-            className="bg-primary hover:bg-accent px-4 py-2 rounded transition-colors font-heading text-sm"
-          >
-            Back to LouRock
-          </a>
+
+          {/* Mobile Menu */}
+          {isMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 space-y-4">
+              <a 
+                href="#home" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block py-2 hover:text-accent transition-colors"
+              >
+                Home
+              </a>
+              <a 
+                href="#about" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block py-2 hover:text-accent transition-colors"
+              >
+                About
+              </a>
+              <a 
+                href="#epk" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block py-2 hover:text-accent transition-colors"
+              >
+                EPK
+              </a>
+              <a 
+                href="#tour" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block py-2 hover:text-accent transition-colors"
+              >
+                Tour
+              </a>
+              <a 
+                href="#contact" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block py-2 hover:text-accent transition-colors"
+              >
+                Contact
+              </a>
+            </div>
+          )}
         </div>
       </nav>
 
@@ -89,16 +158,16 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-transparent via-60% to-background/70 md:from-background/80 md:to-background/80"></div>
         <div className="absolute inset-0 bg-black/50 md:bg-black/40"></div>
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0iIzQzNDAzYyIgZmlsbC1vcGFjaXR5PSIwLjEiLz4KPC9zdmc+')] opacity-20"></div>
-        <div className="relative z-10 text-center animate-fade-in-up">
-          <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl text-cream mb-6 tracking-wider">
+        <div className="relative z-10 text-center">
+          <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl text-cream mb-6 tracking-wider western-text-appear">
             DAKOTA
             <br />
             <span className="text-accent">DREAMERS</span>
           </h1>
-          <p className="font-body text-xl md:text-2xl text-sand mb-8 max-w-2xl mx-auto">
+          <p className="font-body text-xl md:text-2xl text-sand mb-8 max-w-2xl mx-auto western-text-appear-subtitle">
             Bringing the Spirit of the American West to Southern France
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center western-button-appear">
             <a 
               href="#epk" 
               className="bg-accent hover:bg-rust px-8 py-3 rounded font-heading transition-colors"

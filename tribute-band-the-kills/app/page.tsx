@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('biography');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const setlist = [
     "Doing It to Death", "Impossible Tracks", "Tape Song", "Whirling Eyes",
@@ -58,7 +59,9 @@ export default function Home() {
             <div className="kills-heading text-xl">
               TRIBUTE BAND THE KILLS
             </div>
-            <div className="flex space-x-6">
+            
+            {/* Desktop Menu */}
+            <div className="hidden md:flex space-x-6">
               <a href="#about" className="hover:text-kills-red transition-colors">ABOUT</a>
               <a href="#video" className="hover:text-kills-red transition-colors">VIDEO</a>
               <a href="#epk" className="hover:text-kills-red transition-colors">EPK</a>
@@ -70,7 +73,64 @@ export default function Home() {
                 ← LOUROCK.COM
               </a>
             </div>
+
+            {/* Mobile Hamburger Button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2 hover:bg-kills-dark-gray rounded transition-colors"
+              aria-label="Toggle menu"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                {isMenuOpen ? (
+                  <path d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
           </div>
+
+          {/* Mobile Menu */}
+          {isMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 space-y-4">
+              <a 
+                href="#about" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block py-2 hover:text-kills-red transition-colors"
+              >
+                ABOUT
+              </a>
+              <a 
+                href="#video" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block py-2 hover:text-kills-red transition-colors"
+              >
+                VIDEO
+              </a>
+              <a 
+                href="#epk" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block py-2 hover:text-kills-red transition-colors"
+              >
+                EPK
+              </a>
+              <a 
+                href="#shows" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block py-2 hover:text-kills-red transition-colors"
+              >
+                SHOWS
+              </a>
+            </div>
+          )}
         </div>
       </nav>
 
