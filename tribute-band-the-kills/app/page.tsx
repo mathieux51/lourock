@@ -408,7 +408,12 @@ export default function Home() {
             </a>
           </div>
           <div className="kills-body text-kills-gray text-sm">
-            <p>Professional tribute to The Kills • Occitanie, France</p>
+            <p>
+              Professional tribute to The Kills • Occitanie, France | 
+              <a href="https://lourock.com" className="text-kills-red hover:text-kills-pink ml-1">
+                Powered by LouRock
+              </a>
+            </p>
           </div>
         </div>
       </footer>
