@@ -1,22 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Bebas+Neue&family=Oswald:wght@400;600;700&family=Anton&family=Archivo+Black&family=Amiri:wght@400;700&family=Lora:wght@400;500;600&family=Barlow+Condensed:wght@400;600;800&display=swap");
 @import "tailwindcss";
 
 :root {
-  /* Cowboy-Nord Gloomy Color Palette */
-  --nord-night: #2e3440;
-  --nord-dark: #3b4252;
-  --nord-darker: #434c5e;
-  --nord-darkest: #4c566a;
+  /* Vintage Rodeo Poster Palette */
+  --poster-dark: #1a0f08;
+  --poster-brown: #3d1f0f;
+  --poster-rust: #8b3a1f;
+  --poster-burnt: #a0421e;
   
-  --nord-snow: #eceff4;
-  --nord-light: #e5e9f0;
-  --nord-lighter: #d8dee9;
+  --poster-cream: #f4e4c1;
+  --poster-yellow: #f4d03f;
+  --poster-gold: #d4a137;
   
-  --cowboy-dust: #8b7355;
-  --cowboy-leather: #654321;
-  --cowboy-rust: #b7472a;
-  --cowboy-sage: #87a96b;
-  --cowboy-sand: #d4c4a8;
+  --rodeo-orange: #e85d25;
+  --rodeo-red: #cc3311;
+  --rodeo-sienna: #a0522d;
+  --rodeo-tan: #d2b48c;
+  --vintage-yellow: #ffd700;
+  --vintage-cream: #fffdd0;
+  --sunset-glow: #ff6b35;
+  --saddle-brown: #8b4513;
   
   --nord-frost-light: #8fbcbb;
   --nord-frost: #88c0d0;
@@ -43,15 +46,15 @@
   --deep-brown: #2C2621;
 
   /* Theme Colors */
-  --background: var(--nord-night);
-  --foreground: var(--nord-snow);
-  --card: var(--nord-dark);
-  --card-foreground: var(--nord-light);
-  --border: var(--nord-darker);
-  --muted: var(--nord-lighter);
-  --muted-foreground: var(--nord-darkest);
-  --accent: var(--cowboy-sage);
-  --accent-foreground: var(--nord-night);
+  --background: var(--poster-cream);
+  --foreground: var(--poster-dark);
+  --card: var(--poster-rust);
+  --card-foreground: var(--poster-cream);
+  --border: var(--poster-brown);
+  --muted: var(--rodeo-tan);
+  --muted-foreground: var(--poster-brown);
+  --accent: var(--rodeo-orange);
+  --accent-foreground: var(--poster-cream);
   --destructive: var(--nord-aurora-red);
   --warning: var(--nord-aurora-orange);
   --success: var(--nord-aurora-green);
@@ -111,9 +114,14 @@
   --color-aurora-purple: var(--nord-aurora-purple);
   
   /* Fonts */
-  --font-sans: "Source Sans 3", system-ui, sans-serif;
-  --font-serif: "Playfair Display", Georgia, serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: "Barlow Condensed", system-ui, sans-serif;
+  --font-serif: "Lora", Georgia, serif;
+  --font-arabic: "Amiri", serif;
+  --font-western: "Bungee", display;
+  --font-poster: "Anton", sans-serif;
+  --font-bold: "Archivo Black", sans-serif;
+  --font-condensed: "Bebas Neue", sans-serif;
+  --font-impact: "Oswald", sans-serif;
   
   /* Spacing and sizing */
   --spacing: 0.25rem;
@@ -243,6 +251,94 @@ html {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Rodeo Poster Typography */
+.western-name {
+  font-family: var(--font-western);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 0 var(--desert-shadow);
+}
+
+.poster-title {
+  font-family: var(--font-poster);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.rodeo-heading {
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.arabic-text {
+  font-family: var(--font-arabic);
+  font-weight: 400;
+}
+
+.impact-text {
+  font-family: var(--font-impact);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.desert-border {
+  border: 4px solid var(--poster-dark);
+  box-shadow: 
+    inset 0 0 0 2px var(--poster-cream),
+    0 4px 12px rgba(0,0,0,0.3);
+  background: var(--poster-cream);
+}
+
+.vintage-poster {
+  background: linear-gradient(180deg, #f4d03f 0%, #ff8c42 25%, #e85d25 50%, #cc3311 75%, #8b3a1f 100%);
+  position: relative;
+}
+
+.vintage-poster::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 4px, rgba(0,0,0,0.005) 4px, rgba(0,0,0,0.005) 8px);
+  pointer-events: none;
+}
+
+footer {
+  background: var(--poster-cream) !important;
+}
+
+footer::before {
+  display: none !important;
+}
+
+.vintage-border {
+  border: 6px double var(--poster-dark);
+  box-shadow: 
+    inset 0 0 0 1px var(--poster-cream),
+    inset 0 0 0 3px var(--poster-brown),
+    inset 0 0 0 4px var(--poster-cream),
+    0 0 20px rgba(0,0,0,0.5);
+  background: var(--poster-cream);
+  position: relative;
+}
+
+.vintage-border::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(139, 58, 31, 0.02) 10px, rgba(139, 58, 31, 0.02) 20px);
+  pointer-events: none;
+}
+
+/* Modern sleek text */
+.modern-text {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
 /* Responsive typography */
