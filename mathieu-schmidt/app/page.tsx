@@ -34,8 +34,8 @@ export default function Home() {
             </div>
             
             {/* Side decorations */}
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 text-4xl text-poster-brown">◆</div>
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 text-4xl text-poster-brown">◆</div>
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 text-4xl text-poster-brown hidden md:block">◆</div>
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 text-4xl text-poster-brown hidden md:block">◆</div>
           </div>
 
           {/* Hero Image with ornate frame */}
@@ -116,14 +116,14 @@ export default function Home() {
       {/* Additional Show Information */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="vintage-border p-8 md:p-12">
+          <div className="vintage-border p-4 md:p-12">
             <h2 className="western-name text-4xl md:text-6xl text-center text-rodeo-red mb-8">
               THE JOURNEY
             </h2>
             
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-4 md:gap-8">
               {/* Left Performance Card */}
-              <div className="border-4 border-poster-dark p-6 bg-poster-cream">
+              <div className="border-4 border-poster-dark p-3 md:p-6 bg-poster-cream">
                 <div className="border-b-2 border-poster-brown pb-4 mb-4">
                   <h3 className="impact-text text-2xl text-rodeo-orange text-center">
                     COWBOY BALLADS
@@ -146,7 +146,7 @@ export default function Home() {
               </div>
 
               {/* Right Performance Card */}
-              <div className="border-4 border-poster-dark p-6 bg-poster-cream">
+              <div className="border-4 border-poster-dark p-3 md:p-6 bg-poster-cream">
                 <div className="border-b-2 border-poster-brown pb-4 mb-4">
                   <h3 className="impact-text text-2xl text-rodeo-orange text-center">
                     DESERT MELODIES
