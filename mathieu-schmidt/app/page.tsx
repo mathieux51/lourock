@@ -6,6 +6,7 @@ import Image from "next/image";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showHowdy, setShowHowdy] = useState(false);
 
   return (
     <div className="min-h-screen vintage-poster overflow-x-hidden">
@@ -16,10 +17,7 @@ export default function Home() {
           
           {/* Top Banner */}
           <div className="text-center mb-6">
-            <div className="text-poster-brown text-xs md:text-sm rodeo-heading tracking-[0.5em] mb-2">
-              ═══ LIVE MUSIC ═══
-            </div>
-            <h2 className="western-name text-2xl md:text-3xl text-rodeo-orange mb-2">
+            <h2 className="western-name text-2xl md:text-3xl text-rodeo-orange">
               DESERT TROUBADOUR
             </h2>
           </div>
@@ -42,16 +40,34 @@ export default function Home() {
 
           {/* Hero Image with ornate frame */}
           <div className="relative mx-auto mb-8 w-56 h-56 md:w-72 md:h-72">
-            <div className="absolute inset-0 border-8 border-poster-dark rounded-full"></div>
-            <div className="absolute inset-2 border-4 border-rodeo-orange rounded-full"></div>
-            <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-poster-cream">
+            <div className="absolute inset-0 border-2 border-poster-dark rounded-full"></div>
+            <div className="absolute inset-0.5 border border-rodeo-orange rounded-full"></div>
+            <div 
+              className="absolute inset-[3px] rounded-full overflow-hidden"
+              onMouseEnter={() => setShowHowdy(true)}
+              onMouseLeave={() => setShowHowdy(false)}
+              onTouchStart={() => setShowHowdy(true)}
+              onTouchEnd={() => setTimeout(() => setShowHowdy(false), 2000)}
+            >
+              <div className="absolute inset-0 bg-gradient-to-b from-orange-300 via-orange-400 to-red-500"></div>
               <Image
-                src="/head.png"
+                src="/hero-no-bg.png"
                 alt="Mathieu Schmidt"
                 fill
-                className="object-cover object-top"
+                className="object-cover relative z-10"
+                style={{ objectPosition: '0px -60px' }}
               />
             </div>
+            {/* Chat bubble */}
+            {showHowdy && (
+              <div className="absolute -top-8 left-1/2 -translate-x-1/2 animate-bounce">
+                <div className="bg-poster-cream border-2 border-poster-dark rounded-lg px-3 py-1 shadow-lg relative">
+                  <span className="impact-text text-rodeo-red text-sm">HOWDY FOLKS!</span>
+                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-poster-cream"></div>
+                  <div className="absolute -bottom-[10px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-poster-dark"></div>
+                </div>
+              </div>
+            )}
             {/* Corner ornaments */}
             <div className="absolute -top-4 -left-4 text-3xl text-vintage-yellow">✦</div>
             <div className="absolute -top-4 -right-4 text-3xl text-vintage-yellow">✦</div>
@@ -60,13 +76,7 @@ export default function Home() {
           </div>
 
           {/* Show Details */}
-          <div className="text-center space-y-4 mb-8">
-            <div className="bg-rodeo-red py-2 px-6 inline-block -rotate-2 shadow-lg">
-              <p className="poster-title text-xl md:text-2xl text-poster-cream">
-                Howdy folks!
-              </p>
-            </div>
-            
+          <div className="text-center mb-8">
             <div className="flex justify-center items-center gap-4 text-poster-brown">
               <span className="text-2xl">★</span>
               <span className="rodeo-heading text-sm md:text-base tracking-widest">LIVE MUSIC</span>
@@ -170,18 +180,15 @@ export default function Home() {
             <h2 className="western-name text-4xl md:text-6xl text-poster-dark drop-shadow-[2px_2px_0_var(--rodeo-orange)]">
               GLIMPSES & ECHOES
             </h2>
-            <div className="text-poster-brown text-xs md:text-sm rodeo-heading tracking-[0.5em] mt-4">
-              ═══ LIVE MUSIC ═══
-            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { src: "/audience.png", title: "TRAIN FOR RAIN", bg: "bg-poster-cream" },
               { src: "/camargue.png", title: "CAMARGUE", bg: "bg-gradient-to-br from-rodeo-orange via-sunset-glow to-rodeo-red" },
-              { src: "/range.png", title: "THEM WORDS", bg: "bg-poster-cream" },
+              { src: "/blues.png", title: "THEM WORDS", bg: "bg-poster-cream" },
               { src: "/painting.png", title: "TIME ROLLS ON", bg: "bg-gradient-to-br from-vintage-yellow via-poster-gold to-rodeo-orange" },
-              { src: "/oud1.png", title: "MORNING", bg: "bg-gradient-to-br from-saddle-brown via-poster-rust to-rodeo-sienna" },
+              { src: "/oud3.png", title: "MORNING", bg: "bg-gradient-to-br from-saddle-brown via-poster-rust to-rodeo-sienna" },
               { src: "/mathieu.png", title: "ANXIETY RIVERS", bg: "bg-poster-cream" }
             ].map((item, index) => (
               <div key={index} className="border-4 border-poster-dark bg-poster-cream p-2">
@@ -190,11 +197,11 @@ export default function Home() {
                     src={item.src}
                     alt={item.title}
                     fill
-                    className="object-cover object-top"
+                    className={`object-cover ${item.src === "/oud3.png" ? "object-center" : "object-top"}`}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-poster-dark/60 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-2 left-0 right-0 text-center">
-                    <p className="impact-text text-poster-cream text-lg">{item.title}</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-poster-dark/80 via-poster-dark/20 to-transparent"></div>
+                  <div className="absolute bottom-4 left-0 right-0 text-center">
+                    <p className="impact-text text-poster-cream text-2xl md:text-3xl drop-shadow-[2px_2px_4px_rgba(0,0,0,0.9)]">{item.title}</p>
                   </div>
                 </div>
               </div>
@@ -208,28 +215,28 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <div className="vintage-border p-8 md:p-12 text-center">
             <h2 className="western-name text-4xl md:text-5xl text-rodeo-red mb-6">
-              HOWDY PARTNER!
+              HOLLER AT ME!
             </h2>
             
 
             <div className="space-y-4">
-              <a
-                href="https://mathieu-schmidt.bandcamp.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-8 py-4 bg-rodeo-red text-poster-cream impact-text text-xl border-4 border-poster-dark hover:bg-rodeo-orange transition-colors shadow-lg"
-              >
-                <span>LISTEN ON BANDCAMP<br /><span className="text-sm">(OLD)</span></span>
-              </a>
-              
               <div>
                 <a
                   href="https://lourock.com"
-                  className="inline-block px-8 py-4 bg-poster-cream text-rodeo-red border-4 border-rodeo-red hover:bg-vintage-yellow transition-colors rodeo-heading text-lg"
+                  className="inline-block px-10 py-5 bg-rodeo-red text-poster-cream border-4 border-poster-dark hover:bg-rodeo-orange transition-colors impact-text text-2xl md:text-3xl shadow-lg transform hover:scale-105"
                 >
                   CONTACT FOR BOOKING
                 </a>
               </div>
+              
+              <a
+                href="https://mathieu-schmidt.bandcamp.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-3 bg-poster-cream text-rodeo-red impact-text text-base border-2 border-rodeo-red hover:bg-vintage-yellow transition-colors"
+              >
+                <span>LISTEN ON BANDCAMP<br /><span className="text-xs">(OLD)</span></span>
+              </a>
             </div>
 
             <div className="mt-8">
