@@ -15,7 +15,12 @@
       "Bash(npm run lint)",
       "Bash(npx prettier:*)",
       "Bash(npm install pino pino-pretty)",
-      "Bash(npm uninstall:*)"
+      "Bash(npm uninstall:*)",
+      "Bash(npx --yes create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --eslint)",
+      "Bash(npx --yes create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --eslint --no-turbopack)",
+      "Bash(npm install:*)",
+      "Bash(curl:*)",
+      "Bash(open http://localhost:3000)"
     ],
     "deny": [],
     "ask": []

@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --comic-yellow: #FFD93D;
+  --comic-red: #FF6B6B;
+  --comic-blue: #4ECDC4;
+  --comic-green: #95E1D3;
+  --comic-purple: #A8E6CF;
+  --comic-black: #2C3E50;
+  --comic-white: #FFF5E4;
+  --halftone-dots: radial-gradient(circle, transparent 20%, var(--comic-black) 20%, var(--comic-black) 80%, transparent 80%, transparent);
+}
+
+body {
+  background-color: rgb(254 252 232);
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.03) 2px,
+      rgba(0,0,0,0.03) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.03) 2px,
+      rgba(0,0,0,0.03) 4px
+    );
+}
+
+.comic-border {
+  border: 2px solid black;
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+}
+
+.comic-border-thick {
+  border: 8px solid black;
+  box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+}
+
+.comic-panel {
+  border: 2px solid black;
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+  background-color: white;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.comic-text {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 0.05em;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+.comic-bubble {
+  border: 2px solid black;
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+  background-color: white;
+  padding: 1rem;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 30% 75%, 20% 100%, 25% 75%, 0 75%);
+}
+
+.comic-action {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 0.05em;
+  font-size: 3.75rem;
+  transform: rotate(-5deg);
+  text-shadow: 
+    3px 3px 0px var(--comic-yellow),
+    6px 6px 0px var(--comic-black);
+}
+
+@media (min-width: 768px) {
+  .comic-action {
+    font-size: 5.625rem;
+  }
+}
+
+.comic-button {
+  border: 2px solid black;
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+  padding: 0.75rem 1.5rem;
+  background-color: rgb(253 224 71);
+  font-family: 'Bangers', cursive;
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.comic-button:hover {
+  background-color: rgb(250 204 21);
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+}
+
+.comic-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px 0px rgba(0,0,0,1);
+}
+
+.halftone-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.halftone-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--halftone-dots);
+  background-size: 4px 4px;
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.speed-lines {
+  background-image: 
+    linear-gradient(to right, transparent 45%, rgba(0,0,0,0.1) 49%, rgba(0,0,0,0.1) 51%, transparent 55%);
+  background-size: 30px 100%;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0) rotate(-1deg); }
+  25% { transform: translateX(-2px) rotate(-2deg); }
+  75% { transform: translateX(2px) rotate(0deg); }
+}
+
+@keyframes pop {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.2) rotate(5deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.comic-shake {
+  animation: shake 0.3s ease-in-out infinite;
+}
+
+.comic-pop {
+  animation: pop 0.5s ease-in-out;
+}
+
+.header-bg {
+  background-size: auto 130% !important;
+  background-position: center 0% !important;
+}
+
+@media (min-width: 768px) {
+  .header-bg {
+    background-size: auto 140% !important;
+    background-position: center -5% !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header-bg {
+    background-size: auto 150% !important;
+    background-position: center -10% !important;
+  }
+}
