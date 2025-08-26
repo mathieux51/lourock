@@ -165,23 +165,85 @@ export default function Home() {
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Row 1: Large text + Small action */}
-        <div className="grid grid-cols-4 gap-1 mb-1 h-16">
+        <div className="grid grid-cols-4 gap-1 mb-1 h-32">
           <motion.div
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="col-span-3 comic-panel cursor-pointer"
-            style={{backgroundColor: '#CA7625'}}
+            className="col-span-3 comic-panel cursor-pointer p-2 relative overflow-hidden"
+            style={{
+              background: `
+                radial-gradient(circle at 50% 50%, #FFD93D 0%, #FF6B6B 20%, #4ECDC4 40%, #CA7625 60%, #795B1A 80%, #385C5F 100%),
+                conic-gradient(from 0deg at 50% 50%, 
+                  #FFD93D 0deg, #FF6B6B 60deg, #4ECDC4 120deg, 
+                  #95E1D3 180deg, #A8E6CF 240deg, #FFD93D 360deg)
+              `,
+              backgroundBlendMode: 'multiply'
+            }}
             onMouseEnter={() => setHoveredPanel('intro')}
             onMouseLeave={() => setHoveredPanel(null)}
           >
-            <div className="h-full flex items-center justify-center">
+            {/* Explosion burst lines */}
+            <div className="absolute inset-0" 
+                 style={{
+                   backgroundImage: `
+                     linear-gradient(0deg, transparent 48%, yellow 49%, yellow 51%, transparent 52%),
+                     linear-gradient(45deg, transparent 48%, orange 49%, orange 51%, transparent 52%),
+                     linear-gradient(90deg, transparent 48%, red 49%, red 51%, transparent 52%),
+                     linear-gradient(135deg, transparent 48%, magenta 49%, magenta 51%, transparent 52%),
+                     linear-gradient(-45deg, transparent 48%, cyan 49%, cyan 51%, transparent 52%),
+                     linear-gradient(-90deg, transparent 48%, lime 49%, lime 51%, transparent 52%),
+                     linear-gradient(-135deg, transparent 48%, purple 49%, purple 51%, transparent 52%)
+                   `,
+                   opacity: 0.6
+                 }}>
+            </div>
+            
+            {/* Animated starburst */}
+            <motion.div 
+              className="absolute inset-0"
+              animate={{
+                rotate: [0, 360],
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              style={{
+                backgroundImage: `
+                  conic-gradient(from 0deg at 50% 50%, 
+                    transparent 0deg, rgba(255,255,0,0.3) 10deg, transparent 20deg,
+                    transparent 40deg, rgba(255,0,255,0.3) 50deg, transparent 60deg,
+                    transparent 80deg, rgba(0,255,255,0.3) 90deg, transparent 100deg,
+                    transparent 120deg, rgba(255,0,0,0.3) 130deg, transparent 140deg,
+                    transparent 160deg, rgba(0,255,0,0.3) 170deg, transparent 180deg,
+                    transparent 200deg, rgba(255,128,0,0.3) 210deg, transparent 220deg,
+                    transparent 240deg, rgba(128,0,255,0.3) 250deg, transparent 260deg,
+                    transparent 280deg, rgba(255,255,0,0.3) 290deg, transparent 300deg,
+                    transparent 320deg, rgba(255,0,128,0.3) 330deg, transparent 340deg,
+                    transparent 360deg)
+                `,
+              }}>
+            </motion.div>
+            
+            <div className="h-full flex items-center justify-center relative z-10">
               <motion.p 
-                className="comic-text text-2xl md:text-3xl text-center"
-                style={{color: '#CA7625', textShadow: '2px 2px 0px #0D0E08'}}
-                animate={hoveredPanel === 'intro' ? { scale: 1.1 } : { scale: 1 }}
+                className="comic-action text-5xl md:text-7xl text-center"
+                style={{
+                  background: 'linear-gradient(45deg, #FF00FF 0%, #00FFFF 25%, #FFFF00 50%, #FF00FF 75%, #00FFFF 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  textShadow: 'none',
+                  filter: 'drop-shadow(4px 4px 0px #000) drop-shadow(8px 8px 0px rgba(255,0,255,0.5)) drop-shadow(12px 12px 0px rgba(0,255,255,0.3))',
+                  transform: 'rotate(-5deg) skew(-5deg)',
+                  letterSpacing: '0.15em',
+                  margin: 0
+                }}
+                animate={hoveredPanel === 'intro' ? { scale: 1.15, rotate: -3 } : { scale: 1, rotate: -5 }}
               >
-OH YEAH!               </motion.p>
+🎸 ROCK ON! 🎸               </motion.p>
             </div>
           </motion.div>
           
@@ -387,8 +449,8 @@ OH YEAH!               </motion.p>
             style={{backgroundColor: '#795B1A'}}
           >
             <img 
-              src="/picnic.png" 
-              alt="Picnic Fun" 
+              src="/high-five.png" 
+              alt="High Five" 
               className="w-full h-full object-cover"
             />
           </motion.div>
@@ -419,8 +481,8 @@ OH YEAH!               </motion.p>
           {[
             { src: '/cards.png', bg: '#385C5F' },
             { src: '/oysters.png', bg: '#3F2E10' },
-            { src: '/telecaster.png', bg: '#CA7625' },
-            { src: '/banjo.png', bg: '#795B1A' }
+            { src: '/beer.png', bg: '#CA7625' },
+            { src: '/petanque.png', bg: '#795B1A' }
           ].map((item, index) => (
             <motion.div
               key={index}
