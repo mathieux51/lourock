@@ -340,7 +340,7 @@ export default function Home() {
                 New tour dates will be announced soon. Stay tuned for upcoming performances across Southern France.
               </p>
               <a 
-                href="#contact" 
+                href="mailto:contact@lourock.com?subject=Booking%20Inquiry%20for%20Dakota%20Dreamers&body=Howdy%20partner!%0D%0A%0D%0AI%20reckon%20Dakota%20Dreamers%20would%20be%20perfect%20for%20our%20event.%20I'd%20be%20mighty%20obliged%20if%20you%20could%20share%20some%20details%20about%20availability%20and%20pricing.%0D%0A%0D%0AOur%20event%20details:%0D%0A-%20Date:%20%0D%0A-%20Venue:%20%0D%0A-%20Expected%20attendance:%20%0D%0A%0D%0ALooking%20forward%20to%20hearing%20from%20y'all!%0D%0A%0D%0AMuch%20obliged,%0D%0A[Your%20Name]" 
                 className="bg-accent hover:bg-rust px-4 sm:px-8 py-3 rounded font-heading transition-colors inline-block"
               >
                 <span className="whitespace-normal sm:whitespace-nowrap">Contact for Booking</span>
@@ -375,7 +375,16 @@ export default function Home() {
               <button 
                 onClick={() => {
                   const email = 'contact' + '@' + 'lourock.com';
-                  window.location.href = 'mailto:' + email;
+                  const subject = encodeURIComponent('Inquiry for Dakota Dreamers');
+                  const body = encodeURIComponent(`Howdy partners!
+
+I'm reaching out about Dakota Dreamers. I'd be much obliged if y'all could help me with some information.
+
+[Your message here]
+
+Happy trails,
+[Your Name]`);
+                  window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
                 }}
                 className="text-accent hover:text-rust transition-colors font-heading text-xl"
               >

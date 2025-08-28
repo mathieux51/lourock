@@ -364,6 +364,26 @@ footer::before {
   animation: kenBurns 20s ease-in-out infinite alternate;
 }
 
+/* Settings animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -45%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.3s ease-out;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
 /* Responsive typography */
 @media (max-width: 768px) {
   p {

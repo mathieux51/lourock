@@ -3,22 +3,41 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import AudioWaveform from "./components/AudioWaveform";
+import Settings from "./components/Settings";
 
 export default function Home() {
   const [showHowdy, setShowHowdy] = useState(false);
   const [activeAudio, setActiveAudio] = useState<string | null>(null);
   const [audioEnabled, setAudioEnabled] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const [showSettings, setShowSettings] = useState(false);
+  const [settings, setSettings] = useState({
+    autoplayAudio: false,
+    kenBurnsEffect: true,
+    showTooltips: true,
+    animatedText: true
+  });
   const galleryRef = useRef<HTMLElement>(null);
+
+  // Load settings from localStorage on mount
+  useEffect(() => {
+    const savedSettings = localStorage.getItem('appSettings');
+    if (savedSettings) {
+      setSettings(JSON.parse(savedSettings));
+    }
+  }, []);
 
   useEffect(() => {
     const initAudio = () => {
       if (!audioEnabled && window.AudioContext) {
-        const context = new (window.AudioContext || (window as any).webkitAudioContext)();
-        context.resume().then(() => {
-          setAudioEnabled(true);
-          context.close();
-        });
+        const AudioCtx = window.AudioContext || (window as Window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+        if (AudioCtx) {
+          const context = new AudioCtx();
+          context.resume().then(() => {
+            setAudioEnabled(true);
+            context.close();
+          });
+        }
       }
     };
 
@@ -33,19 +52,39 @@ export default function Home() {
       { threshold: 0.1 }
     );
 
-    if (galleryRef.current) {
-      observer.observe(galleryRef.current);
+    const galleryElement = galleryRef.current;
+    if (galleryElement) {
+      observer.observe(galleryElement);
     }
 
     return () => {
-      if (galleryRef.current) {
-        observer.unobserve(galleryRef.current);
+      if (galleryElement) {
+        observer.unobserve(galleryElement);
       }
     };
   }, [audioEnabled]);
 
   return (
     <div className="min-h-screen vintage-poster overflow-x-hidden">
+      {/* Settings Modal */}
+      <Settings 
+        isOpen={showSettings}
+        onClose={() => setShowSettings(false)}
+        settings={settings}
+        onSettingsChange={setSettings}
+      />
+
+      {/* Settings Button */}
+      <button
+        onClick={() => setShowSettings(true)}
+        className="fixed top-4 right-4 z-50 p-3 bg-poster-dark/80 text-poster-cream rounded-full hover:bg-rodeo-red transition-colors shadow-lg"
+        aria-label="Open settings"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      </button>
       {/* Main Rodeo Poster */}
       <section className="min-h-screen relative flex items-center justify-center p-4 md:p-8">
         {/* Vintage Border Frame */}
@@ -124,7 +163,7 @@ export default function Home() {
           <div className="border-y-4 border-double border-poster-dark py-6 mb-6">
             <div className="text-center">
               <a
-                href="mailto:contact@lourock.com?subject=Booking%20Inquiry%20for%20Mathieu%20Schmidt&body=Hello,%0D%0A%0D%0AI%20would%20like%20to%20inquire%20about%20booking%20Mathieu%20Schmidt%20for%20an%20event.%0D%0A%0D%0APlease%20provide%20more%20information%20about%20availability%20and%20pricing.%0D%0A%0D%0AThank%20you!"
+                href="mailto:contact@lourock.com?subject=Booking%20Inquiry%20for%20Mathieu%20Schmidt&body=Howdy!%0D%0A%0D%0AI%20would%20like%20to%20inquire%20about%20booking%20Mathieu%20Schmidt%20for%20an%20event.%0D%0A%0D%0APlease%20provide%20more%20information%20about%20availability%20and%20pricing.%0D%0A%0D%0AThank%20you!"
                 className="inline-block px-8 py-4 bg-rodeo-red text-poster-cream impact-text text-xl md:text-2xl border-4 border-poster-dark hover:bg-rodeo-orange transition-colors shadow-lg transform hover:scale-105"
               >
                 <span className="drop-shadow-[1px_1px_0_var(--rodeo-orange)]">BOOK THE SHOW</span>
@@ -153,7 +192,7 @@ export default function Home() {
       <section ref={galleryRef} className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="western-name text-4xl md:text-6xl text-poster-dark drop-shadow-[2px_2px_0_var(--rodeo-orange)]">
+            <h2 className={`western-name text-4xl md:text-6xl text-poster-dark drop-shadow-[2px_2px_0_var(--rodeo-orange)] ${settings.animatedText ? 'fade-in' : ''}`}>
               GLIMPSES & ECHOES
             </h2>
             <p className="rodeo-heading text-[10px] md:text-xs mt-4 tracking-wider" style={{ color: 'var(--poster-dark)' }}>
@@ -180,7 +219,7 @@ export default function Home() {
                     if (item.hasAudio) {
                       // Initialize audio context on first interaction if needed
                       if (!audioEnabled && window.AudioContext) {
-                        const context = new (window.AudioContext || (window as any).webkitAudioContext)();
+                        const context = new (window.AudioContext || (window as Window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext)();
                         context.resume().then(() => {
                           setAudioEnabled(true);
                           context.close();
@@ -194,7 +233,7 @@ export default function Home() {
                     src={item.src}
                     alt={item.title}
                     fill
-                    className={`object-cover ${item.src === "/oud3.png" ? "object-center" : "object-top"} ${item.hasAudio && activeAudio === item.title ? "ken-burns-effect" : ""}`}
+                    className={`object-cover ${item.src === "/oud3.png" ? "object-center" : "object-top"} ${item.hasAudio && activeAudio === item.title && settings.kenBurnsEffect ? "ken-burns-effect" : ""}`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-poster-dark/80 via-poster-dark/20 to-transparent"></div>
                   {item.hasAudio && activeAudio === item.title && item.audioUrl && (
@@ -204,7 +243,7 @@ export default function Home() {
                     />
                   )}
                   {/* Tooltip */}
-                  {item.hasAudio && hoveredItem === item.title && activeAudio !== item.title && (
+                  {settings.showTooltips && item.hasAudio && hoveredItem === item.title && activeAudio !== item.title && (
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-poster-dark/90 text-poster-cream px-3 py-1 rounded-md z-40 pointer-events-none">
                       <p className="rodeo-heading text-xs">CLICK TO PLAY</p>
                     </div>
@@ -223,7 +262,7 @@ export default function Home() {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="vintage-border p-4 md:p-12">
-            <h2 className="western-name text-4xl md:text-6xl text-center text-rodeo-red mb-8">
+            <h2 className={`western-name text-4xl md:text-6xl text-center text-rodeo-red mb-8 ${settings.animatedText ? 'fade-in' : ''}`}>
               THE JOURNEY
             </h2>
             
