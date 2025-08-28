@@ -211,7 +211,7 @@ export default function Home() {
 
               <div className="pt-8">
                 <p className="font-serif text-lg leading-relaxed text-center italic" style={{ color: 'var(--poster-brown)' }}>
-                  "Every song is a journey, every performance a pilgrimage through the landscapes of memory and dream. From the Mediterranean shores to the endless horizon of the American frontier, music becomes the universal language that speaks to the wanderer in all of us."
+                  &ldquo;Every song is a journey, every performance a pilgrimage through the landscapes of memory and dream. From the Mediterranean shores to the endless horizon of the American frontier, music becomes the universal language that speaks to the wanderer in all of us.&rdquo;
                 </p>
               </div>
 
