@@ -105,7 +105,7 @@ export default function Home() {
 
 
           {/* Bottom Text */}
-          <div className="text-center border-t-4 border-poster-dark pt-4">
+          <div className="text-center pt-4">
             <p className="rodeo-heading text-poster-brown text-xs md:text-sm tracking-[0.3em]">
               MONTPELLIER ◆ OCCITANIE ◆ FRANCE
             </p>
@@ -169,51 +169,54 @@ export default function Home() {
               THE JOURNEY
             </h2>
             
-            <div className="grid md:grid-cols-2 gap-4 md:gap-8">
-              {/* Left Performance Card */}
-              <div className="border-4 border-poster-dark p-3 md:p-6 bg-poster-cream">
-                <div className="border-b-2 border-poster-brown pb-4 mb-4">
-                  <h3 className="impact-text text-2xl text-rodeo-orange text-center">
-                    COWBOY BALLADS
-                  </h3>
-                </div>
-                <div className="relative aspect-[2/3] mb-4 rounded overflow-hidden border-2 border-poster-dark">
+            <div className="space-y-16">
+              {/* First paragraph with floating image */}
+              <div className="text-justify">
+                <div className="w-40 h-40 md:w-48 md:h-48 border-2 border-poster-dark rounded overflow-hidden bg-poster-cream float-left mr-6 mb-4 shape-outside-[circle(50%)]">
                   <Image
                     src="/painting-cowboy.png"
                     alt="Cowboy Performance"
-                    fill
-                    className="object-cover"
+                    width={192}
+                    height={192}
+                    className="object-cover w-full h-full"
                   />
                 </div>
-                <p className="text-center font-serif" style={{ color: 'var(--poster-dark)' }}>
-                  Heartfelt melodies inspired by the lonesome prairie and western landscapes
+                <p className="font-serif text-lg leading-[1.8]" style={{ color: 'var(--poster-dark)' }}>
+                  <span className="western-name text-6xl float-left mr-3 mt-0 leading-[0.8] text-rodeo-red">I</span>n the dusty crossroads where ancient desert winds meet the lonesome prairie, Mathieu Schmidt weaves tales that transcend borders and time. Born from the sun-baked streets of Montpellier in the heart of Occitanie, his music carries the weight of wandering souls and the whispers of forgotten lands. 
+                  <br /><br />
+                  Each melody is a bridge between worlds - the haunting call of the oud echoing across Saharan dunes, the plaintive cry of steel strings under starlit Western skies. With weathered hands that know both the comfort of home and the call of distant horizons, he crafts songs that speak to the universal human experience of longing and belonging.
                 </p>
-                <div className="text-center mt-4">
-                  <span className="text-vintage-yellow text-2xl">★★★★★</span>
-                </div>
               </div>
 
-              {/* Right Performance Card */}
-              <div className="border-4 border-poster-dark p-3 md:p-6 bg-poster-cream">
-                <div className="border-b-2 border-poster-brown pb-4 mb-4">
-                  <h3 className="impact-text text-2xl text-rodeo-orange text-center">
-                    DESERT MELODIES
-                  </h3>
-                </div>
-                <div className="relative aspect-[2/3] mb-4 rounded overflow-hidden border-2 border-poster-dark">
+              {/* Decorative separator */}
+              <div className="border-t-4 border-poster-dark my-6"></div>
+
+              {/* Second paragraph with floating image */}
+              <div className="text-justify">
+                <div className="w-40 h-40 md:w-48 md:h-48 border-2 border-poster-dark rounded overflow-hidden bg-poster-cream float-right ml-6 mb-4 shape-outside-[circle(50%)]">
                   <Image
                     src="/oud1.png"
                     alt="Desert Performance"
-                    fill
-                    className="object-cover"
+                    width={192}
+                    height={192}
+                    className="object-cover w-full h-full"
                   />
                 </div>
-                <p className="text-center font-serif" style={{ color: 'var(--poster-dark)' }}>
-                  Where desert winds whisper timeless secrets through strings of silk and sand
+                <p className="font-serif text-lg leading-[1.8]" style={{ color: 'var(--poster-dark)' }}>
+                  <span className="western-name text-6xl float-left mr-3 mt-0 leading-[0.8] text-rodeo-red">H</span>is fingers dance across the fretboard of guitar, oud, and bouzouki with the grace of a desert nomad and the grit of a prairie drifter. Languages flow through his songs like rivers converging - French melodies carrying the elegance of troubadour tradition, English verses painted with cowboy blues, and Occitan words breathing life into the ancient tongue of his homeland.
+                  <br /><br />
+                  This is music for the restless heart, for those who find solace in the space between cultures, between the familiar and the foreign. Each performance becomes a pilgrimage through sound, connecting audiences to something both ancient and eternal.
                 </p>
-                <div className="text-center mt-4">
-                  <span className="text-vintage-yellow text-2xl">★★★★★</span>
-                </div>
+              </div>
+
+              <div className="pt-8">
+                <p className="font-serif text-lg leading-relaxed text-center italic" style={{ color: 'var(--poster-brown)' }}>
+                  "Every song is a journey, every performance a pilgrimage through the landscapes of memory and dream. From the Mediterranean shores to the endless horizon of the American frontier, music becomes the universal language that speaks to the wanderer in all of us."
+                </p>
+              </div>
+
+              <div className="text-center mt-8">
+                <span className="text-vintage-yellow text-3xl">★ ★ ★ ★ ★</span>
               </div>
             </div>
 
