@@ -1,12 +1,47 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import AudioWaveform from "./components/AudioWaveform";
 
 export default function Home() {
   const [showHowdy, setShowHowdy] = useState(false);
   const [activeAudio, setActiveAudio] = useState<string | null>(null);
+  const [audioEnabled, setAudioEnabled] = useState(false);
+  const galleryRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const initAudio = () => {
+      if (!audioEnabled && window.AudioContext) {
+        const context = new (window.AudioContext || (window as any).webkitAudioContext)();
+        context.resume().then(() => {
+          setAudioEnabled(true);
+          context.close();
+        });
+      }
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !audioEnabled) {
+            initAudio();
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (galleryRef.current) {
+      observer.observe(galleryRef.current);
+    }
+
+    return () => {
+      if (galleryRef.current) {
+        observer.unobserve(galleryRef.current);
+      }
+    };
+  }, [audioEnabled]);
 
   return (
     <div className="min-h-screen vintage-poster overflow-x-hidden">
@@ -114,14 +149,14 @@ export default function Home() {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-20 px-4">
+      <section ref={galleryRef} className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="western-name text-4xl md:text-6xl text-poster-dark drop-shadow-[2px_2px_0_var(--rodeo-orange)]">
               GLIMPSES & ECHOES
             </h2>
             <p className="rodeo-heading text-[10px] md:text-xs mt-4 tracking-wider" style={{ color: 'var(--poster-dark)' }}>
-              <span className="hidden md:inline">(hover to play)</span>
+              <span className="hidden md:inline">(click to play)</span>
               <span className="md:hidden">(tap to play)</span>
             </p>
           </div>
@@ -138,9 +173,19 @@ export default function Home() {
               <div key={index} className="border-4 border-poster-dark bg-poster-cream p-2">
                 <div 
                   className={`relative aspect-square overflow-hidden ${item.bg} ${item.hasAudio ? 'cursor-pointer' : ''}`}
-                  onMouseEnter={() => item.hasAudio && setActiveAudio(item.title)}
-                  onMouseLeave={() => item.hasAudio && setActiveAudio(null)}
-                  onClick={() => item.hasAudio && setActiveAudio(activeAudio === item.title ? null : item.title)}
+                  onClick={() => {
+                    if (item.hasAudio) {
+                      // Initialize audio context on first interaction if needed
+                      if (!audioEnabled && window.AudioContext) {
+                        const context = new (window.AudioContext || (window as any).webkitAudioContext)();
+                        context.resume().then(() => {
+                          setAudioEnabled(true);
+                          context.close();
+                        });
+                      }
+                      setActiveAudio(activeAudio === item.title ? null : item.title);
+                    }
+                  }}
                 >
                   <Image
                     src={item.src}
