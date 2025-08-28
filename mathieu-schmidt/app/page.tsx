@@ -3,10 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import AudioWaveform from "./components/AudioWaveform";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showHowdy, setShowHowdy] = useState(false);
+  const [showWaveform, setShowWaveform] = useState(false);
 
   return (
     <div className="min-h-screen vintage-poster overflow-x-hidden">
@@ -186,13 +188,18 @@ export default function Home() {
             {[
               { src: "/audience.png", title: "TRAIN FOR RAIN", bg: "bg-poster-cream" },
               { src: "/camargue.png", title: "CAMARGUE", bg: "bg-gradient-to-br from-rodeo-orange via-sunset-glow to-rodeo-red" },
-              { src: "/blues.png", title: "THEM WORDS", bg: "bg-poster-cream" },
+              { src: "/blues.png", title: "THEM WORDS", bg: "bg-poster-cream", hasAudio: true },
               { src: "/painting.png", title: "TIME ROLLS ON", bg: "bg-gradient-to-br from-vintage-yellow via-poster-gold to-rodeo-orange" },
               { src: "/oud3.png", title: "MORNING", bg: "bg-gradient-to-br from-saddle-brown via-poster-rust to-rodeo-sienna" },
               { src: "/mathieu.png", title: "ANXIETY RIVERS", bg: "bg-poster-cream" }
             ].map((item, index) => (
               <div key={index} className="border-4 border-poster-dark bg-poster-cream p-2">
-                <div className={`relative aspect-square overflow-hidden ${item.bg}`}>
+                <div 
+                  className={`relative aspect-square overflow-hidden ${item.bg} ${item.hasAudio ? 'cursor-pointer' : ''}`}
+                  onMouseEnter={() => item.hasAudio && setShowWaveform(true)}
+                  onMouseLeave={() => item.hasAudio && setShowWaveform(false)}
+                  onClick={() => item.hasAudio && setShowWaveform(!showWaveform)}
+                >
                   <Image
                     src={item.src}
                     alt={item.title}
@@ -200,7 +207,13 @@ export default function Home() {
                     className={`object-cover ${item.src === "/oud3.png" ? "object-center" : "object-top"}`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-poster-dark/80 via-poster-dark/20 to-transparent"></div>
-                  <div className="absolute bottom-4 left-0 right-0 text-center">
+                  {item.hasAudio && showWaveform && (
+                    <AudioWaveform 
+                      audioUrl="/them-words-blues.mp3"
+                      onClose={() => setShowWaveform(false)}
+                    />
+                  )}
+                  <div className="absolute bottom-4 left-0 right-0 text-center z-50">
                     <p className="impact-text text-poster-cream text-2xl md:text-3xl drop-shadow-[2px_2px_4px_rgba(0,0,0,0.9)]">{item.title}</p>
                   </div>
                 </div>
