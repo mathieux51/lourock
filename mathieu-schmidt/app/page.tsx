@@ -127,7 +127,7 @@ export default function Home() {
               { src: "/camargue.png", title: "CAMARGUE", bg: "bg-gradient-to-br from-rodeo-orange via-sunset-glow to-rodeo-red" },
               { src: "/blues.png", title: "THEM WORDS", bg: "bg-poster-cream", hasAudio: true, audioUrl: "/them-words-blues.mp3" },
               { src: "/oud3.png", title: "MORNING", bg: "bg-gradient-to-br from-saddle-brown via-poster-rust to-rodeo-sienna" },
-              { src: "/electric.png", title: "TRAIN FOR RAIN", bg: "bg-poster-cream" },
+              { src: "/electric.png", title: "TRAIN FOR RAIN", bg: "bg-poster-cream", hasAudio: true, audioUrl: "/train-for-rain.mp3" },
               { src: "/painting.png", title: "TIME ROLLS ON", bg: "bg-gradient-to-br from-vintage-yellow via-poster-gold to-rodeo-orange", hasAudio: true, audioUrl: "/time-rolls-on.mp3" },
               { src: "/berlin.png", title: "ANXIETY RIVERS", bg: "bg-poster-cream" }
             ].map((item, index) => (
