@@ -341,6 +341,29 @@ footer::before {
   letter-spacing: 0.02em;
 }
 
+/* Ken Burns effect animation */
+@keyframes kenBurns {
+  0% {
+    transform: scale(1) translateX(0);
+  }
+  25% {
+    transform: scale(1.1) translateX(-2%);
+  }
+  50% {
+    transform: scale(1.15) translateX(2%);
+  }
+  75% {
+    transform: scale(1.1) translateX(-1%);
+  }
+  100% {
+    transform: scale(1.05) translateX(0);
+  }
+}
+
+.ken-burns-effect {
+  animation: kenBurns 20s ease-in-out infinite alternate;
+}
+
 /* Responsive typography */
 @media (max-width: 768px) {
   p {

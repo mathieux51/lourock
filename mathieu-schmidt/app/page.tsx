@@ -146,7 +146,7 @@ export default function Home() {
                     src={item.src}
                     alt={item.title}
                     fill
-                    className={`object-cover ${item.src === "/oud3.png" ? "object-center" : "object-top"}`}
+                    className={`object-cover ${item.src === "/oud3.png" ? "object-center" : "object-top"} ${item.hasAudio && activeAudio === item.title ? "ken-burns-effect" : ""}`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-poster-dark/80 via-poster-dark/20 to-transparent"></div>
                   {item.hasAudio && activeAudio === item.title && item.audioUrl && (
