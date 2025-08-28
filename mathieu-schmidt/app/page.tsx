@@ -129,7 +129,7 @@ export default function Home() {
               { src: "/oud3.png", title: "MORNING", bg: "bg-gradient-to-br from-saddle-brown via-poster-rust to-rodeo-sienna" },
               { src: "/electric.png", title: "TRAIN FOR RAIN", bg: "bg-poster-cream", hasAudio: true, audioUrl: "/train-for-rain.mp3" },
               { src: "/painting.png", title: "TIME ROLLS ON", bg: "bg-gradient-to-br from-vintage-yellow via-poster-gold to-rodeo-orange", hasAudio: true, audioUrl: "/time-rolls-on.mp3" },
-              { src: "/berlin.png", title: "ANXIETY RIVERS", bg: "bg-poster-cream" }
+              { src: "/berlin.png", title: "ANXIETY RIVERS", bg: "bg-poster-cream", hasAudio: true, audioUrl: "/anxiety-rivers.mp3" }
             ].map((item, index) => (
               <div key={index} className="border-4 border-poster-dark bg-poster-cream p-2">
                 <div 
