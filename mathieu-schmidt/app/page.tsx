@@ -1,14 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import AudioWaveform from "./components/AudioWaveform";
 
 export default function Home() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showHowdy, setShowHowdy] = useState(false);
-  const [showWaveform, setShowWaveform] = useState(false);
+  const [activeAudio, setActiveAudio] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen vintage-poster overflow-x-hidden">
@@ -188,17 +186,17 @@ export default function Home() {
             {[
               { src: "/audience.png", title: "TRAIN FOR RAIN", bg: "bg-poster-cream" },
               { src: "/camargue.png", title: "CAMARGUE", bg: "bg-gradient-to-br from-rodeo-orange via-sunset-glow to-rodeo-red" },
-              { src: "/blues.png", title: "THEM WORDS", bg: "bg-poster-cream", hasAudio: true },
-              { src: "/painting.png", title: "TIME ROLLS ON", bg: "bg-gradient-to-br from-vintage-yellow via-poster-gold to-rodeo-orange" },
+              { src: "/blues.png", title: "THEM WORDS", bg: "bg-poster-cream", hasAudio: true, audioUrl: "/them-words-blues.mp3" },
+              { src: "/painting.png", title: "TIME ROLLS ON", bg: "bg-gradient-to-br from-vintage-yellow via-poster-gold to-rodeo-orange", hasAudio: true, audioUrl: "/time-rolls-on.mp3" },
               { src: "/oud3.png", title: "MORNING", bg: "bg-gradient-to-br from-saddle-brown via-poster-rust to-rodeo-sienna" },
               { src: "/mathieu.png", title: "ANXIETY RIVERS", bg: "bg-poster-cream" }
             ].map((item, index) => (
               <div key={index} className="border-4 border-poster-dark bg-poster-cream p-2">
                 <div 
                   className={`relative aspect-square overflow-hidden ${item.bg} ${item.hasAudio ? 'cursor-pointer' : ''}`}
-                  onMouseEnter={() => item.hasAudio && setShowWaveform(true)}
-                  onMouseLeave={() => item.hasAudio && setShowWaveform(false)}
-                  onClick={() => item.hasAudio && setShowWaveform(!showWaveform)}
+                  onMouseEnter={() => item.hasAudio && setActiveAudio(item.title)}
+                  onMouseLeave={() => item.hasAudio && setActiveAudio(null)}
+                  onClick={() => item.hasAudio && setActiveAudio(activeAudio === item.title ? null : item.title)}
                 >
                   <Image
                     src={item.src}
@@ -207,10 +205,10 @@ export default function Home() {
                     className={`object-cover ${item.src === "/oud3.png" ? "object-center" : "object-top"}`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-poster-dark/80 via-poster-dark/20 to-transparent"></div>
-                  {item.hasAudio && showWaveform && (
+                  {item.hasAudio && activeAudio === item.title && item.audioUrl && (
                     <AudioWaveform 
-                      audioUrl="/them-words-blues.mp3"
-                      onClose={() => setShowWaveform(false)}
+                      audioUrl={item.audioUrl}
+                      onClose={() => setActiveAudio(null)}
                     />
                   )}
                   <div className="absolute bottom-4 left-0 right-0 text-center z-50">

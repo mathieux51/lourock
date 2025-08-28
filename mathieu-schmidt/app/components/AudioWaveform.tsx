@@ -10,15 +10,16 @@ interface AudioWaveformProps {
 export default function AudioWaveform({ audioUrl, onClose }: AudioWaveformProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
-  const animationRef = useRef<number>();
-  const [audioContext, setAudioContext] = useState<AudioContext | null>(null);
+  const animationRef = useRef<number | undefined>(undefined);
   const [analyser, setAnalyser] = useState<AnalyserNode | null>(null);
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    const context = new (window.AudioContext || (window as any).webkitAudioContext)();
+    const AudioCtx = window.AudioContext || (window as Window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+    if (!AudioCtx) return;
+    const context = new AudioCtx();
     const source = context.createMediaElementSource(audio);
     const analyserNode = context.createAnalyser();
     
@@ -26,7 +27,6 @@ export default function AudioWaveform({ audioUrl, onClose }: AudioWaveformProps)
     source.connect(analyserNode);
     analyserNode.connect(context.destination);
     
-    setAudioContext(context);
     setAnalyser(analyserNode);
 
     audio.play();
