@@ -120,6 +120,10 @@ export default function Home() {
             <h2 className="western-name text-4xl md:text-6xl text-poster-dark drop-shadow-[2px_2px_0_var(--rodeo-orange)]">
               GLIMPSES & ECHOES
             </h2>
+            <p className="rodeo-heading text-[10px] md:text-xs mt-4 tracking-wider" style={{ color: 'var(--poster-dark)' }}>
+              <span className="hidden md:inline">(hover to play)</span>
+              <span className="md:hidden">(tap to play)</span>
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
