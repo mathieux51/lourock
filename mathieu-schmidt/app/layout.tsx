@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Mathieu Schmidt - Multi-Instrumental Folk Artist | Gloomy Cowboy-Nordic Folk",
   description:
     "Mathieu Schmidt is a multi-instrumental folk artist from Montpellier weaving gloomy melodies across cultures. Playing guitar, oud, bouzouki, singing in French, English & Occitan. Experience continuous audio journeys blending folk, Arabic, Irish, cowboy, blues, rock & Mediterranean traditions.",
+  icons: {
+    icon: '/favicon.png',
+  },
   keywords: [
     "Mathieu Schmidt",
     "multi-instrumental folk",

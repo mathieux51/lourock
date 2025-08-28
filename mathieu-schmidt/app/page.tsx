@@ -113,6 +113,54 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="western-name text-4xl md:text-6xl text-poster-dark drop-shadow-[2px_2px_0_var(--rodeo-orange)]">
+              GLIMPSES & ECHOES
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { src: "/camargue.png", title: "CAMARGUE", bg: "bg-gradient-to-br from-rodeo-orange via-sunset-glow to-rodeo-red" },
+              { src: "/blues.png", title: "THEM WORDS", bg: "bg-poster-cream", hasAudio: true, audioUrl: "/them-words-blues.mp3" },
+              { src: "/oud3.png", title: "MORNING", bg: "bg-gradient-to-br from-saddle-brown via-poster-rust to-rodeo-sienna" },
+              { src: "/electric.png", title: "TRAIN FOR RAIN", bg: "bg-poster-cream" },
+              { src: "/painting.png", title: "TIME ROLLS ON", bg: "bg-gradient-to-br from-vintage-yellow via-poster-gold to-rodeo-orange", hasAudio: true, audioUrl: "/time-rolls-on.mp3" },
+              { src: "/berlin.png", title: "ANXIETY RIVERS", bg: "bg-poster-cream" }
+            ].map((item, index) => (
+              <div key={index} className="border-4 border-poster-dark bg-poster-cream p-2">
+                <div 
+                  className={`relative aspect-square overflow-hidden ${item.bg} ${item.hasAudio ? 'cursor-pointer' : ''}`}
+                  onMouseEnter={() => item.hasAudio && setActiveAudio(item.title)}
+                  onMouseLeave={() => item.hasAudio && setActiveAudio(null)}
+                  onClick={() => item.hasAudio && setActiveAudio(activeAudio === item.title ? null : item.title)}
+                >
+                  <Image
+                    src={item.src}
+                    alt={item.title}
+                    fill
+                    className={`object-cover ${item.src === "/oud3.png" ? "object-center" : "object-top"}`}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-poster-dark/80 via-poster-dark/20 to-transparent"></div>
+                  {item.hasAudio && activeAudio === item.title && item.audioUrl && (
+                    <AudioWaveform 
+                      audioUrl={item.audioUrl}
+                      onClose={() => setActiveAudio(null)}
+                    />
+                  )}
+                  <div className="absolute bottom-4 left-0 right-0 text-center z-50">
+                    <p className="impact-text text-poster-cream text-2xl md:text-3xl drop-shadow-[2px_2px_4px_rgba(0,0,0,0.9)]">{item.title}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Additional Show Information */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
@@ -169,54 +217,6 @@ export default function Home() {
               </div>
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="western-name text-4xl md:text-6xl text-poster-dark drop-shadow-[2px_2px_0_var(--rodeo-orange)]">
-              GLIMPSES & ECHOES
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { src: "/audience.png", title: "TRAIN FOR RAIN", bg: "bg-poster-cream" },
-              { src: "/camargue.png", title: "CAMARGUE", bg: "bg-gradient-to-br from-rodeo-orange via-sunset-glow to-rodeo-red" },
-              { src: "/blues.png", title: "THEM WORDS", bg: "bg-poster-cream", hasAudio: true, audioUrl: "/them-words-blues.mp3" },
-              { src: "/painting.png", title: "TIME ROLLS ON", bg: "bg-gradient-to-br from-vintage-yellow via-poster-gold to-rodeo-orange", hasAudio: true, audioUrl: "/time-rolls-on.mp3" },
-              { src: "/oud3.png", title: "MORNING", bg: "bg-gradient-to-br from-saddle-brown via-poster-rust to-rodeo-sienna" },
-              { src: "/mathieu.png", title: "ANXIETY RIVERS", bg: "bg-poster-cream" }
-            ].map((item, index) => (
-              <div key={index} className="border-4 border-poster-dark bg-poster-cream p-2">
-                <div 
-                  className={`relative aspect-square overflow-hidden ${item.bg} ${item.hasAudio ? 'cursor-pointer' : ''}`}
-                  onMouseEnter={() => item.hasAudio && setActiveAudio(item.title)}
-                  onMouseLeave={() => item.hasAudio && setActiveAudio(null)}
-                  onClick={() => item.hasAudio && setActiveAudio(activeAudio === item.title ? null : item.title)}
-                >
-                  <Image
-                    src={item.src}
-                    alt={item.title}
-                    fill
-                    className={`object-cover ${item.src === "/oud3.png" ? "object-center" : "object-top"}`}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-poster-dark/80 via-poster-dark/20 to-transparent"></div>
-                  {item.hasAudio && activeAudio === item.title && item.audioUrl && (
-                    <AudioWaveform 
-                      audioUrl={item.audioUrl}
-                      onClose={() => setActiveAudio(null)}
-                    />
-                  )}
-                  <div className="absolute bottom-4 left-0 right-0 text-center z-50">
-                    <p className="impact-text text-poster-cream text-2xl md:text-3xl drop-shadow-[2px_2px_4px_rgba(0,0,0,0.9)]">{item.title}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
