@@ -8,6 +8,7 @@ export default function Home() {
   const [showHowdy, setShowHowdy] = useState(false);
   const [activeAudio, setActiveAudio] = useState<string | null>(null);
   const [audioEnabled, setAudioEnabled] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const galleryRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -173,6 +174,8 @@ export default function Home() {
               <div key={index} className="border-4 border-poster-dark bg-poster-cream p-2">
                 <div 
                   className={`relative aspect-square overflow-hidden ${item.bg} ${item.hasAudio ? 'cursor-pointer' : ''}`}
+                  onMouseEnter={() => item.hasAudio && setHoveredItem(item.title)}
+                  onMouseLeave={() => item.hasAudio && setHoveredItem(null)}
                   onClick={() => {
                     if (item.hasAudio) {
                       // Initialize audio context on first interaction if needed
@@ -199,6 +202,12 @@ export default function Home() {
                       audioUrl={item.audioUrl}
                       onClose={() => setActiveAudio(null)}
                     />
+                  )}
+                  {/* Tooltip */}
+                  {item.hasAudio && hoveredItem === item.title && activeAudio !== item.title && (
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-poster-dark/90 text-poster-cream px-3 py-1 rounded-md z-40 pointer-events-none">
+                      <p className="rodeo-heading text-xs">CLICK TO PLAY</p>
+                    </div>
                   )}
                   <div className="absolute bottom-4 left-0 right-0 text-center z-50">
                     <p className="impact-text text-poster-cream text-2xl md:text-3xl drop-shadow-[2px_2px_4px_rgba(0,0,0,0.9)]">{item.title}</p>
