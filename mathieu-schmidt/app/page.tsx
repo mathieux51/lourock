@@ -8,7 +8,7 @@ export default function Home() {
   const [showHowdy, setShowHowdy] = useState(false);
   const [activeAudio, setActiveAudio] = useState<string | null>(null);
   const [audioEnabled, setAudioEnabled] = useState(false);
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const [loadingAudio, setLoadingAudio] = useState<string | null>(null);
   const galleryRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -178,8 +178,6 @@ export default function Home() {
               <div key={index} className="border-4 border-poster-dark bg-poster-cream p-2">
                 <div 
                   className={`relative aspect-square overflow-hidden ${item.bg} ${item.hasAudio ? 'cursor-pointer' : ''}`}
-                  onMouseEnter={() => item.hasAudio && setHoveredItem(item.title)}
-                  onMouseLeave={() => item.hasAudio && setHoveredItem(null)}
                   onClick={() => {
                     if (item.hasAudio) {
                       // Initialize audio context on first interaction if needed
@@ -190,7 +188,13 @@ export default function Home() {
                           context.close();
                         });
                       }
-                      setActiveAudio(activeAudio === item.title ? null : item.title);
+                      if (activeAudio === item.title) {
+                        setActiveAudio(null);
+                        setLoadingAudio(null);
+                      } else {
+                        setLoadingAudio(item.title);
+                        setActiveAudio(item.title);
+                      }
                     }
                   }}
                 >
@@ -204,17 +208,66 @@ export default function Home() {
                   {item.hasAudio && activeAudio === item.title && item.audioUrl && (
                     <AudioWaveform 
                       audioUrl={item.audioUrl}
-                      onClose={() => setActiveAudio(null)}
+                      onClose={() => {
+                        setActiveAudio(null);
+                        setLoadingAudio(null);
+                      }}
+                      onLoaded={() => setLoadingAudio(null)}
                     />
                   )}
-                  {/* Tooltip */}
-                  {item.hasAudio && hoveredItem === item.title && activeAudio !== item.title && (
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-poster-dark/90 text-poster-cream px-3 py-1 rounded-md z-40 pointer-events-none">
-                      <p className="rodeo-heading text-xs">CLICK TO PLAY</p>
-                    </div>
-                  )}
-                  <div className="absolute bottom-4 left-0 right-0 text-center z-50">
-                    <p className="impact-text text-poster-cream text-2xl md:text-3xl drop-shadow-[2px_2px_4px_rgba(0,0,0,0.9)]">{item.title}</p>
+                  {/* Bottom section with play button and title */}
+                  <div className="absolute bottom-0 left-0 right-0 z-50 flex flex-col items-center pb-4">
+                    {/* Play/Loading/Playing Icon */}
+                    {item.hasAudio && (
+                      <div className="flex flex-col items-center">
+                        {loadingAudio === item.title ? (
+                          // Loading spinner
+                          <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ 
+                            border: '3px solid rgba(232, 93, 37, 0.9)',
+                            backgroundColor: 'transparent' 
+                          }}>
+                            <svg className="animate-spin h-8 w-8" style={{ color: 'rgba(232, 93, 37, 0.9)' }} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                          </div>
+                        ) : activeAudio === item.title ? (
+                          // Pause icon when playing
+                          <div className="w-16 h-16 rounded-full flex items-center justify-center shadow-lg" style={{ 
+                            border: '3px solid rgba(204, 51, 17, 0.9)',
+                            backgroundColor: 'transparent' 
+                          }}>
+                            <svg className="w-8 h-8" style={{ color: 'rgba(204, 51, 17, 0.9)' }} fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                            </svg>
+                          </div>
+                        ) : (
+                          // Play icon
+                          <div 
+                            className="w-16 h-16 rounded-full flex items-center justify-center transition-all hover:shadow-lg" 
+                            style={{ 
+                              border: '3px solid rgba(232, 93, 37, 0.9)',
+                              backgroundColor: 'transparent',
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.borderColor = 'rgba(204, 51, 17, 0.9)';
+                              const svg = e.currentTarget.querySelector('svg');
+                              if (svg) svg.style.color = 'rgba(204, 51, 17, 0.9)';
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.borderColor = 'rgba(232, 93, 37, 0.9)';
+                              const svg = e.currentTarget.querySelector('svg');
+                              if (svg) svg.style.color = 'rgba(232, 93, 37, 0.9)';
+                            }}
+                          >
+                            <svg className="w-8 h-8" style={{ color: 'rgba(232, 93, 37, 0.9)' }} fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M8 5v14l11-7z"/>
+                            </svg>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                    <p className="impact-text text-poster-cream text-2xl md:text-3xl drop-shadow-[2px_2px_4px_rgba(0,0,0,0.9)] mt-2">{item.title}</p>
                   </div>
                 </div>
               </div>
