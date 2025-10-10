@@ -377,7 +377,7 @@ export default function Home() {
           transition={{ delay: 1.05 }}
           className="mb-4 h-32"
         >
-          <div className="comic-panel h-full flex items-center justify-center p-4" style={{backgroundColor: '#795B1A'}}>
+          <div className="comic-panel h-full flex items-center justify-center p-4" style={{backgroundColor: '#795B1A', padding: '1rem'}}>
             <div className="text-center">
               <h3 className="comic-text text-3xl mb-3" style={{color: 'white'}}>
                 🎧 ÉCOUTEZ NOTRE MUSIQUE 🎧
@@ -458,8 +458,8 @@ export default function Home() {
             <ul id="performance-list" className="space-y-1 text-left" style={{fontFamily: 'Comic Neue', color: 'white'}}>
               <li>⏱️ 45-90 minutes</li>
               <li>🎵 Compositions originales</li>
-              <li>⚡ Haute énergie</li>
-              <li>🤘 Interaction public</li>
+              <li>🌟 Ambiance garantie</li>
+              <li>🎭 Spectacle captivant</li>
             </ul>
           </motion.div>
         </div>
