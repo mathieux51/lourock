@@ -403,7 +403,7 @@ export default function Home() {
           </div>
         </motion.div>
 
-        {/* Row 9: Technical specs grid */}
+        {/* Row 10: Technical specs grid */}
         <div id="technical-specs" className="grid grid-cols-3 gap-4 mb-4 h-48">
           <motion.div 
             id="stage-setup"
