@@ -196,7 +196,7 @@ export default function Home() {
         {/* Row 3: Image + Text panels staggered */}
         <div id="band-member-mathieu" className="grid grid-cols-5 gap-4 mb-4 h-48">
           <motion.div
-            id="mathieu-image"
+            id="music-image"
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5 }}
@@ -271,12 +271,12 @@ export default function Home() {
         {/* Row 5: Text + Image staggered (reverse) */}
         <div id="booking-info" className="grid grid-cols-5 gap-4 mb-4 h-48">
           <motion.div
-            id="manu-text"
+            id="booking-text"
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.7 }}
             className="col-span-3 comic-panel flex flex-col justify-center p-4"
-            style={{backgroundColor: '#d2e3e5', padding: '1rem'}}
+            style={{backgroundColor: '#385C5F', padding: '1rem'}}
           >
             <h2 className="comic-text text-4xl mb-3" 
                 style={{color: 'white', textShadow: '2px 2px 0px #385C5F, 4px 4px 0px #0D0E08'}}>
@@ -298,7 +298,7 @@ export default function Home() {
           </motion.div>
           
           <motion.div
-            id="manu-image"
+            id="booking-image"
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.8 }}
@@ -313,26 +313,38 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Row 6: Full width EPK title */}
+        {/* Row 5b: Spanish action words strip */}
         <motion.div
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.9 }}
-          className="mb-4 h-24"
+          id="spanish-action-words"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.85 }}
+          className="grid grid-cols-5 gap-2 mb-4 h-16"
         >
-          <div className="comic-panel h-full flex items-center justify-center"
-               style={{
-                 background: 'linear-gradient(90deg, #CA7625 0%, #795B1A 50%, #385C5F 100%)'
-               }}>
-            <h2 className="comic-text text-5xl md:text-6xl text-center" 
-                style={{
-                  color: 'white', 
-                  textShadow: '4px 4px 0px #CA7625, 8px 8px 0px #0D0E08'
-                }}>
-              ⚡ DOSSIER DE PRESSE ÉLECTRONIQUE ⚡
-            </h2>
-          </div>
+          {['¡PUM!', '¡ZAS!', '¡CATAPLUM!', '¡PAF!', '¡BUM!'].map((word, index) => (
+            <motion.div
+              key={word}
+              className="comic-panel flex items-center justify-center cursor-pointer"
+              style={{backgroundColor: ['#795B1A', '#3F2E10', '#CA7625', '#0D0E08', '#385C5F'][index]}}
+              whileHover={{ scale: 1.1, rotate: 7 }}
+              animate={{
+                scale: [1, 1.08, 1],
+              }}
+              transition={{
+                duration: 1.8,
+                repeat: Infinity,
+                delay: index * 0.12
+              }}
+            >
+              <span className="comic-text text-2xl" 
+                    style={{color: 'white', textShadow: '2px 2px 0px #000'}}>
+                {word}
+              </span>
+            </motion.div>
+          ))}
         </motion.div>
+
+
 
         {/* Row 7: Story panel */}
         <motion.div
@@ -342,17 +354,18 @@ export default function Home() {
           transition={{ delay: 1.0 }}
           className="mb-4 h-40"
         >
-          <div className="comic-panel h-full flex flex-col justify-center p-8 bg-white relative">
-            <Star className="absolute -top-3 -right-3 w-8 h-8 text-yellow-400" />
+          <div className="comic-panel h-full flex flex-col justify-center p-4 relative" style={{backgroundColor: '#3F2E10', padding: '1rem'}}>
             <h3 className="comic-text text-3xl mb-4 flex items-center gap-3"
-                style={{color: '#CA7625', textShadow: '2px 2px 0px #0D0E08'}}>
+                style={{color: 'white', textShadow: '2px 2px 0px #CA7625'}}>
               <Music className="w-8 h-8" />
-              L'HISTOIRE EXPLOSIVE
+              NOTRE HISTOIRE
             </h3>
-            <p className="text-lg leading-relaxed" style={{fontFamily: 'Comic Neue'}}>
-              💥 Les Espanters sont nés de la collision cosmique de deux forces musicales ! 
-              Quand l'oud ancestral de Mathieu a rencontré la furie électrique de Manu, une explosion 
-              sonique a secoué la côte méditerranéenne !             </p>
+            <p className="text-lg leading-relaxed" style={{fontFamily: 'Comic Neue', color: 'white'}}>
+              Deux voisins devenus amis, partageant jeux, bières et fous rires ! La musique est arrivée 
+              naturellement, régulièrement. Cherchant un son unique né de leurs horizons musicaux opposés, 
+              ils explorent rythmes, gammes, silences et tensions. Sur scène, c'est le plaisir qui prime ! 
+              💛 Fait avec amour à Montpellier 💛
+            </p>
           </div>
         </motion.div>
 
@@ -367,11 +380,11 @@ export default function Home() {
             transition={{ delay: 1.1 }}
             whileHover={{ scale: 1.05, rotate: 2 }}
           >
-            <Zap className="w-8 h-8 mb-2 text-red-500 mx-auto" />
-            <h3 className="comic-text text-2xl mb-3 text-center" style={{color: '#FF00FF'}}>
+            <Zap id="stage-icon" className="w-8 h-8 mb-2 text-red-500 mx-auto" />
+            <h3 id="stage-title" className="comic-text text-2xl mb-3 text-center" style={{color: '#FF00FF'}}>
               STAGE SETUP
             </h3>
-            <ul className="space-y-1 text-center" style={{fontFamily: 'Comic Neue'}}>
+            <ul id="stage-list" className="space-y-1 text-center" style={{fontFamily: 'Comic Neue'}}>
               <li>💥 2 DI boxes</li>
               <li>💥 2 microphones</li>
               <li>💥 2 monitors</li>
@@ -388,6 +401,7 @@ export default function Home() {
             style={{backgroundColor: '#795B1A'}}
           >
             <img 
+              id="tech-img-element"
               src="/high-five.png" 
               alt="High Five" 
               className="w-full h-full object-cover"
@@ -403,11 +417,11 @@ export default function Home() {
             transition={{ delay: 1.3 }}
             whileHover={{ scale: 1.05, rotate: -2 }}
           >
-            <Heart className="w-8 h-8 mb-2 text-red-500 mx-auto" />
-            <h3 className="comic-text text-2xl mb-3 text-center" style={{color: '#FF00FF'}}>
+            <Heart id="performance-icon" className="w-8 h-8 mb-2 text-red-500 mx-auto" />
+            <h3 id="performance-title" className="comic-text text-2xl mb-3 text-center" style={{color: '#FF00FF'}}>
               PERFORMANCE
             </h3>
-            <ul className="space-y-1 text-center" style={{fontFamily: 'Comic Neue'}}>
+            <ul id="performance-list" className="space-y-1 text-center" style={{fontFamily: 'Comic Neue'}}>
               <li>💥 45-90 minutes</li>
               <li>🎵 Original songs</li>
               <li>⚡ High-energy</li>

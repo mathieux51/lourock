@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Les Espanters - Electronic Press Kit",
-  description: "Mathieu & Manu bring you explosive Mediterranean sounds with Oud, Guitar, Banjo and Electric riffs",
+  title: "Les Espanters",
+  description: "Mathieu & Manu vous apportent des sons méditerranéens explosifs avec Oud, Guitare, Banjo et riffs électriques",
   icons: {
     icon: [
       {
