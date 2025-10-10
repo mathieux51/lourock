@@ -2,7 +2,7 @@
 
 import React, { createContext, useState, useEffect, ReactNode } from 'react'
 import en from '../translations/en.json'
-import { detectLanguage, saveLanguagePreference } from '../utils/detectLanguage'
+import { saveLanguagePreference } from '../utils/detectLanguage'
 
 type Translations = typeof en
 
@@ -19,7 +19,7 @@ const loadTranslations = async (locale: string): Promise<Translations> => {
   try {
     const translations = await import(`../translations/${locale}.json`)
     return translations.default
-  } catch (error) {
+  } catch {
     console.warn(`Translation file for locale "${locale}" not found, falling back to English`)
     return en
   }
