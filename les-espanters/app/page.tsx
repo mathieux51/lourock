@@ -1,12 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Music, Guitar, Disc3, Mail, Download, Zap, Star, Heart } from "lucide-react";
-import { useState } from "react";
+import { Music, Mail, Download, Zap, Heart } from "lucide-react";
+import Image from "next/image";
+
 
 export default function Home() {
-  const [hoveredPanel, setHoveredPanel] = useState<string | null>(null);
-
   return (
     <div className="min-h-screen p-4 md:p-8 relative overflow-hidden">
       {/* Animated background dots */}
@@ -203,9 +202,11 @@ export default function Home() {
             className="col-span-2 comic-panel overflow-hidden"
             style={{backgroundColor: '#385C5F'}}
           >
-            <img 
+            <Image 
               src="/running.png" 
               alt="Running Action" 
+              width={500}
+              height={300}
               className="w-full h-full object-cover"
             />
           </motion.div>
@@ -223,7 +224,7 @@ export default function Home() {
               NOTRE MUSIQUE
             </h2>
             <p className="text-lg leading-relaxed" style={{fontFamily: 'Comic Neue', color: 'white'}}>
-              Guitare électrique fusionnée avec l'oud traditionnel, guitare acoustique mariée au banjo ! 
+              Guitare électrique fusionnée avec l&apos;oud traditionnel, guitare acoustique mariée au banjo ! 
               Un paysage sonore unique qui voyage du désert aux montagnes. Musique instrumentale composée à 
               Montpellier - parfaite en fond sonore au restaurant ou explosive sur scène avec des sonorités rock !
             </p>
@@ -283,7 +284,7 @@ export default function Home() {
               POUR QUI ?
             </h2>
             <p className="text-lg leading-relaxed" style={{fontFamily: 'Comic Neue', color: 'white'}}>
-              Festival de musique du monde, concert privé, mariage bohème, événement d'entreprise, 
+              Festival de musique du monde, concert privé, mariage bohème, événement d&apos;entreprise, 
               restaurant ou particulier - notre plateforme musicale saura vous séduire ! Découvrez 
               notre univers sonore unique mêlant world, arabesque, western, folk et blues.
             </p>
@@ -305,9 +306,11 @@ export default function Home() {
             className="col-span-2 comic-panel overflow-hidden"
             style={{backgroundColor: '#795B1A'}}
           >
-            <img 
+            <Image 
               src="/laugh.png" 
               alt="Laughing" 
+              width={500}
+              height={300}
               className="w-full h-full object-cover"
             />
           </motion.div>
@@ -363,7 +366,7 @@ export default function Home() {
             <p className="text-lg leading-relaxed" style={{fontFamily: 'Comic Neue', color: 'white'}}>
               Deux voisins devenus amis, partageant jeux, bières et fous rires ! La musique est arrivée 
               naturellement, régulièrement. Cherchant un son unique né de leurs horizons musicaux opposés, 
-              ils explorent rythmes, gammes, silences et tensions. Sur scène, c'est le plaisir qui prime ! 
+              ils explorent rythmes, gammes, silences et tensions. Sur scène, c&apos;est le plaisir qui prime ! 
               💛 Fait avec amour à Montpellier 💛
             </p>
           </div>
@@ -434,10 +437,12 @@ export default function Home() {
             transition={{ delay: 1.2 }}
             style={{backgroundColor: '#795B1A'}}
           >
-            <img 
+            <Image 
               id="tech-img-element"
               src="/high-five.png" 
               alt="High Five" 
+              width={500}
+              height={300}
               className="w-full h-full object-cover"
             />
           </motion.div>
@@ -516,9 +521,11 @@ export default function Home() {
               transition={{ delay: 2.0 + index * 0.1 }}
               whileHover={{ scale: 1.1, rotate: 5 }}
             >
-              <img 
+              <Image 
                 src={item.src}
                 alt={`Comic image ${index + 1}`}
+                width={300}
+                height={200}
                 className="w-full h-full object-cover"
               />
             </motion.div>
