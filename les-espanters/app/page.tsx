@@ -369,7 +369,41 @@ export default function Home() {
           </div>
         </motion.div>
 
-        {/* Row 8: Technical specs grid */}
+        {/* Row 8: Listen to Music section */}
+        <motion.div
+          id="listen-section"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.05 }}
+          className="mb-4 h-32"
+        >
+          <div className="comic-panel h-full flex items-center justify-center p-4" style={{backgroundColor: '#795B1A'}}>
+            <div className="text-center">
+              <h3 className="comic-text text-3xl mb-3" style={{color: 'white'}}>
+                🎧 ÉCOUTEZ NOTRE MUSIQUE 🎧
+              </h3>
+              <motion.a
+                href="https://www.instagram.com/lesespanters/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block comic-text text-xl px-6 py-2"
+                style={{
+                  backgroundColor: 'white',
+                  color: '#795B1A',
+                  border: '2px solid black',
+                  boxShadow: '3px 3px 0px #000',
+                  textDecoration: 'none'
+                }}
+                whileHover={{ scale: 1.05, rotate: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                @lesespanters sur Instagram
+              </motion.a>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Row 9: Technical specs grid */}
         <div id="technical-specs" className="grid grid-cols-3 gap-4 mb-4 h-48">
           <motion.div 
             id="stage-setup"
@@ -380,15 +414,15 @@ export default function Home() {
             transition={{ delay: 1.1 }}
             whileHover={{ scale: 1.05, rotate: 2 }}
           >
-            <Zap id="stage-icon" className="w-8 h-8 mb-2 text-red-500 mx-auto" />
+            <Zap id="stage-icon" className="w-8 h-8 mb-2 text-white mx-auto fill-white" stroke="white" />
             <h3 id="stage-title" className="comic-text text-2xl mb-3 text-center" style={{color: 'white'}}>
-              STAGE SETUP
+              INSTALLATION SCÈNE
             </h3>
-            <ul id="stage-list" className="space-y-1 text-center" style={{fontFamily: 'Comic Neue'}}>
-              <li>💥 2 DI boxes</li>
-              <li>💥 2 microphones</li>
-              <li>💥 2 monitors</li>
-              <li>💥 4m x 3m stage</li>
+            <ul id="stage-list" className="space-y-1 text-left" style={{fontFamily: 'Comic Neue', color: 'white'}}>
+              <li>🎸 2 DI boxes</li>
+              <li>🎤 2 microphones</li>
+              <li>🔊 2 monitors</li>
+              <li>📐 4m x 3m stage</li>
             </ul>
           </motion.div>
 
@@ -417,46 +451,20 @@ export default function Home() {
             transition={{ delay: 1.3 }}
             whileHover={{ scale: 1.05, rotate: -2 }}
           >
-            <Heart id="performance-icon" className="w-8 h-8 mb-2 text-red-500 mx-auto" />
-            <h3 id="performance-title" className="comic-text text-2xl mb-3 text-center" style={{color: '#FF00FF'}}>
-              PERFORMANCE
+            <Heart id="performance-icon" className="w-8 h-8 mb-2 text-white mx-auto" stroke="white" />
+            <h3 id="performance-title" className="comic-text text-2xl mb-3 text-center" style={{color: 'white'}}>
+              SPECTACLE
             </h3>
-            <ul id="performance-list" className="space-y-1 text-center" style={{fontFamily: 'Comic Neue'}}>
-              <li>💥 45-90 minutes</li>
-              <li>🎵 Original songs</li>
-              <li>⚡ High-energy</li>
-              <li>🤘 Crowd interaction</li>
+            <ul id="performance-list" className="space-y-1 text-left" style={{fontFamily: 'Comic Neue', color: 'white'}}>
+              <li>⏱️ 45-90 minutes</li>
+              <li>🎵 Compositions originales</li>
+              <li>⚡ Haute énergie</li>
+              <li>🤘 Interaction public</li>
             </ul>
           </motion.div>
         </div>
 
-        {/* Row 9: Images showcase */}
-        <div id="images-showcase" className="grid grid-cols-4 gap-4 mb-4 h-32">
-          {[
-            { src: '/cards.png', bg: '#385C5F' },
-            { src: '/oysters.png', bg: '#3F2E10' },
-            { src: '/beer.png', bg: '#CA7625' },
-            { src: '/petanque.png', bg: '#795B1A' }
-          ].map((item, index) => (
-            <motion.div
-              key={index}
-              className="comic-panel overflow-hidden"
-              style={{backgroundColor: item.bg}}
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 1.4 + index * 0.1 }}
-              whileHover={{ scale: 1.1, rotate: 5 }}
-            >
-              <img 
-                src={item.src}
-                alt={`Comic image ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Row 10: Contact buttons */}
+        {/* Row 9: Contact buttons */}
         <motion.div
           id="contact-buttons"
           initial={{ scale: 0.8, opacity: 0 }}
@@ -490,6 +498,32 @@ export default function Home() {
             TÉLÉCHARGER EPK !
           </motion.button>
         </motion.div>
+
+        {/* Row 10: Images showcase */}
+        <div id="images-showcase" className="grid grid-cols-4 gap-4 mb-4 h-32">
+          {[
+            { src: '/cards.png', bg: '#385C5F' },
+            { src: '/oysters.png', bg: '#3F2E10' },
+            { src: '/beer.png', bg: '#CA7625' },
+            { src: '/petanque.png', bg: '#795B1A' }
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              className="comic-panel overflow-hidden"
+              style={{backgroundColor: item.bg}}
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 2.0 + index * 0.1 }}
+              whileHover={{ scale: 1.1, rotate: 5 }}
+            >
+              <img 
+                src={item.src}
+                alt={`Comic image ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          ))}
+        </div>
       </div>
 
       {/* Footer */}
@@ -504,7 +538,7 @@ export default function Home() {
                  backgroundColor: '#CA7625',
                  boxShadow: '5px 5px 0px #3F2E10'
                }}>
-            <p className="font-bold text-lg" style={{fontFamily: 'Comic Neue'}}>
+            <p className="font-bold text-lg" style={{fontFamily: 'Comic Neue', color: 'white'}}>
               © 2025 LES ESPANTERS - DÉCHAÎNEZ LA FOLIE MÉDITERRANÉENNE ! 🎸⚡            </p>
           </div>
         </motion.div>
