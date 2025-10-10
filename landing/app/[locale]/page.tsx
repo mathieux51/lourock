@@ -104,7 +104,7 @@ export default function Home() {
               {t('bands.title')}
             </h3>
             
-            <div id="bands-grid" className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div id="bands-grid" className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
               <Link href="https://dakota-dreamers.lourock.com" className="group">
                 <div id="band-dakota" className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-slate-700 hover:border-purple-500 transition-all duration-300 transform hover:scale-105">
                   <div className="h-48 bg-cover bg-center rounded-lg mb-6" style={{backgroundImage: 'url("https://dakota-dreamers.lourock.com/stage.png")'}}></div>
@@ -134,6 +134,17 @@ export default function Home() {
                   <p className="text-slate-400 mb-4">{t('bands.mathieu.genre')}</p>
                   <p className="text-sm text-slate-500">
                     {t('bands.mathieu.description')}
+                  </p>
+                </div>
+              </Link>
+
+              <Link href="https://les-espanters.lourock.com" className="group">
+                <div id="band-espanters" className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-slate-700 hover:border-purple-500 transition-all duration-300 transform hover:scale-105">
+                  <div className="h-48 bg-cover bg-center rounded-lg mb-6" style={{backgroundImage: 'url("https://les-espanters.lourock.com/laugh.png")'}}></div>
+                  <h4 className="text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors">{t('bands.espanters.name')}</h4>
+                  <p className="text-slate-400 mb-4">{t('bands.espanters.genre')}</p>
+                  <p className="text-sm text-slate-500">
+                    {t('bands.espanters.description')}
                   </p>
                 </div>
               </Link>
@@ -182,6 +193,7 @@ export default function Home() {
                   <li>• {t('bands.dakota.name')} - {t('bands.dakota.genre')}</li>
                   <li>• {t('bands.kills.name')} - {t('bands.kills.genre')}</li>
                   <li>• {t('bands.mathieu.name')} - {t('bands.mathieu.genre')}</li>
+                  <li>• {t('bands.espanters.name')} - {t('bands.espanters.genre')}</li>
                 </ul>
               </div>
 
