@@ -381,7 +381,7 @@ export default function Home() {
             whileHover={{ scale: 1.05, rotate: 2 }}
           >
             <Zap id="stage-icon" className="w-8 h-8 mb-2 text-red-500 mx-auto" />
-            <h3 id="stage-title" className="comic-text text-2xl mb-3 text-center" style={{color: '#FF00FF'}}>
+            <h3 id="stage-title" className="comic-text text-2xl mb-3 text-center" style={{color: 'white'}}>
               STAGE SETUP
             </h3>
             <ul id="stage-list" className="space-y-1 text-center" style={{fontFamily: 'Comic Neue'}}>
