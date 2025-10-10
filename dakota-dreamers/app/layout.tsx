@@ -15,9 +15,9 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: "Dakota Dreamers - Country Rock Duo from Montpellier",
-  description: "Dakota Dreamers brings the spirit of the American West to Southern France. A country rock duo performing across the Occitanie region with authentic cowboy soul and modern rock energy.",
-  keywords: ["country music", "rock duo", "Montpellier", "Occitanie", "American West", "cowboy", "live music", "Southern France"],
+  title: "Dakota Dreamers - Country Duo from Montpellier",
+  description: "Dakota Dreamers brings the spirit of the American West to Southern France. A country duo performing across the Occitanie region with authentic cowboy soul and modern energy.",
+  keywords: ["country music", "duo", "Montpellier", "Occitanie", "American West", "cowboy", "live music", "Southern France"],
   authors: [{ name: "Dakota Dreamers" }],
   viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     icon: "/favicon.png",
   },
   openGraph: {
-    title: "Dakota Dreamers - Country Rock Duo",
-    description: "Authentic American West spirit meets Southern France. Country rock duo bringing cowboy soul to the Occitanie region.",
+    title: "Dakota Dreamers - Country Duo",
+    description: "Authentic American West spirit meets Southern France. Country duo bringing cowboy soul to the Occitanie region.",
     type: "website",
     locale: "en_US",
   },

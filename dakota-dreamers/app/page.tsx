@@ -10,7 +10,7 @@ export default function Home() {
   const musicSamples = [
     {
       title: "Dust & Dreams",
-      description: "Our signature blend of country soul and rock energy",
+      description: "Our signature blend of country soul and energy",
       duration: "3:45"
     },
     {
@@ -203,7 +203,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <p className="font-body text-lg leading-relaxed">
-                  Dakota Dreamers emerged from a deep friendship and shared passion for country rock music, nature, and the traditional culture of Southern France. This duo discovered their musical chemistry through their mutual appreciation for the breathtaking beauty found in the Occitanie region.
+                  Dakota Dreamers emerged from a deep friendship and shared passion for country music, nature, and the traditional culture of Southern France. This duo discovered their musical chemistry through their mutual appreciation for the breathtaking beauty found in the Occitanie region.
                 </p>
                 <p className="font-body text-lg leading-relaxed">
                   Born from this connection to both the land and each other, the band channels authentic Western storytelling through the lens of their Mediterranean heritage. Their music speaks to those who find inspiration in wide-open spaces, timeless melodies, and the natural wonders of Southern France.
@@ -406,7 +406,7 @@ Happy trails,
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <h3 className="font-heading text-2xl text-primary mb-2">Dakota Dreamers</h3>
-              <p className="text-ash">Country Rock Duo • Montpellier, France</p>
+              <p className="text-ash">Country Duo • Montpellier, France</p>
             </div>
             
             <div className="flex space-x-6">

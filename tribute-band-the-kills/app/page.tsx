@@ -152,7 +152,7 @@ export default function Home() {
             <span className="block text-kills-white">THE KILLS</span>
           </h1>
           <p className="kills-body text-lg sm:text-xl md:text-2xl text-kills-light-gray max-w-2xl mx-auto mb-12 px-4">
-            Raw garage rock tribute capturing the minimalist sound and explosive energy of Alison Mosshart and Jamie Hince
+            Raw garage tribute capturing the minimalist sound and explosive energy of Alison Mosshart and Jamie Hince
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 max-w-md sm:max-w-none mx-auto">
             <a 
@@ -180,13 +180,13 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="kills-heading text-2xl mb-6 text-kills-red">
-                RAW GARAGE ROCK TRIBUTE
+                RAW GARAGE TRIBUTE
               </h3>
               <p className="kills-body text-lg mb-6 text-kills-light-gray leading-relaxed">
-                We don&apos;t just play The Kills&apos; songs - we resurrect their primal energy. Every performance is a sonic assault of minimalist garage rock, where two guitars become an army and silence is as powerful as sound. We capture the danger, the tension, and the raw intensity that defines The Kills&apos; legendary live shows.
+                We don&apos;t just play The Kills&apos; songs - we resurrect their primal energy. Every performance is a sonic assault of minimalist garage sound, where two guitars become an army and silence is as powerful as sound. We capture the danger, the tension, and the raw intensity that defines The Kills&apos; legendary live shows.
               </p>
               <p className="kills-body text-lg mb-6 text-kills-light-gray leading-relaxed">
-                From the feedback-drenched chaos of their early work to the sophisticated darkness of their later albums, we deliver an authentic experience that goes beyond mere imitation. This is about channeling the spirit of garage rock rebellion, bringing that same confrontational intimacy that made The Kills one of the most influential acts of the 21st century.
+                From the feedback-drenched chaos of their early work to the sophisticated darkness of their later albums, we deliver an authentic experience that goes beyond mere imitation. This is about channeling the spirit of garage rebellion, bringing that same confrontational intimacy that made The Kills one of the most influential acts of the 21st century.
               </p>
             </div>
             <div className="bg-kills-charcoal p-8 border-2 border-kills-dark-gray">
@@ -270,13 +270,13 @@ export default function Home() {
                     Our story began at an open mic night in Montpellier, where fate brought together three musicians with a shared passion. When Mathieu heard the raw power of Lucie and Francis performing, he knew he&apos;d found something special. That night sparked the formation of Tribute Band The Kills.
                   </p>
                   <p>
-                    United by our love for The Kills&apos; minimalist garage rock sound and a mutual appreciation for sunglasses on stage, we channel the explosive energy and stripped-down aesthetic that made the original duo legendary. From Montpellier to venues across Occitanie, we bring that same raw, unfiltered intensity to every performance.
+                    United by our love for The Kills&apos; minimalist garage sound and a mutual appreciation for sunglasses on stage, we channel the explosive energy and stripped-down aesthetic that made the original duo legendary. From Montpellier to venues across Occitanie, we bring that same raw, unfiltered intensity to every performance.
                   </p>
                   <p>
                     Drawing inspiration from The Kills&apos; entire discography - from the raw energy of &quot;Keep On Your Mean Side&quot; to the refined aggression of &quot;Blood Pressures&quot; - our performances capture both the musical precision and explosive stage presence that made Alison Mosshart and Jamie Hince iconic. We meticulously recreate the stripped-down aesthetic that became The Kills&apos; signature, delivering authentic recreations of their minimalist setup.
                   </p>
                   <p>
-                    Available for festivals, club shows, and private events across Occitanie and beyond, Tribute Band The Kills delivers professional, high-energy performances with professional grade equipment and sound. We bring the garage rock revival to both intimate clubs and festival stages, celebrating one of garage rock&apos;s most influential acts.
+                    Available for festivals, club shows, and private events across Occitanie and beyond, Tribute Band The Kills delivers professional, high-energy performances with professional grade equipment and sound. We bring the garage revival to both intimate clubs and festival stages, celebrating one of garage music&apos;s most influential acts.
                   </p>
                 </div>
               </div>

@@ -107,9 +107,9 @@ export default function Home() {
                 <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-slate-700 hover:border-purple-500 transition-all duration-300 transform hover:scale-105">
                   <div className="h-48 bg-cover bg-center rounded-lg mb-6" style={{backgroundImage: 'url("https://dakota-dreamers.lourock.com/stage.png")'}}></div>
                   <h4 className="text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors">Dakota Dreamers</h4>
-                  <p className="text-slate-400 mb-4">Country Rock Duo</p>
+                  <p className="text-slate-400 mb-4">Country Duo</p>
                   <p className="text-sm text-slate-500">
-                    Bringing the spirit of the American West to Southern France with authentic country rock performances.
+                    Bringing the spirit of the American West to Southern France with authentic country performances.
                   </p>
                 </div>
               </Link>
@@ -118,9 +118,9 @@ export default function Home() {
                 <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-slate-700 hover:border-purple-500 transition-all duration-300 transform hover:scale-105">
                   <div className="h-48 bg-cover bg-center rounded-lg mb-6" style={{backgroundImage: 'url("https://the-kills.lourock.com/stage.png")'}}></div>
                   <h4 className="text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors">Tribute Band The Kills</h4>
-                  <p className="text-slate-400 mb-4">Rock Tribute</p>
+                  <p className="text-slate-400 mb-4">Garage Tribute</p>
                   <p className="text-sm text-slate-500">
-                    A powerful tribute to one of indie rock&apos;s most iconic duos, capturing their raw energy and signature sound.
+                    A powerful tribute to one of indie&apos;s most iconic duos, capturing their raw energy and signature sound.
                   </p>
                 </div>
               </Link>
@@ -183,8 +183,8 @@ export default function Home() {
                   <span className="font-semibold text-slate-200">Available Bands:</span>
                 </p>
                 <ul className="text-slate-300 space-y-2">
-                  <li>• Dakota Dreamers - Country Rock Duo</li>
-                  <li>• Tribute Band The Kills - Rock Tribute</li>
+                  <li>• Dakota Dreamers - Country Duo</li>
+                  <li>• Tribute Band The Kills - Garage Tribute</li>
                   <li>• Mathieu Schmidt - Solo Artist</li>
                 </ul>
               </div>

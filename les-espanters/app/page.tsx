@@ -34,6 +34,7 @@ export default function Home() {
 
       {/* Title Header - Full Width */}
       <motion.header 
+        id="header"
         initial={{ rotate: -5, scale: 0, opacity: 0 }}
         animate={{ rotate: 0, scale: 1, opacity: 1 }}
         transition={{ type: "spring", duration: 1 }}
@@ -126,9 +127,10 @@ export default function Home() {
             ⚡
           </div>
           
-          <div className="relative z-10 text-center py-12">
+          <div className="relative z-10 text-center py-6">
             <motion.h1 
-              className="comic-action text-7xl md:text-9xl mb-4" 
+              id="band-name"
+              className="comic-action text-7xl md:text-9xl mb-2" 
               style={{
                 color: 'white', 
                 textShadow: '4px 4px 0px #795B1A, 8px 8px 0px #3F2E10, 12px 12px 0px #0D0E08',
@@ -144,133 +146,60 @@ export default function Home() {
             >
               LES ESPANTERS
             </motion.h1>
-            <motion.div 
-              className="comic-text text-2xl md:text-4xl" 
-              style={{color: '#0D0E08', textShadow: '2px 2px 0px #FFFFFF, 4px 4px 0px #CA7625, 6px 6px 0px #0D0E08'}}
-              animate={{
-                rotate: [-2, 2, -2],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-              }}
+            <div 
+              id="tagline"
+              className="comic-text text-2xl md:text-4xl -mt-2 mb-4" 
+              style={{color: 'white', textShadow: '2px 2px 4px rgba(0,0,0,0.5)', paddingBottom: '1rem'}}
             >
-              ⚡ EXPLOSIVE MEDITERRANEAN MADNESS ⚡
-            </motion.div>
+              ⚡ FOLIE MÉDITERRANÉENNE EXPLOSIVE ⚡
+            </div>
           </div>
         </div>
       </motion.header>
 
       {/* Comic Book Grid Layout */}
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div id="comic-grid" className="max-w-7xl mx-auto relative z-10">
         
-        {/* Row 1: Large text + Small action */}
-        <div className="grid grid-cols-4 gap-1 mb-1 h-32">
-          <motion.div
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="col-span-3 comic-panel cursor-pointer p-2 relative overflow-hidden"
-            style={{
-              background: `
-                radial-gradient(circle at 50% 50%, #FFD93D 0%, #FF6B6B 20%, #4ECDC4 40%, #CA7625 60%, #795B1A 80%, #385C5F 100%),
-                conic-gradient(from 0deg at 50% 50%, 
-                  #FFD93D 0deg, #FF6B6B 60deg, #4ECDC4 120deg, 
-                  #95E1D3 180deg, #A8E6CF 240deg, #FFD93D 360deg)
-              `,
-              backgroundBlendMode: 'multiply'
-            }}
-            onMouseEnter={() => setHoveredPanel('intro')}
-            onMouseLeave={() => setHoveredPanel(null)}
-          >
-            {/* Explosion burst lines */}
-            <div className="absolute inset-0" 
-                 style={{
-                   backgroundImage: `
-                     linear-gradient(0deg, transparent 48%, yellow 49%, yellow 51%, transparent 52%),
-                     linear-gradient(45deg, transparent 48%, orange 49%, orange 51%, transparent 52%),
-                     linear-gradient(90deg, transparent 48%, red 49%, red 51%, transparent 52%),
-                     linear-gradient(135deg, transparent 48%, magenta 49%, magenta 51%, transparent 52%),
-                     linear-gradient(-45deg, transparent 48%, cyan 49%, cyan 51%, transparent 52%),
-                     linear-gradient(-90deg, transparent 48%, lime 49%, lime 51%, transparent 52%),
-                     linear-gradient(-135deg, transparent 48%, purple 49%, purple 51%, transparent 52%)
-                   `,
-                   opacity: 0.6
-                 }}>
-            </div>
-            
-            {/* Animated starburst */}
-            <motion.div 
-              className="absolute inset-0"
+        {/* Row 1 removed - was the ROCK ON section */}
+
+        {/* Row 2: French action words strip */}
+        <motion.div
+          id="french-action-words"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.3 }}
+          className="grid grid-cols-5 gap-2 mb-4 h-16"
+        >
+          {['BOUM!', 'PATATRAS!', 'PLOUF!', 'VLAN!', 'CRAC!'].map((word, index) => (
+            <motion.div
+              key={word}
+              className="comic-panel flex items-center justify-center cursor-pointer"
+              style={{backgroundColor: ['#385C5F', '#0D0E08', '#795B1A', '#CA7625', '#3F2E10'][index]}}
+              whileHover={{ scale: 1.1, rotate: -5 }}
               animate={{
-                rotate: [0, 360],
+                scale: [1, 1.05, 1],
               }}
               transition={{
-                duration: 20,
+                duration: 2,
                 repeat: Infinity,
-                ease: "linear"
+                delay: index * 0.15
               }}
-              style={{
-                backgroundImage: `
-                  conic-gradient(from 0deg at 50% 50%, 
-                    transparent 0deg, rgba(255,255,0,0.3) 10deg, transparent 20deg,
-                    transparent 40deg, rgba(255,0,255,0.3) 50deg, transparent 60deg,
-                    transparent 80deg, rgba(0,255,255,0.3) 90deg, transparent 100deg,
-                    transparent 120deg, rgba(255,0,0,0.3) 130deg, transparent 140deg,
-                    transparent 160deg, rgba(0,255,0,0.3) 170deg, transparent 180deg,
-                    transparent 200deg, rgba(255,128,0,0.3) 210deg, transparent 220deg,
-                    transparent 240deg, rgba(128,0,255,0.3) 250deg, transparent 260deg,
-                    transparent 280deg, rgba(255,255,0,0.3) 290deg, transparent 300deg,
-                    transparent 320deg, rgba(255,0,128,0.3) 330deg, transparent 340deg,
-                    transparent 360deg)
-                `,
-              }}>
-            </motion.div>
-            
-            <div className="h-full flex items-center justify-center relative z-10">
-              <motion.p 
-                className="comic-action text-5xl md:text-7xl text-center"
-                style={{
-                  background: 'linear-gradient(45deg, #FF00FF 0%, #00FFFF 25%, #FFFF00 50%, #FF00FF 75%, #00FFFF 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  textShadow: 'none',
-                  filter: 'drop-shadow(4px 4px 0px #000) drop-shadow(8px 8px 0px rgba(255,0,255,0.5)) drop-shadow(12px 12px 0px rgba(0,255,255,0.3))',
-                  transform: 'rotate(-5deg) skew(-5deg)',
-                  letterSpacing: '0.15em',
-                  margin: 0
-                }}
-                animate={hoveredPanel === 'intro' ? { scale: 1.15, rotate: -3 } : { scale: 1, rotate: -5 }}
-              >
-🎸 ROCK ON! 🎸               </motion.p>
-            </div>
-          </motion.div>
-          
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.3 }}
-            className="comic-panel flex items-center justify-center"
-            style={{backgroundColor: '#795B1A'}}
-          >
-            <motion.div 
-              className="comic-text text-4xl"
-              style={{color: 'white', textShadow: '2px 2px 0px #000'}}
-              animate={{ rotate: [0, 360] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
             >
-              💥
+              <span className="comic-text text-2xl" 
+                    style={{color: 'white', textShadow: '2px 2px 0px #000'}}>
+                {word}
+              </span>
             </motion.div>
-          </motion.div>
-        </div>
+          ))}
+        </motion.div>
 
-        {/* Row 2: Image + Text panels staggered */}
-        <div className="grid grid-cols-5 gap-4 mb-4 h-48">
+        {/* Row 3: Image + Text panels staggered */}
+        <div id="band-member-mathieu" className="grid grid-cols-5 gap-4 mb-4 h-48">
           <motion.div
+            id="mathieu-image"
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.5 }}
             className="col-span-2 comic-panel overflow-hidden"
             style={{backgroundColor: '#385C5F'}}
           >
@@ -282,34 +211,38 @@ export default function Home() {
           </motion.div>
           
           <motion.div
+            id="music-description"
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="col-span-3 comic-panel flex flex-col justify-center p-6"
-            style={{backgroundColor: '#f7e3d1'}}
+            transition={{ delay: 0.6 }}
+            className="col-span-3 comic-panel flex flex-col justify-center p-4"
+            style={{backgroundColor: '#CA7625', padding: '1rem'}}
           >
             <h2 className="comic-text text-4xl mb-3" 
-                style={{color: '#CA7625', textShadow: '3px 3px 0px #795B1A, 5px 5px 0px #0D0E08'}}>
-              MATHIEU
+                style={{color: 'white', textShadow: '2px 2px 0px #CA7625, 4px 4px 0px #0D0E08'}}>
+              NOTRE MUSIQUE
             </h2>
-            <p className="text-lg leading-relaxed" style={{fontFamily: 'Comic Neue'}}>
-              Master of the ancient Oud, bringing mystical Mediterranean melodies! 
-              When he switches to guitar, expect explosive riffs!             </p>
+            <p className="text-lg leading-relaxed" style={{fontFamily: 'Comic Neue', color: 'white'}}>
+              Guitare électrique fusionnée avec l'oud traditionnel, guitare acoustique mariée au banjo ! 
+              Un paysage sonore unique qui voyage du désert aux montagnes. Musique instrumentale composée à 
+              Montpellier - parfaite en fond sonore au restaurant ou explosive sur scène avec des sonorités rock !
+            </p>
             <motion.div 
               className="inline-block comic-text text-xl px-3 py-1 mt-3 transform -rotate-2" 
               style={{backgroundColor: '#CA7625', color: 'white', textShadow: '1px 1px 0px #0D0E08', width: 'fit-content'}}
               animate={{ rotate: [-2, 2, -2] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              OUD & GUITAR WIZARD!             </motion.div>
+              NOMADE • ORIENTAL • DÉSERT • MONTAGNE             </motion.div>
           </motion.div>
         </div>
 
-        {/* Row 3: Action words strip */}
+        {/* Row 4: Action words strip */}
         <motion.div
+          id="action-words"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 0.65 }}
           className="grid grid-cols-5 gap-2 mb-4 h-16"
         >
           {['POW!', 'BOOM!', 'ZAP!', 'BANG!', 'WOW!'].map((word, index) => (
@@ -335,22 +268,24 @@ export default function Home() {
           ))}
         </motion.div>
 
-        {/* Row 4: Text + Image staggered (reverse) */}
-        <div className="grid grid-cols-5 gap-4 mb-4 h-48">
+        {/* Row 5: Text + Image staggered (reverse) */}
+        <div id="booking-info" className="grid grid-cols-5 gap-4 mb-4 h-48">
           <motion.div
+            id="manu-text"
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.7 }}
-            className="col-span-3 comic-panel flex flex-col justify-center p-6"
-            style={{backgroundColor: '#d2e3e5'}}
+            className="col-span-3 comic-panel flex flex-col justify-center p-4"
+            style={{backgroundColor: '#d2e3e5', padding: '1rem'}}
           >
             <h2 className="comic-text text-4xl mb-3" 
-                style={{color: '#385C5F', textShadow: '3px 3px 0px #CA7625, 5px 5px 0px #0D0E08'}}>
-              MANU
+                style={{color: 'white', textShadow: '2px 2px 0px #385C5F, 4px 4px 0px #0D0E08'}}>
+              POUR QUI ?
             </h2>
-            <p className="text-lg leading-relaxed" style={{fontFamily: 'Comic Neue'}}>
-              Electric wizard with fingers of lightning! From face-melting guitar solos 
-              to hypnotic banjo rhythms, brings the thunder! ⚡
+            <p className="text-lg leading-relaxed" style={{fontFamily: 'Comic Neue', color: 'white'}}>
+              Festival de musique du monde, concert privé, mariage bohème, événement d'entreprise, 
+              restaurant ou particulier - notre plateforme musicale saura vous séduire ! Découvrez 
+              notre univers sonore unique mêlant world, arabesque, western, folk et blues.
             </p>
             <motion.div 
               className="inline-block comic-text text-xl px-3 py-1 mt-3 transform rotate-2" 
@@ -358,11 +293,12 @@ export default function Home() {
               animate={{ rotate: [2, -2, 2] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              ELECTRIC FURY! ⚡
+              WORLD • ARABESQUE • FOLK • BLUES
             </motion.div>
           </motion.div>
           
           <motion.div
+            id="manu-image"
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.8 }}
@@ -377,7 +313,7 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Row 5: Full width EPK title */}
+        {/* Row 6: Full width EPK title */}
         <motion.div
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -393,13 +329,14 @@ export default function Home() {
                   color: 'white', 
                   textShadow: '4px 4px 0px #CA7625, 8px 8px 0px #0D0E08'
                 }}>
-              ⚡ ELECTRONIC PRESS KIT ⚡
+              ⚡ DOSSIER DE PRESSE ÉLECTRONIQUE ⚡
             </h2>
           </div>
         </motion.div>
 
-        {/* Row 6: Story panel */}
+        {/* Row 7: Story panel */}
         <motion.div
+          id="band-story"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0 }}
@@ -410,18 +347,19 @@ export default function Home() {
             <h3 className="comic-text text-3xl mb-4 flex items-center gap-3"
                 style={{color: '#CA7625', textShadow: '2px 2px 0px #0D0E08'}}>
               <Music className="w-8 h-8" />
-              THE EXPLOSIVE STORY
+              L'HISTOIRE EXPLOSIVE
             </h3>
             <p className="text-lg leading-relaxed" style={{fontFamily: 'Comic Neue'}}>
-              💥 Les Espanters emerged from the cosmic collision of two musical forces! 
-              When Mathieu's ancient Oud met Manu's electric fury, a sonic explosion 
-              rocked the Mediterranean coast!             </p>
+              💥 Les Espanters sont nés de la collision cosmique de deux forces musicales ! 
+              Quand l'oud ancestral de Mathieu a rencontré la furie électrique de Manu, une explosion 
+              sonique a secoué la côte méditerranéenne !             </p>
           </div>
         </motion.div>
 
-        {/* Row 7: Technical specs grid */}
-        <div className="grid grid-cols-3 gap-4 mb-4 h-48">
+        {/* Row 8: Technical specs grid */}
+        <div id="technical-specs" className="grid grid-cols-3 gap-4 mb-4 h-48">
           <motion.div 
+            id="stage-setup"
             className="comic-panel p-4 flex flex-col justify-center" 
             style={{backgroundColor: '#CA7625'}}
             initial={{ rotate: -5, opacity: 0 }}
@@ -442,6 +380,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div 
+            id="tech-image"
             className="comic-panel overflow-hidden"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
@@ -456,6 +395,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div 
+            id="performance-info"
             className="comic-panel p-4 flex flex-col justify-center" 
             style={{backgroundColor: '#385C5F'}}
             initial={{ rotate: 5, opacity: 0 }}
@@ -476,8 +416,8 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Row 8: Images showcase */}
-        <div className="grid grid-cols-4 gap-4 mb-4 h-32">
+        {/* Row 9: Images showcase */}
+        <div id="images-showcase" className="grid grid-cols-4 gap-4 mb-4 h-32">
           {[
             { src: '/cards.png', bg: '#385C5F' },
             { src: '/oysters.png', bg: '#3F2E10' },
@@ -502,8 +442,9 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Row 9: Contact buttons */}
+        {/* Row 10: Contact buttons */}
         <motion.div
+          id="contact-buttons"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 1.8 }}
@@ -519,7 +460,7 @@ export default function Home() {
             whileTap={{ scale: 0.95 }}
           >
             <Mail className="w-6 h-6" />
-            CONTACT US NOW!
+            CONTACTEZ-NOUS !
           </motion.button>
           
           <motion.button 
@@ -532,13 +473,13 @@ export default function Home() {
             whileTap={{ scale: 0.95 }}
           >
             <Download className="w-6 h-6" />
-            DOWNLOAD EPK!
+            TÉLÉCHARGER EPK !
           </motion.button>
         </motion.div>
       </div>
 
       {/* Footer */}
-      <footer className="text-center py-8 relative z-10">
+      <footer id="footer" className="text-center py-8 relative z-10">
         <motion.div 
           className="inline-block"
           animate={{ rotate: [-1, 1, -1] }}
@@ -550,16 +491,16 @@ export default function Home() {
                  boxShadow: '5px 5px 0px #3F2E10'
                }}>
             <p className="font-bold text-lg" style={{fontFamily: 'Comic Neue'}}>
-              © 2024 LES ESPANTERS - UNLEASH THE MEDITERRANEAN MADNESS! 🎸⚡            </p>
+              © 2025 LES ESPANTERS - DÉCHAÎNEZ LA FOLIE MÉDITERRANÉENNE ! 🎸⚡            </p>
           </div>
         </motion.div>
       </footer>
 
       {/* Floating action words */}
-      <div className="fixed top-20 right-10 comic-text text-4xl transform rotate-12 pointer-events-none hidden lg:block z-20" 
+      <div id="floating-bang" className="fixed top-20 right-10 comic-text text-4xl transform rotate-12 pointer-events-none hidden lg:block z-20" 
            style={{color: '#CA7625', textShadow: '3px 3px 0px #795B1A, 5px 5px 0px #0D0E08'}}>
         BANG!       </div>
-      <div className="fixed bottom-20 left-10 comic-text text-3xl transform -rotate-6 pointer-events-none hidden lg:block z-20" 
+      <div id="floating-wow" className="fixed bottom-20 left-10 comic-text text-3xl transform -rotate-6 pointer-events-none hidden lg:block z-20" 
            style={{color: '#385C5F', textShadow: '3px 3px 0px #CA7625, 5px 5px 0px #0D0E08'}}>
         WOW!       </div>
     </div>
