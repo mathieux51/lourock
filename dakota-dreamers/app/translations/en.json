@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "epk": "EPK",
+    "tour": "Tour",
+    "contact": "Contact",
+    "backToLouRock": "Back to LouRock",
+    "toggleMenu": "Toggle menu"
+  },
+  "hero": {
+    "title": "DAKOTA",
+    "titleAccent": "DREAMERS",
+    "subtitle": "Bringing the Spirit of the American West to Southern France",
+    "ctaEpk": "Electronic Press Kit",
+    "ctaTour": "Tour Dates"
+  },
+  "about": {
+    "title": "About the Band",
+    "paragraph1": "Dakota Dreamers emerged from a deep friendship and shared passion for country music, nature, and the traditional culture of Southern France. This duo discovered their musical chemistry through their mutual appreciation for the breathtaking beauty found in the Occitanie region.",
+    "paragraph2": "Born from this connection to both the land and each other, the band channels authentic Western storytelling through the lens of their Mediterranean heritage. Their music speaks to those who find inspiration in wide-open spaces, timeless melodies, and the natural wonders of Southern France.",
+    "paragraph3": "From intimate venues in the Occitanie region to festival stages across Southern France, Dakota Dreamers delivers performances that transport audiences to dusty highways and endless horizons, proving that the American West lives in the hearts of all who dare to dream.",
+    "bandMembers": "Band Members",
+    "robRole": "Lead vocals, acoustic guitar and piano",
+    "mathieuRole": "Side vocals, lead guitar, bouzouki and banjo"
+  },
+  "epk": {
+    "title": "Electronic Press Kit",
+    "biography": {
+      "title": "Biography",
+      "paragraph1": "Dakota Dreamers represents the convergence of two musical worlds: the authentic storytelling tradition of American country music and the passionate artistic heritage of Southern France.",
+      "paragraph2": "Since forming in Montpellier, the duo has been crafting a unique sound that honors the cowboy spirit while embracing their Mediterranean roots. Their performances capture the essence of wide landscapes and intimate emotions.",
+      "downloadBio": "Download Full Bio"
+    },
+    "music": {
+      "title": "Music Samples",
+      "track1": {
+        "title": "Dust & Dreams",
+        "description": "Our signature blend of country soul and energy",
+        "duration": "3:45"
+      },
+      "track2": {
+        "title": "Occitanie Sunset",
+        "description": "A tribute to our Southern French homeland",
+        "duration": "4:12"
+      },
+      "track3": {
+        "title": "Highway to Montpellier",
+        "description": "Where American highways meet French countryside",
+        "duration": "3:58"
+      },
+      "downloadTracks": "Download Tracks"
+    },
+    "technical": {
+      "title": "Technical Requirements",
+      "requirements": [
+        "2 vocal microphones (SM58 or equivalent)",
+        "2 DI boxes for instruments",
+        "Basic PA system for venues up to 500 people",
+        "Monitor speakers (2 minimum)",
+        "Standard power requirements"
+      ],
+      "downloadRider": "Tech Rider PDF"
+    },
+    "photos": {
+      "title": "Press Photos",
+      "description": "High-resolution promotional photos available for press and promotional use.",
+      "downloadPhotos": "Download Photos"
+    }
+  },
+  "tour": {
+    "title": "Tour Dates",
+    "comingSoon": "Coming Soon",
+    "comingSoonText": "New tour dates will be announced soon. Stay tuned for upcoming performances across Southern France.",
+    "contactBooking": "Contact for Booking",
+    "emailSubject": "Booking Inquiry for Dakota Dreamers",
+    "emailBody": "Howdy partner!\n\nI reckon Dakota Dreamers would be perfect for our event. I'd be mighty obliged if you could share some details about availability and pricing.\n\nOur event details:\n- Date: \n- Venue: \n- Expected attendance: \n\nLooking forward to hearing from y'all!\n\nMuch obliged,\n[Your Name]"
+  },
+  "contact": {
+    "title": "Contact",
+    "getInTouch": "Get in Touch",
+    "description": "For bookings, press inquiries, and all other matters, reach out to us at:",
+    "emailLink": "contact at lourock dot com",
+    "emailSubject": "Inquiry for Dakota Dreamers",
+    "emailBody": "Howdy partners!\n\nI'm reaching out about Dakota Dreamers. I'd be much obliged if y'all could help me with some information.\n\n[Your message here]\n\nHappy trails,\n[Your Name]",
+    "basedIn": "Based in Montpellier, Occitanie",
+    "performing": "Performing across Southern France and beyond"
+  },
+  "footer": {
+    "tagline": "Country Duo • Montpellier, France",
+    "copyright": "© 2025 Dakota Dreamers. All rights reserved.",
+    "poweredBy": "Powered by LouRock"
+  }
+}

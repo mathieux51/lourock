@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "epk": "EPK",
+    "tour": "Tournée",
+    "contact": "Contact",
+    "backToLouRock": "Retour à LouRock",
+    "toggleMenu": "Basculer le menu"
+  },
+  "hero": {
+    "title": "DAKOTA",
+    "titleAccent": "DREAMERS",
+    "subtitle": "L'Esprit de l'Ouest Américain dans le Sud de la France",
+    "ctaEpk": "Dossier de Presse Électronique",
+    "ctaTour": "Dates de Tournée"
+  },
+  "about": {
+    "title": "À Propos du Groupe",
+    "paragraph1": "Dakota Dreamers est né d'une amitié profonde et d'une passion partagée pour la musique country, la nature et la culture traditionnelle du Sud de la France. Ce duo a découvert son alchimie musicale à travers leur appréciation mutuelle pour la beauté époustouflante de la région Occitanie.",
+    "paragraph2": "Né de cette connexion à la fois à la terre et l'un à l'autre, le groupe canalise la narration authentique de l'Ouest à travers le prisme de leur héritage méditerranéen. Leur musique parle à ceux qui trouvent l'inspiration dans les grands espaces, les mélodies intemporelles et les merveilles naturelles du Sud de la France.",
+    "paragraph3": "Des salles intimes de la région Occitanie aux scènes de festival à travers le Sud de la France, Dakota Dreamers offre des performances qui transportent le public vers des autoroutes poussiéreuses et des horizons infinis, prouvant que l'Ouest américain vit dans le cœur de tous ceux qui osent rêver.",
+    "bandMembers": "Membres du Groupe",
+    "robRole": "Chant principal, guitare acoustique et piano",
+    "mathieuRole": "Chœurs, guitare lead, bouzouki et banjo"
+  },
+  "epk": {
+    "title": "Dossier de Presse Électronique",
+    "biography": {
+      "title": "Biographie",
+      "paragraph1": "Dakota Dreamers représente la convergence de deux mondes musicaux : la tradition authentique de narration de la musique country américaine et l'héritage artistique passionné du Sud de la France.",
+      "paragraph2": "Depuis leur formation à Montpellier, le duo a créé un son unique qui honore l'esprit cowboy tout en embrassant leurs racines méditerranéennes. Leurs performances capturent l'essence des vastes paysages et des émotions intimes.",
+      "downloadBio": "Télécharger la Bio Complète"
+    },
+    "music": {
+      "title": "Échantillons Musicaux",
+      "track1": {
+        "title": "Dust & Dreams",
+        "description": "Notre mélange signature d'âme country et d'énergie",
+        "duration": "3:45"
+      },
+      "track2": {
+        "title": "Occitanie Sunset",
+        "description": "Un hommage à notre terre du Sud de la France",
+        "duration": "4:12"
+      },
+      "track3": {
+        "title": "Highway to Montpellier",
+        "description": "Où les autoroutes américaines rencontrent la campagne française",
+        "duration": "3:58"
+      },
+      "downloadTracks": "Télécharger les Morceaux"
+    },
+    "technical": {
+      "title": "Exigences Techniques",
+      "requirements": [
+        "2 microphones vocaux (SM58 ou équivalent)",
+        "2 boîtiers DI pour instruments",
+        "Système de sonorisation basique pour salles jusqu'à 500 personnes",
+        "Haut-parleurs de retour (2 minimum)",
+        "Alimentation électrique standard"
+      ],
+      "downloadRider": "Fiche Technique PDF"
+    },
+    "photos": {
+      "title": "Photos de Presse",
+      "description": "Photos promotionnelles haute résolution disponibles pour la presse et l'usage promotionnel.",
+      "downloadPhotos": "Télécharger les Photos"
+    }
+  },
+  "tour": {
+    "title": "Dates de Tournée",
+    "comingSoon": "Bientôt Disponible",
+    "comingSoonText": "Les nouvelles dates de tournée seront annoncées bientôt. Restez à l'écoute pour les prochaines performances à travers le Sud de la France.",
+    "contactBooking": "Contact pour Réservation",
+    "emailSubject": "Demande de Réservation pour Dakota Dreamers",
+    "emailBody": "Bonjour partenaires !\n\nJe pense que Dakota Dreamers serait parfait pour notre événement. Je serais très reconnaissant si vous pouviez partager quelques détails sur la disponibilité et les tarifs.\n\nDétails de notre événement :\n- Date : \n- Lieu : \n- Assistance attendue : \n\nJ'ai hâte d'avoir de vos nouvelles !\n\nBien cordialement,\n[Votre Nom]"
+  },
+  "contact": {
+    "title": "Contact",
+    "getInTouch": "Contactez-nous",
+    "description": "Pour les réservations, les demandes de presse et toutes autres questions, contactez-nous à :",
+    "emailLink": "contact chez lourock point com",
+    "emailSubject": "Demande d'Information pour Dakota Dreamers",
+    "emailBody": "Bonjour partenaires !\n\nJe vous contacte à propos de Dakota Dreamers. Je serais très reconnaissant si vous pouviez m'aider avec quelques informations.\n\n[Votre message ici]\n\nBien à vous,\n[Votre Nom]",
+    "basedIn": "Basé à Montpellier, Occitanie",
+    "performing": "Se produisant à travers le Sud de la France et au-delà"
+  },
+  "footer": {
+    "tagline": "Duo Country • Montpellier, France",
+    "copyright": "© 2025 Dakota Dreamers. Tous droits réservés.",
+    "poweredBy": "Propulsé par LouRock"
+  }
+}
