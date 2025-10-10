@@ -12,43 +12,44 @@ export async function generateStaticParams() {
   ]
 }
 
-export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  
   const titles: Record<string, string> = {
     en: 'LouRock - The Sound of Southern France',
-    fr: 'LouRock - Le Son du Sud de la France',
-    es: 'LouRock - El Sonido del Sur de Francia'
+    fr: 'LouRock - Le Son du Sud de la France'
   }
 
   const descriptions: Record<string, string> = {
     en: 'Connecting talented bands from Montpellier & Occitanie with venues across the region',
-    fr: 'Connecter les groupes talentueux de Montpellier et Occitanie avec les salles de la région',
-    es: 'Conectando bandas talentosas de Montpellier y Occitania con locales en toda la región'
+    fr: 'Connecter les groupes talentueux de Montpellier et Occitanie avec les salles de la région'
   }
 
   return {
-    title: titles[params.locale] || titles.en,
-    description: descriptions[params.locale] || descriptions.en,
+    title: titles[locale] || titles.en,
+    description: descriptions[locale] || descriptions.en,
     alternates: {
       languages: {
         'en': '/en',
-        'fr': '/fr',
-        'es': '/es'
+        'fr': '/fr'
       }
     }
   }
 }
 
-export default function LocaleLayout({
+export default async function LocaleLayout({
   children,
   params
 }: {
   children: React.ReactNode
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }) {
+  const { locale } = await params
+  
   return (
-    <html lang={params.locale}>
+    <html lang={locale}>
       <body className={inter.className}>
-        <TranslationProvider initialLocale={params.locale}>
+        <TranslationProvider initialLocale={locale}>
           {children}
         </TranslationProvider>
       </body>
