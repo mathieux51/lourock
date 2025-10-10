@@ -13,6 +13,7 @@ jobs:
       dakota-dreamers: ${{ steps.filter.outputs.dakota-dreamers }}
       tribute-band-the-kills: ${{ steps.filter.outputs.tribute-band-the-kills }}
       mathieu-schmidt: ${{ steps.filter.outputs.mathieu-schmidt }}
+      les-espanters: ${{ steps.filter.outputs.les-espanters }}
       deploy-script: ${{ steps.filter.outputs.deploy-script }}
     steps:
       - name: Checkout code
@@ -31,6 +32,8 @@ jobs:
               - 'tribute-band-the-kills/**'
             mathieu-schmidt:
               - 'mathieu-schmidt/**'
+            les-espanters:
+              - 'les-espanters/**'
             deploy-script:
               - 'deploy.sh'
               - '.github/workflows/deploy.yml'
@@ -122,3 +125,25 @@ jobs:
         env:
           NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
         run: ./deploy.sh mathieu-schmidt
+
+  deploy-les-espanters:
+    needs: changes
+    if: needs.changes.outputs.les-espanters == 'true' || needs.changes.outputs.deploy-script == 'true'
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel@latest
+
+      - name: Deploy Les Espanters
+        env:
+          NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
+        run: ./deploy.sh les-espanters
