@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "brand": "LouRock",
+    "menu": {
+      "bands": "Our Bands",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "toggleMenu": "Toggle menu"
+  },
+  "hero": {
+    "title": "LouRock",
+    "subtitle": "The Sound of Southern France",
+    "description": "Connecting talented bands from Montpellier & Occitanie with venues across the region",
+    "cta": "Discover Our Artists"
+  },
+  "bands": {
+    "title": "Our Featured Bands",
+    "dakota": {
+      "name": "Dakota Dreamers",
+      "genre": "Country Duo",
+      "description": "Bringing the spirit of the American West to Southern France with authentic country performances."
+    },
+    "kills": {
+      "name": "Tribute Band The Kills",
+      "genre": "Garage Tribute",
+      "description": "A powerful tribute to one of indie's most iconic duos, capturing their raw energy and signature sound."
+    },
+    "mathieu": {
+      "name": "Mathieu Schmidt",
+      "genre": "Solo Artist",
+      "description": "Intimate performances blending folk, indie, and Mediterranean influences into a unique musical journey."
+    },
+    "epkNote": "Each band provides a complete Electronic Press Kit for professional booking"
+  },
+  "about": {
+    "title": "About LouRock",
+    "paragraph1": "LouRock is the premier platform connecting talented local bands from Montpellier and the Occitanie region with venues and event organizers across Southern France. We specialize in curating authentic musical experiences that capture the unique cultural blend of our region.",
+    "paragraph2": "From intimate café concerts to festival performances, our artists bring professional quality and passionate performances to every stage. Each band in our roster offers a complete Electronic Press Kit, making booking seamless and professional.",
+    "paragraph3": "Whether you're organizing a corporate event, planning a festival, or booking entertainment for your venue, LouRock connects you with the perfect sound for your audience."
+  },
+  "contact": {
+    "title": "Book a Performance",
+    "description": "Ready to bring exceptional live music to your venue or event? Get in touch with us to discuss your requirements and find the perfect band for your audience.",
+    "availableBands": "Available Bands:",
+    "cta": "Contact Us for Booking",
+    "directEmail": "Or email us directly at:",
+    "email": "contact@lourock.com",
+    "emailSubject": "Booking Inquiry - LouRock",
+    "emailBody": "Hello LouRock Team,\n\nI am interested in booking one of your bands for an upcoming event.\n\nEvent Details:\n- Date: \n- Venue/Location: \n- Type of Event: \n- Expected Audience Size: \n- Band(s) of Interest: \n\nAdditional Information:\n\n\nBest regards,\n[Your Name]\n[Your Phone Number]"
+  },
+  "requestBand": {
+    "title": "Didn't find what you were looking for?",
+    "description": "We're always expanding our roster. Let us know what type of band you need and we'll help you find the perfect match for your event.",
+    "cta": "Request a Band",
+    "emailSubject": "Band Request - LouRock",
+    "emailBody": "Hello LouRock Team,\n\nI'm looking for a specific type of band that I didn't see in your current roster.\n\nBand/Music Style I'm Looking For:\n\n\nEvent Details:\n- Date: \n- Venue/Location: \n- Type of Event: \n- Expected Audience Size: \n\nAdditional Requirements:\n\n\nBest regards,\n[Your Name]\n[Your Phone Number]"
+  },
+  "footer": {
+    "copyright": "© 2025 LouRock. Bringing the best of Montpellier's music scene to your venue.",
+    "location": "Based in Montpellier, Occitanie",
+    "platform": "Professional Music Booking Platform"
+  }
+}

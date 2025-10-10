@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "brand": "LouRock",
+    "menu": {
+      "bands": "Nos Groupes",
+      "about": "À Propos",
+      "contact": "Contact"
+    },
+    "toggleMenu": "Basculer le menu"
+  },
+  "hero": {
+    "title": "LouRock",
+    "subtitle": "Le Son du Sud de la France",
+    "description": "Connecter les groupes talentueux de Montpellier et Occitanie avec les salles de la région",
+    "cta": "Découvrir Nos Artistes"
+  },
+  "bands": {
+    "title": "Nos Groupes en Vedette",
+    "dakota": {
+      "name": "Dakota Dreamers",
+      "genre": "Duo Country",
+      "description": "Apportant l'esprit de l'Ouest américain dans le Sud de la France avec des performances country authentiques."
+    },
+    "kills": {
+      "name": "Tribute Band The Kills",
+      "genre": "Tribute Garage",
+      "description": "Un hommage puissant à l'un des duos les plus iconiques de l'indie, capturant leur énergie brute et leur son signature."
+    },
+    "mathieu": {
+      "name": "Mathieu Schmidt",
+      "genre": "Artiste Solo",
+      "description": "Des performances intimes mélangeant folk, indie et influences méditerranéennes dans un voyage musical unique."
+    },
+    "epkNote": "Chaque groupe fournit un dossier de presse électronique complet pour une réservation professionnelle"
+  },
+  "about": {
+    "title": "À Propos de LouRock",
+    "paragraph1": "LouRock est la plateforme de premier plan connectant les groupes locaux talentueux de Montpellier et de la région Occitanie avec les salles et organisateurs d'événements du Sud de la France. Nous nous spécialisons dans la curation d'expériences musicales authentiques qui capturent le mélange culturel unique de notre région.",
+    "paragraph2": "Des concerts intimistes de café aux performances de festival, nos artistes apportent qualité professionnelle et performances passionnées à chaque scène. Chaque groupe de notre répertoire offre un dossier de presse électronique complet, rendant la réservation fluide et professionnelle.",
+    "paragraph3": "Que vous organisiez un événement d'entreprise, planifiez un festival ou réserviez du divertissement pour votre salle, LouRock vous connecte avec le son parfait pour votre public."
+  },
+  "contact": {
+    "title": "Réserver une Performance",
+    "description": "Prêt à apporter de la musique live exceptionnelle à votre salle ou événement ? Contactez-nous pour discuter de vos besoins et trouver le groupe parfait pour votre public.",
+    "availableBands": "Groupes Disponibles :",
+    "cta": "Nous Contacter pour Réserver",
+    "directEmail": "Ou envoyez-nous un email directement à :",
+    "email": "contact@lourock.com",
+    "emailSubject": "Demande de Réservation - LouRock",
+    "emailBody": "Bonjour l'équipe LouRock,\n\nJe suis intéressé(e) pour réserver l'un de vos groupes pour un événement à venir.\n\nDétails de l'Événement :\n- Date : \n- Lieu/Emplacement : \n- Type d'Événement : \n- Taille du Public Attendu : \n- Groupe(s) d'Intérêt : \n\nInformations Supplémentaires :\n\n\nCordialement,\n[Votre Nom]\n[Votre Numéro de Téléphone]"
+  },
+  "requestBand": {
+    "title": "Vous n'avez pas trouvé ce que vous cherchiez ?",
+    "description": "Nous élargissons toujours notre répertoire. Dites-nous quel type de groupe vous recherchez et nous vous aiderons à trouver la correspondance parfaite pour votre événement.",
+    "cta": "Demander un Groupe",
+    "emailSubject": "Demande de Groupe - LouRock",
+    "emailBody": "Bonjour l'équipe LouRock,\n\nJe recherche un type spécifique de groupe que je n'ai pas vu dans votre répertoire actuel.\n\nGroupe/Style de Musique que je Recherche :\n\n\nDétails de l'Événement :\n- Date : \n- Lieu/Emplacement : \n- Type d'Événement : \n- Taille du Public Attendu : \n\nExigences Supplémentaires :\n\n\nCordialement,\n[Votre Nom]\n[Votre Numéro de Téléphone]"
+  },
+  "footer": {
+    "copyright": "© 2025 LouRock. Apportant le meilleur de la scène musicale de Montpellier à votre salle.",
+    "location": "Basé à Montpellier, Occitanie",
+    "platform": "Plateforme Professionnelle de Réservation Musicale"
+  }
+}
