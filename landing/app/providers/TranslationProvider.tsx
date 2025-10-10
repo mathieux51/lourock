@@ -34,7 +34,7 @@ export function TranslationProvider({
 }) {
   const [locale, setLocale] = useState(initialLocale)
   const [translations, setTranslations] = useState<Translations>(en)
-  const supportedLocales = ['en', 'fr', 'es'] // Update this when you add new translations
+  const supportedLocales = ['en', 'fr'] // Update this when you add new translations
 
   useEffect(() => {
     loadTranslations(locale).then(setTranslations)

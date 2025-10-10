@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { useTranslation } from '../hooks/useTranslation'
+import { LanguageSwitcher } from '../components/LanguageSwitcher'
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -18,10 +19,11 @@ export default function Home() {
             </h1>
             
             {/* Desktop Menu */}
-            <div id="desktop-menu" className="hidden md:flex space-x-8">
+            <div id="desktop-menu" className="hidden md:flex space-x-8 items-center">
               <a href="#bands" className="hover:text-purple-400 transition-colors">{t('nav.menu.bands')}</a>
               <a href="#about" className="hover:text-purple-400 transition-colors">{t('nav.menu.about')}</a>
               <a href="#contact" className="hover:text-purple-400 transition-colors">{t('nav.menu.contact')}</a>
+              <LanguageSwitcher />
             </div>
 
             {/* Mobile Hamburger Button */}
@@ -72,6 +74,9 @@ export default function Home() {
               >
                 {t('nav.menu.contact')}
               </a>
+              <div className="pt-2 border-t border-slate-800">
+                <LanguageSwitcher />
+              </div>
             </div>
           )}
         </nav>
