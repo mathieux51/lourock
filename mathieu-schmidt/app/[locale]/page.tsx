@@ -2,9 +2,12 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import AudioWaveform from "./components/AudioWaveform";
+import AudioWaveform from "../components/AudioWaveform";
+import LanguageSwitcher from "../components/LanguageSwitcher";
+import { useTranslation } from "../hooks/useTranslation";
 
 export default function Home() {
+  const t = useTranslation();
   const [showHowdy, setShowHowdy] = useState(false);
   const [activeAudio, setActiveAudio] = useState<string | null>(null);
   const [audioEnabled, setAudioEnabled] = useState(false);
@@ -50,6 +53,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen vintage-poster overflow-x-hidden">
+      {/* Language Switcher */}
+      <div className="fixed top-4 right-4 z-50">
+        <LanguageSwitcher />
+      </div>
+
       {/* Main Rodeo Poster */}
       <section className="min-h-screen relative flex items-center justify-center p-4 md:p-8">
         {/* Vintage Border Frame */}
@@ -58,7 +66,7 @@ export default function Home() {
           {/* Top Banner */}
           <div className="text-center mb-6">
             <h2 className="western-name text-2xl md:text-3xl text-rodeo-orange">
-              DESERT TROUBADOUR
+              {t.tagline}
             </h2>
           </div>
 
@@ -102,7 +110,7 @@ export default function Home() {
             {showHowdy && (
               <div className="absolute -top-8 left-1/2 -translate-x-1/2 animate-bounce">
                 <div className="bg-poster-cream border-2 border-poster-dark rounded-lg px-3 py-1 shadow-lg relative">
-                  <span className="impact-text text-rodeo-red text-sm">HOWDY FOLKS!</span>
+                  <span className="impact-text text-rodeo-red text-sm">{t.howdy}</span>
                   <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-poster-cream"></div>
                   <div className="absolute -bottom-[10px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-poster-dark"></div>
                 </div>
@@ -119,7 +127,7 @@ export default function Home() {
           <div className="text-center mb-8">
             <div className="flex justify-center items-center gap-4 text-poster-brown">
               <span className="text-2xl">★</span>
-              <span className="rodeo-heading text-sm md:text-base tracking-widest">LIVE MUSIC</span>
+              <span className="rodeo-heading text-sm md:text-base tracking-widest">{t.liveMusic}</span>
               <span className="text-2xl">★</span>
             </div>
           </div>
@@ -131,13 +139,11 @@ export default function Home() {
                 href="mailto:contact@lourock.com?subject=Booking%20Inquiry%20for%20Mathieu%20Schmidt&body=Howdy!%0D%0A%0D%0AI%20would%20like%20to%20inquire%20about%20booking%20Mathieu%20Schmidt%20for%20an%20event.%0D%0A%0D%0APlease%20provide%20more%20information%20about%20availability%20and%20pricing.%0D%0A%0D%0AThank%20you!"
                 className="inline-block px-8 py-4 bg-rodeo-red text-poster-cream impact-text text-xl md:text-2xl border-4 border-poster-dark hover:bg-rodeo-orange transition-colors shadow-lg transform hover:scale-105"
               >
-                <span className="drop-shadow-[1px_1px_0_var(--rodeo-orange)]">BOOK THE SHOW</span>
+                <span className="drop-shadow-[1px_1px_0_var(--rodeo-orange)]">{t.bookShow}</span>
               </a>
               <div className="mt-6 text-center font-serif">
                 <p className="text-base md:text-lg leading-relaxed max-w-lg mx-auto font-semibold" style={{ color: 'var(--poster-brown)' }}>
-                  Experience the unique fusion of desert melodies and cowboy ballads. 
-                  From the dusty trails of the Old West to the ancient rhythms of the Sahara, 
-                  Mathieu Schmidt brings you a musical journey like no other.
+                  {t.description}
                 </p>
               </div>
             </div>
@@ -147,12 +153,12 @@ export default function Home() {
           {/* Bottom Text */}
           <div className="text-center pt-4">
             <p className="rodeo-heading text-poster-brown text-xs md:text-sm tracking-[0.3em] mb-3">
-              ARTISTE BASÉ À MONTPELLIER
+              {t.basedIn}
             </p>
             <p className="font-serif text-sm text-poster-dark leading-relaxed">
-              Concerts folk acoustiques dans l&apos;Hérault et Occitanie
+              {t.locationDetails}
               <br />
-              Montpellier • Nîmes • Toulouse • Festivals régionaux
+              {t.cities}
             </p>
           </div>
         </div>
@@ -163,22 +169,22 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="western-name text-4xl md:text-6xl text-poster-dark drop-shadow-[2px_2px_0_var(--rodeo-orange)] fade-in">
-              GLIMPSES & ECHOES
+              {t.gallery.title}
             </h2>
             <p className="rodeo-heading text-[10px] md:text-xs mt-4 tracking-wider" style={{ color: 'var(--poster-dark)' }}>
-              <span className="hidden md:inline">(click to play)</span>
-              <span className="md:hidden">(tap to play)</span>
+              <span className="hidden md:inline">{t.gallery.clickToPlay}</span>
+              <span className="md:hidden">{t.gallery.tapToPlay}</span>
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { src: "/camargue.png", title: "CAMARGUE", bg: "bg-gradient-to-br from-rodeo-orange via-sunset-glow to-rodeo-red" },
-              { src: "/blues.png", title: "THEM WORDS", bg: "bg-poster-cream", hasAudio: true, audioUrl: "/them-words-blues.mp3" },
-              { src: "/oud3.png", title: "MORNING", bg: "bg-gradient-to-br from-saddle-brown via-poster-rust to-rodeo-sienna" },
-              { src: "/electric.png", title: "TRAIN FOR RAIN", bg: "bg-poster-cream", hasAudio: true, audioUrl: "/train-for-rain.mp3" },
-              { src: "/painting.png", title: "TIME ROLLS ON", bg: "bg-gradient-to-br from-vintage-yellow via-poster-gold to-rodeo-orange", hasAudio: true, audioUrl: "/time-rolls-on.mp3" },
-              { src: "/berlin.png", title: "ANXIETY RIVERS", bg: "bg-poster-cream", hasAudio: true, audioUrl: "/anxiety-rivers.mp3" }
+              { src: "/camargue.png", title: t.gallery.camargue, bg: "bg-gradient-to-br from-rodeo-orange via-sunset-glow to-rodeo-red" },
+              { src: "/blues.png", title: t.gallery.themWords, bg: "bg-poster-cream", hasAudio: true, audioUrl: "/them-words-blues.mp3" },
+              { src: "/oud3.png", title: t.gallery.morning, bg: "bg-gradient-to-br from-saddle-brown via-poster-rust to-rodeo-sienna" },
+              { src: "/electric.png", title: t.gallery.trainForRain, bg: "bg-poster-cream", hasAudio: true, audioUrl: "/train-for-rain.mp3" },
+              { src: "/painting.png", title: t.gallery.timeRollsOn, bg: "bg-gradient-to-br from-vintage-yellow via-poster-gold to-rodeo-orange", hasAudio: true, audioUrl: "/time-rolls-on.mp3" },
+              { src: "/berlin.png", title: t.gallery.anxietyRivers, bg: "bg-poster-cream", hasAudio: true, audioUrl: "/anxiety-rivers.mp3" }
             ].map((item, index) => (
               <div key={index} className="border-4 border-poster-dark bg-poster-cream p-2">
                 <div 
@@ -286,7 +292,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="vintage-border p-4 md:p-12">
             <h2 className="western-name text-4xl md:text-6xl text-center text-rodeo-red mb-8 fade-in">
-              THE JOURNEY
+              {t.journey.title}
             </h2>
             
             <div className="space-y-16">
@@ -302,9 +308,10 @@ export default function Home() {
                   />
                 </div>
                 <p className="font-serif text-lg leading-[1.8]" style={{ color: 'var(--poster-dark)' }}>
-                  <span className="western-name text-6xl float-left mr-3 mt-0 leading-[0.8] text-rodeo-red">I</span>n the dusty crossroads where ancient desert winds meet the lonesome prairie, Mathieu Schmidt weaves tales that transcend borders and time. Born from the sun-baked streets of Montpellier in the heart of Occitanie, his music carries the weight of wandering souls and the whispers of forgotten lands. 
+                  <span className="western-name text-6xl float-left mr-3 mt-0 leading-[0.8] text-rodeo-red">I</span>
+                  {t.journey.paragraph1.substring(0, 1).toLowerCase() + t.journey.paragraph1.substring(1)}
                   <br /><br />
-                  Each melody is a bridge between worlds - the haunting call of the oud echoing across Saharan dunes, the plaintive cry of steel strings under starlit Western skies. With weathered hands that know both the comfort of home and the call of distant horizons, he crafts songs that speak to the universal human experience of longing and belonging.
+                  {t.journey.paragraph2}
                 </p>
               </div>
 
@@ -323,15 +330,16 @@ export default function Home() {
                   />
                 </div>
                 <p className="font-serif text-lg leading-[1.8]" style={{ color: 'var(--poster-dark)' }}>
-                  <span className="western-name text-6xl float-left mr-3 mt-0 leading-[0.8] text-rodeo-red">H</span>is fingers dance across the fretboard of guitar, oud, and bouzouki with the grace of a desert nomad and the grit of a prairie drifter. Languages flow through his songs like rivers converging - French melodies carrying the elegance of troubadour tradition, English verses painted with cowboy blues, and Occitan words breathing life into the ancient tongue of his homeland.
+                  <span className="western-name text-6xl float-left mr-3 mt-0 leading-[0.8] text-rodeo-red">H</span>
+                  {t.journey.paragraph3.substring(0, 1).toLowerCase() + t.journey.paragraph3.substring(1)}
                   <br /><br />
-                  This is music for the restless heart, for those who find solace in the space between cultures, between the familiar and the foreign. Each performance becomes a pilgrimage through sound, connecting audiences to something both ancient and eternal.
+                  {t.journey.paragraph4}
                 </p>
               </div>
 
               <div className="pt-8">
                 <p className="font-serif text-lg leading-relaxed text-center italic" style={{ color: 'var(--poster-brown)' }}>
-                  &ldquo;Every song is a journey, every performance a pilgrimage through the landscapes of memory and dream. From the Mediterranean shores to the endless horizon of the American frontier, music becomes the universal language that speaks to the wanderer in all of us.&rdquo;
+                  &ldquo;{t.journey.quote}&rdquo;
                 </p>
               </div>
 
@@ -349,7 +357,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <div className="vintage-border p-8 md:p-12 text-center">
             <h2 className="western-name text-4xl md:text-5xl text-rodeo-red mb-6">
-              HOLLER AT ME!
+              {t.booking.title}
             </h2>
             
 
@@ -359,7 +367,7 @@ export default function Home() {
                   href="https://lourock.com"
                   className="inline-block px-10 py-5 bg-rodeo-red text-poster-cream border-4 border-poster-dark hover:bg-rodeo-orange transition-colors impact-text text-2xl md:text-3xl shadow-lg transform hover:scale-105"
                 >
-                  CONTACT FOR BOOKING
+                  {t.booking.contactButton}
                 </a>
               </div>
               
@@ -369,13 +377,13 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-3 bg-poster-cream text-rodeo-red impact-text text-base border-2 border-rodeo-red hover:bg-vintage-yellow transition-colors"
               >
-                <span>LISTEN ON BANDCAMP<br /><span className="text-xs">(OLD)</span></span>
+                <span>{t.booking.bandcampButton}<br /><span className="text-xs">{t.booking.bandcampOld}</span></span>
               </a>
             </div>
 
             <div className="mt-8">
               <p className="text-sm" style={{ color: 'var(--rodeo-red)' }}>
-                ◆ NO HORSES WERE HARMED IN THE MAKING OF THIS MUSIC ◆
+                {t.booking.noHorses}
               </p>
             </div>
           </div>
@@ -390,7 +398,7 @@ export default function Home() {
           </h3>
           <p className="rodeo-heading text-poster-brown tracking-widest mb-6">
             <span className="text-rodeo-orange text-xl align-middle">★</span>
-            <span className="mx-2">MONTPELLIER ◆ OCCITANIE</span>
+            <span className="mx-2">{t.footer.location}</span>
             <span className="text-rodeo-orange text-xl align-middle">★</span>
           </p>
 
@@ -408,13 +416,13 @@ export default function Home() {
               href="https://lourock.com"
               className="impact-text text-rodeo-red hover:text-rodeo-orange transition-colors"
             >
-              LOU ROCK
+              {t.footer.louRock}
             </a>
           </div>
 
           <div className="pt-6 border-t-2 border-poster-brown">
             <p className="text-poster-brown text-sm rodeo-heading">
-              © 2025 ◆ PART OF THE LOU ROCK COLLECTIVE
+              {t.footer.copyright}
             </p>
           </div>
         </div>

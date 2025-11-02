@@ -1,0 +1,45 @@
+{
+  "tagline": "DESERT TROUBADOUR",
+  "liveMusic": "LIVE MUSIC",
+  "bookShow": "BOOK THE SHOW",
+  "description": "Experience the unique fusion of desert melodies and cowboy ballads. From the dusty trails of the Old West to the ancient rhythms of the Sahara, Mathieu Schmidt brings you a musical journey like no other.",
+  "basedIn": "ARTIST BASED IN MONTPELLIER",
+  "locationDetails": "Acoustic folk concerts in Hérault and Occitanie",
+  "cities": "Montpellier • Nîmes • Toulouse • Regional Festivals",
+  "howdy": "HOWDY FOLKS!",
+  
+  "gallery": {
+    "title": "GLIMPSES & ECHOES",
+    "clickToPlay": "(click to play)",
+    "tapToPlay": "(tap to play)",
+    "camargue": "CAMARGUE",
+    "themWords": "THEM WORDS",
+    "morning": "MORNING",
+    "trainForRain": "TRAIN FOR RAIN",
+    "timeRollsOn": "TIME ROLLS ON",
+    "anxietyRivers": "ANXIETY RIVERS"
+  },
+  
+  "journey": {
+    "title": "THE JOURNEY",
+    "paragraph1": "In the dusty crossroads where ancient desert winds meet the lonesome prairie, Mathieu Schmidt weaves tales that transcend borders and time. Born from the sun-baked streets of Montpellier in the heart of Occitanie, his music carries the weight of wandering souls and the whispers of forgotten lands.",
+    "paragraph2": "Each melody is a bridge between worlds - the haunting call of the oud echoing across Saharan dunes, the plaintive cry of steel strings under starlit Western skies. With weathered hands that know both the comfort of home and the call of distant horizons, he crafts songs that speak to the universal human experience of longing and belonging.",
+    "paragraph3": "His fingers dance across the fretboard of guitar, oud, and bouzouki with the grace of a desert nomad and the grit of a prairie drifter. Languages flow through his songs like rivers converging - French melodies carrying the elegance of troubadour tradition, English verses painted with cowboy blues, and Occitan words breathing life into the ancient tongue of his homeland.",
+    "paragraph4": "This is music for the restless heart, for those who find solace in the space between cultures, between the familiar and the foreign. Each performance becomes a pilgrimage through sound, connecting audiences to something both ancient and eternal.",
+    "quote": "Every song is a journey, every performance a pilgrimage through the landscapes of memory and dream. From the Mediterranean shores to the endless horizon of the American frontier, music becomes the universal language that speaks to the wanderer in all of us."
+  },
+  
+  "booking": {
+    "title": "HOLLER AT ME!",
+    "contactButton": "CONTACT FOR BOOKING",
+    "bandcampButton": "LISTEN ON BANDCAMP",
+    "bandcampOld": "(OLD)",
+    "noHorses": "◆ NO HORSES WERE HARMED IN THE MAKING OF THIS MUSIC ◆"
+  },
+  
+  "footer": {
+    "location": "MONTPELLIER ◆ OCCITANIE",
+    "louRock": "LOU ROCK",
+    "copyright": "© 2025 ◆ PART OF THE LOU ROCK COLLECTIVE"
+  }
+}

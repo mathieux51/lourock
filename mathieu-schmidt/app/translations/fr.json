@@ -1,0 +1,45 @@
+{
+  "tagline": "DESERT TROUBADOUR",
+  "liveMusic": "LIVE MUSIC",
+  "bookShow": "BOOK THE SHOW",
+  "description": "Experience the unique fusion of desert melodies and cowboy ballads. From the dusty trails of the Old West to the ancient rhythms of the Sahara, Mathieu Schmidt brings you a musical journey like no other.",
+  "basedIn": "ARTISTE BASÉ À MONTPELLIER",
+  "locationDetails": "Concerts folk acoustiques dans l'Hérault et Occitanie",
+  "cities": "Montpellier • Nîmes • Toulouse • Festivals régionaux",
+  "howdy": "HOWDY FOLKS!",
+  
+  "gallery": {
+    "title": "GLIMPSES & ECHOES",
+    "clickToPlay": "(cliquer pour jouer)",
+    "tapToPlay": "(toucher pour jouer)",
+    "camargue": "CAMARGUE",
+    "themWords": "THEM WORDS",
+    "morning": "MORNING",
+    "trainForRain": "TRAIN FOR RAIN",
+    "timeRollsOn": "TIME ROLLS ON",
+    "anxietyRivers": "ANXIETY RIVERS"
+  },
+  
+  "journey": {
+    "title": "LE VOYAGE",
+    "paragraph1": "Dans les carrefours poussiéreux où les vents ancestraux du désert rencontrent la prairie solitaire, Mathieu Schmidt tisse des récits qui transcendent les frontières et le temps. Né des rues ensoleillées de Montpellier au cœur de l'Occitanie, sa musique porte le poids des âmes errantes et les murmures des terres oubliées.",
+    "paragraph2": "Chaque mélodie est un pont entre les mondes - l'appel envoûtant du oud résonnant à travers les dunes sahariennes, le cri plaintif des cordes d'acier sous les cieux étoilés de l'Ouest. Avec des mains usées qui connaissent à la fois le confort du foyer et l'appel des horizons lointains, il crée des chansons qui parlent de l'expérience humaine universelle du désir et de l'appartenance.",
+    "paragraph3": "Ses doigts dansent sur le manche de la guitare, du oud et du bouzouki avec la grâce d'un nomade du désert et le courage d'un vagabond de la prairie. Les langues coulent à travers ses chansons comme des rivières qui convergent - des mélodies françaises portant l'élégance de la tradition troubadour, des vers anglais peints de blues cow-boy, et des mots occitans insufflant la vie à l'ancienne langue de sa terre natale.",
+    "paragraph4": "C'est une musique pour le cœur agité, pour ceux qui trouvent du réconfort dans l'espace entre les cultures, entre le familier et l'étranger. Chaque performance devient un pèlerinage à travers le son, reliant le public à quelque chose à la fois ancien et éternel.",
+    "quote": "Chaque chanson est un voyage, chaque performance un pèlerinage à travers les paysages de la mémoire et du rêve. Des rives méditerranéennes à l'horizon sans fin de la frontière américaine, la musique devient le langage universel qui parle au vagabond en chacun de nous."
+  },
+  
+  "booking": {
+    "title": "CONTACTEZ-MOI !",
+    "contactButton": "CONTACT FOR BOOKING",
+    "bandcampButton": "LISTEN ON BANDCAMP",
+    "bandcampOld": "(OLD)",
+    "noHorses": "◆ NO HORSES WERE HARMED IN THE MAKING OF THIS MUSIC ◆"
+  },
+  
+  "footer": {
+    "location": "MONTPELLIER ◆ OCCITANIE",
+    "louRock": "LOU ROCK",
+    "copyright": "© 2025 ◆ PART OF THE LOU ROCK COLLECTIVE"
+  }
+}
