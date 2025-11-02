@@ -139,7 +139,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <img 
             src="/stage.png" 
-            alt="Stage background" 
+            alt="Tribute The Kills concert live Montpellier garage rock Hérault Occitanie" 
             className="w-full h-auto object-contain object-center mt-16 md:mt-0"
           />
         </div>
@@ -180,10 +180,10 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="kills-heading text-2xl mb-6 text-kills-red">
-                RAW GARAGE TRIBUTE
+                TRIBUTE PROFESSIONNEL BASÉ À MONTPELLIER
               </h3>
               <p className="kills-body text-lg mb-6 text-kills-light-gray leading-relaxed">
-                We don&apos;t just play The Kills&apos; songs - we resurrect their primal energy. Every performance is a sonic assault of minimalist garage sound, where two guitars become an army and silence is as powerful as sound. We capture the danger, the tension, and the raw intensity that defines The Kills&apos; legendary live shows.
+                Tribute band professionnel The Kills basé à Montpellier, Hérault. Disponible pour concerts et événements dans toute l&apos;Occitanie et au-delà : Montpellier, Nîmes, Toulouse, festivals et clubs. Nous ne reproduisons pas simplement les chansons des Kills - nous ressuscitons leur énergie primale. Chaque performance est un assaut sonique de garage rock minimaliste où deux guitares deviennent une armée et le silence est aussi puissant que le son.
               </p>
               <p className="kills-body text-lg mb-6 text-kills-light-gray leading-relaxed">
                 From the feedback-drenched chaos of their early work to the sophisticated darkness of their later albums, we deliver an authentic experience that goes beyond mere imitation. This is about channeling the spirit of garage rebellion, bringing that same confrontational intimacy that made The Kills one of the most influential acts of the 21st century.
@@ -210,7 +210,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <img 
             src="/fireworks.png" 
-            alt="Fireworks background" 
+            alt="Concert garage rock Montpellier tribute band live performance" 
             className="w-full h-auto object-contain object-center mt-16 md:mt-0"
           />
         </div>
@@ -346,7 +346,7 @@ export default function Home() {
                   <div className="aspect-square bg-kills-dark-gray border-2 border-kills-gray overflow-hidden">
                     <img 
                       src="/stage.png" 
-                      alt="Stage performance" 
+                      alt="Tribute The Kills scène live Montpellier concert rock" 
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -371,7 +371,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <img 
             src="/shows.png" 
-            alt="Shows background" 
+            alt="Réserver concert tribute The Kills Montpellier Occitanie festival club" 
             className="w-full h-auto object-contain object-center mt-16 md:mt-0"
           />
         </div>

@@ -158,7 +158,7 @@ export default function Home() {
         <div className="absolute inset-0 flex items-center justify-center md:items-start">
           <img 
             src="/stage.png" 
-            alt="Stage background" 
+            alt="Scène concert country Dakota Dreamers Montpellier Hérault" 
             className="w-full h-auto object-contain object-center"
           />
         </div>
@@ -196,7 +196,7 @@ export default function Home() {
         <div className="absolute inset-0 flex items-center justify-center md:items-start">
           <img 
             src="/bridge.png" 
-            alt="Bridge background" 
+            alt="Duo country western Occitanie spectacle live" 
             className="w-full h-auto object-contain object-center"
           />
         </div>
@@ -242,7 +242,7 @@ export default function Home() {
         <div className="absolute inset-0 flex items-center justify-center md:items-start">
           <img 
             src="/horse.png" 
-            alt="Horse background" 
+            alt="Concert country americana Montpellier groupe professionnel" 
             className="w-full h-auto object-contain object-center"
           />
         </div>
@@ -362,7 +362,7 @@ export default function Home() {
         <div className="absolute inset-0 flex items-center justify-center">
           <img 
             src="/contact.png" 
-            alt="Contact background" 
+            alt="Réserver groupe country Montpellier Hérault événement mariage festival" 
             className="w-full h-auto object-contain object-center"
           />
         </div>

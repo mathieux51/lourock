@@ -204,7 +204,7 @@ export default function Home() {
           >
             <Image 
               src="/running.png" 
-              alt="Running Action" 
+              alt="Duo world music live Montpellier oud guitare banjo concert" 
               width={500}
               height={300}
               className="w-full h-full object-cover"
@@ -308,7 +308,7 @@ export default function Home() {
           >
             <Image 
               src="/laugh.png" 
-              alt="Laughing" 
+              alt="Concert privé Montpellier mariage événement entreprise groupe live" 
               width={500}
               height={300}
               className="w-full h-full object-cover"
@@ -361,13 +361,16 @@ export default function Home() {
             <h3 className="comic-text text-3xl mb-4 flex items-center gap-3"
                 style={{color: 'white', textShadow: '2px 2px 0px #CA7625'}}>
               <Music className="w-8 h-8" />
-              NOTRE HISTOIRE
+              BASÉ À MONTPELLIER
             </h3>
+            <p className="text-lg leading-relaxed mb-3" style={{fontFamily: 'Comic Neue', color: 'white'}}>
+              Duo musical professionnel installé à Montpellier dans l&apos;Hérault. Nous intervenons pour vos événements 
+              dans toute l&apos;Occitanie : Montpellier, Nîmes, Béziers, Sète, Toulouse, Perpignan et alentours.
+            </p>
             <p className="text-lg leading-relaxed" style={{fontFamily: 'Comic Neue', color: 'white'}}>
-              Deux voisins devenus amis, partageant jeux, bières et fous rires ! La musique est arrivée 
-              naturellement, régulièrement. Cherchant un son unique né de leurs horizons musicaux opposés, 
-              ils explorent rythmes, gammes, silences et tensions. Sur scène, c&apos;est le plaisir qui prime ! 
-              💛 Fait avec amour à Montpellier 💛
+              Deux musiciens voisins devenus amis, partageant jeux, bières et fous rires ! La musique est arrivée 
+              naturellement. Cherchant un son unique né de leurs horizons musicaux opposés, ils explorent rythmes, 
+              gammes, silences et tensions. Sur scène, c&apos;est le plaisir qui prime ! 💛
             </p>
           </div>
         </motion.div>
@@ -440,7 +443,7 @@ export default function Home() {
             <Image 
               id="tech-img-element"
               src="/high-five.png" 
-              alt="High Five" 
+              alt="Duo musical professionnel Montpellier concert live Hérault Occitanie" 
               width={500}
               height={300}
               className="w-full h-full object-cover"
@@ -523,7 +526,7 @@ export default function Home() {
             >
               <Image 
                 src={item.src}
-                alt={`Comic image ${index + 1}`}
+                alt={`Concert live Montpellier musique world folk blues Hérault ${index + 1}`}
                 width={300}
                 height={200}
                 className="w-full h-full object-cover"

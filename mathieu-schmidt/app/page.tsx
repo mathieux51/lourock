@@ -92,7 +92,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-b from-orange-300 via-orange-400 to-red-500"></div>
               <Image
                 src="/hero-no-bg.png"
-                alt="Mathieu Schmidt"
+                alt="Mathieu Schmidt artiste folk multi-instrumental Montpellier oud guitare bouzouki"
                 fill
                 className="object-cover relative z-10"
                 style={{ objectPosition: '0px -60px' }}
@@ -146,8 +146,13 @@ export default function Home() {
 
           {/* Bottom Text */}
           <div className="text-center pt-4">
-            <p className="rodeo-heading text-poster-brown text-xs md:text-sm tracking-[0.3em]">
-              MONTPELLIER ◆ OCCITANIE ◆ FRANCE
+            <p className="rodeo-heading text-poster-brown text-xs md:text-sm tracking-[0.3em] mb-3">
+              ARTISTE BASÉ À MONTPELLIER
+            </p>
+            <p className="font-serif text-sm text-poster-dark leading-relaxed">
+              Concerts folk acoustiques dans l&apos;Hérault et Occitanie
+              <br />
+              Montpellier • Nîmes • Toulouse • Festivals régionaux
             </p>
           </div>
         </div>
@@ -200,7 +205,7 @@ export default function Home() {
                 >
                   <Image
                     src={item.src}
-                    alt={item.title}
+                    alt={`Mathieu Schmidt ${item.title.toLowerCase()} concert folk Montpellier musique méditerranéenne`}
                     fill
                     className={`object-cover ${item.src === "/oud3.png" ? "object-center" : "object-top"} ${item.hasAudio && activeAudio === item.title ? "ken-burns-effect" : ""}`}
                   />
@@ -290,7 +295,7 @@ export default function Home() {
                 <div className="w-40 h-40 md:w-48 md:h-48 border-2 border-poster-dark rounded overflow-hidden bg-poster-cream float-left mr-6 mb-4 shape-outside-[circle(50%)]">
                   <Image
                     src="/painting-cowboy.png"
-                    alt="Cowboy Performance"
+                    alt="Mathieu Schmidt concert folk country Montpellier artiste live"
                     width={192}
                     height={192}
                     className="object-cover w-full h-full"
@@ -311,7 +316,7 @@ export default function Home() {
                 <div className="w-40 h-40 md:w-48 md:h-48 border-2 border-poster-dark rounded overflow-hidden bg-poster-cream float-right ml-6 mb-4 shape-outside-[circle(50%)]">
                   <Image
                     src="/oud1.png"
-                    alt="Desert Performance"
+                    alt="Musicien oud Montpellier musique orientale méditerranéenne concert"
                     width={192}
                     height={192}
                     className="object-cover w-full h-full"
