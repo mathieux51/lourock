@@ -1,0 +1,4 @@
+# Google Search Console monitoring
+gsc-monitoring/credentials.json
+gsc-monitoring/token.pickle
+gsc-monitoring/results/
