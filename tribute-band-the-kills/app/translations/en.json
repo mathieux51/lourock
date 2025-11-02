@@ -1,0 +1,80 @@
+{
+  "nav": {
+    "title": "TRIBUTE BAND THE KILLS",
+    "about": "ABOUT",
+    "video": "VIDEO",
+    "epk": "EPK",
+    "shows": "SHOWS",
+    "backToLourock": "← LOUROCK.COM"
+  },
+  "hero": {
+    "title1": "TRIBUTE",
+    "title2": "BAND",
+    "title3": "THE KILLS",
+    "subtitle": "Raw garage tribute capturing the minimalist sound and explosive energy of Alison Mosshart and Jamie Hince",
+    "discoverBtn": "Discover",
+    "bookBtn": "Book Us"
+  },
+  "about": {
+    "title": "ABOUT THE TRIBUTE",
+    "subtitle": "PROFESSIONAL TRIBUTE BASED IN MONTPELLIER",
+    "description1": "Professional Tribute Band The Kills based in Montpellier, Hérault. Available for concerts and events throughout Occitanie and beyond: Montpellier, Nîmes, Toulouse, festivals and clubs. We don't simply reproduce The Kills' songs - we resurrect their primal energy. Each performance is a sonic assault of minimalist garage rock where two guitars become an army and silence is as powerful as sound.",
+    "description2": "From the feedback-drenched chaos of their early work to the sophisticated darkness of their later albums, we deliver an authentic experience that goes beyond mere imitation. This is about channeling the spirit of garage rebellion, bringing that same confrontational intimacy that made The Kills one of the most influential acts of the 21st century.",
+    "highlightsTitle": "PERFORMANCE HIGHLIGHTS",
+    "highlight1": "Authentic recreation of The Kills' minimalist setup",
+    "highlight2": "Full repertoire spanning all major albums",
+    "highlight3": "Professional grade equipment and sound",
+    "highlight4": "High-energy performances across Occitanie",
+    "highlight5": "Available for festivals, clubs, and private events"
+  },
+  "video": {
+    "title": "LIVE PERFORMANCE",
+    "caption": "Watch us perform \"Whirling Eyes\" live at The Black Sheep"
+  },
+  "epk": {
+    "title": "ELECTRONIC PRESS KIT",
+    "tabs": {
+      "biography": "biography",
+      "setlist": "setlist",
+      "technical": "technical",
+      "photos": "photos"
+    },
+    "biography": {
+      "title": "BAND BIOGRAPHY",
+      "paragraph1": "Our story began at an open mic night in Montpellier, where fate brought together three musicians with a shared passion. When Mathieu heard the raw power of Lucie and Francis performing, he knew he'd found something special. That night sparked the formation of Tribute Band The Kills.",
+      "paragraph2": "United by our love for The Kills' minimalist garage sound and a mutual appreciation for sunglasses on stage, we channel the explosive energy and stripped-down aesthetic that made the original duo legendary. From Montpellier to venues across Occitanie, we bring that same raw, unfiltered intensity to every performance.",
+      "paragraph3": "Drawing inspiration from The Kills' entire discography - from the raw energy of \"Keep On Your Mean Side\" to the refined aggression of \"Blood Pressures\" - our performances capture both the musical precision and explosive stage presence that made Alison Mosshart and Jamie Hince iconic. We meticulously recreate the stripped-down aesthetic that became The Kills' signature, delivering authentic recreations of their minimalist setup.",
+      "paragraph4": "Available for festivals, club shows, and private events across Occitanie and beyond, Tribute Band The Kills delivers professional, high-energy performances with professional grade equipment and sound. We bring the garage revival to both intimate clubs and festival stages, celebrating one of garage music's most influential acts."
+    },
+    "setlist": {
+      "title": "PERFORMANCE SETLIST",
+      "note": "* Setlist can be customized for specific venues and event requirements"
+    },
+    "technical": {
+      "title": "TECHNICAL REQUIREMENTS",
+      "soundTitle": "SOUND REQUIREMENTS",
+      "setupTitle": "SETUP TIME",
+      "setupTime1": "60 minutes soundcheck + setup",
+      "setupTime2": "30 minutes breakdown",
+      "performanceTitle": "PERFORMANCE",
+      "performanceTime1": "75-minute main set",
+      "performanceTime2": "15-minute encore (optional)"
+    },
+    "photos": {
+      "title": "PRESS PHOTOS",
+      "note": "High-resolution press photos available for download. Contact us for media kit access."
+    }
+  },
+  "shows": {
+    "title": "UPCOMING SHOWS",
+    "comingSoonTitle": "COMING SOON",
+    "comingSoonText": "New tour dates will be announced soon. Stay tuned for upcoming tribute performances.",
+    "contactBtn": "CONTACT FOR BOOKINGS"
+  },
+  "footer": {
+    "title": "TRIBUTE BAND THE KILLS",
+    "email": "contact@lourock.com",
+    "description": "Professional tribute to The Kills • Occitanie, France | ",
+    "poweredBy": "Powered by LouRock"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "nav": {
+    "title": "TRIBUTE BAND THE KILLS",
+    "about": "À PROPOS",
+    "video": "VIDÉO",
+    "epk": "EPK",
+    "shows": "CONCERTS",
+    "backToLourock": "← LOUROCK.COM"
+  },
+  "hero": {
+    "title1": "TRIBUTE",
+    "title2": "BAND",
+    "title3": "THE KILLS",
+    "subtitle": "Tribute garage brut capturant le son minimaliste et l'énergie explosive d'Alison Mosshart et Jamie Hince",
+    "discoverBtn": "Découvrir",
+    "bookBtn": "Réserver"
+  },
+  "about": {
+    "title": "À PROPOS DU TRIBUTE",
+    "subtitle": "TRIBUTE PROFESSIONNEL BASÉ À MONTPELLIER",
+    "description1": "Tribute band professionnel The Kills basé à Montpellier, Hérault. Disponible pour concerts et événements dans toute l'Occitanie et au-delà : Montpellier, Nîmes, Toulouse, festivals et clubs. Nous ne reproduisons pas simplement les chansons des Kills - nous ressuscitons leur énergie primale. Chaque performance est un assaut sonique de garage rock minimaliste où deux guitares deviennent une armée et le silence est aussi puissant que le son.",
+    "description2": "Du chaos saturé de feedback de leurs premiers albums à l'obscurité sophistiquée de leurs œuvres récentes, nous offrons une expérience authentique qui va au-delà de la simple imitation. Il s'agit de canaliser l'esprit de rébellion garage, apportant cette même intimité confrontante qui a fait des Kills l'un des groupes les plus influents du 21ème siècle.",
+    "highlightsTitle": "POINTS FORTS DU SPECTACLE",
+    "highlight1": "Recréation authentique du setup minimaliste des Kills",
+    "highlight2": "Répertoire complet couvrant tous les albums majeurs",
+    "highlight3": "Équipement et son de qualité professionnelle",
+    "highlight4": "Performances haute énergie à travers l'Occitanie",
+    "highlight5": "Disponible pour festivals, clubs et événements privés"
+  },
+  "video": {
+    "title": "PERFORMANCE LIVE",
+    "caption": "Regardez notre performance de \"Whirling Eyes\" live au Black Sheep"
+  },
+  "epk": {
+    "title": "DOSSIER DE PRESSE ÉLECTRONIQUE",
+    "tabs": {
+      "biography": "biographie",
+      "setlist": "setlist",
+      "technical": "technique",
+      "photos": "photos"
+    },
+    "biography": {
+      "title": "BIOGRAPHIE DU GROUPE",
+      "paragraph1": "Notre histoire a commencé lors d'une scène ouverte à Montpellier, où le destin a réuni trois musiciens partageant une passion commune. Quand Mathieu a entendu la puissance brute de Lucie et Francis en performance, il a su qu'il avait trouvé quelque chose de spécial. Cette soirée a donné naissance à Tribute Band The Kills.",
+      "paragraph2": "Unis par notre amour du son garage minimaliste des Kills et une appréciation mutuelle pour les lunettes de soleil sur scène, nous canalisons l'énergie explosive et l'esthétique dépouillée qui ont rendu le duo original légendaire. De Montpellier aux salles de toute l'Occitanie, nous apportons cette même intensité brute et sans filtre à chaque performance.",
+      "paragraph3": "Puisant notre inspiration dans toute la discographie des Kills - de l'énergie brute de \"Keep On Your Mean Side\" à l'agressivité raffinée de \"Blood Pressures\" - nos performances capturent à la fois la précision musicale et la présence scénique explosive qui ont rendu Alison Mosshart et Jamie Hince iconiques. Nous recréons méticuleusement l'esthétique dépouillée devenue la signature des Kills, offrant des recréations authentiques de leur setup minimaliste.",
+      "paragraph4": "Disponible pour festivals, concerts en club et événements privés à travers l'Occitanie et au-delà, Tribute Band The Kills offre des performances professionnelles haute énergie avec équipement et son de qualité professionnelle. Nous apportons le renouveau garage aussi bien dans les clubs intimistes que sur les scènes de festivals, célébrant l'un des groupes les plus influents de la musique garage."
+    },
+    "setlist": {
+      "title": "SETLIST DU SPECTACLE",
+      "note": "* La setlist peut être personnalisée selon les besoins spécifiques de la salle et de l'événement"
+    },
+    "technical": {
+      "title": "EXIGENCES TECHNIQUES",
+      "soundTitle": "EXIGENCES SONORES",
+      "setupTitle": "TEMPS D'INSTALLATION",
+      "setupTime1": "60 minutes balance + installation",
+      "setupTime2": "30 minutes démontage",
+      "performanceTitle": "SPECTACLE",
+      "performanceTime1": "Set principal de 75 minutes",
+      "performanceTime2": "Rappel de 15 minutes (optionnel)"
+    },
+    "photos": {
+      "title": "PHOTOS DE PRESSE",
+      "note": "Photos de presse haute résolution disponibles au téléchargement. Contactez-nous pour accéder au kit média."
+    }
+  },
+  "shows": {
+    "title": "PROCHAINS CONCERTS",
+    "comingSoonTitle": "BIENTÔT DISPONIBLE",
+    "comingSoonText": "Les nouvelles dates de tournée seront bientôt annoncées. Restez à l'écoute pour nos prochaines performances tribute.",
+    "contactBtn": "CONTACT POUR RÉSERVATIONS"
+  },
+  "footer": {
+    "title": "TRIBUTE BAND THE KILLS",
+    "email": "contact@lourock.com",
+    "description": "Tribute professionnel de The Kills • Occitanie, France | ",
+    "poweredBy": "Propulsé par LouRock"
+  }
+}

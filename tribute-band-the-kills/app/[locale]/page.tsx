@@ -1,8 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslation } from '../hooks/useTranslation';
+import { LanguageSwitcher } from '../components/LanguageSwitcher';
 
 export default function Home() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('biography');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -57,20 +60,21 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div className="kills-heading text-xl">
-              TRIBUTE BAND THE KILLS
+              {t('nav.title')}
             </div>
             
             {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-6">
-              <a href="#about" className="hover:text-kills-red transition-colors">ABOUT</a>
-              <a href="#video" className="hover:text-kills-red transition-colors">VIDEO</a>
-              <a href="#epk" className="hover:text-kills-red transition-colors">EPK</a>
-              <a href="#shows" className="hover:text-kills-red transition-colors">SHOWS</a>
+            <div className="hidden md:flex space-x-6 items-center">
+              <a href="#about" className="hover:text-kills-red transition-colors">{t('nav.about')}</a>
+              <a href="#video" className="hover:text-kills-red transition-colors">{t('nav.video')}</a>
+              <a href="#epk" className="hover:text-kills-red transition-colors">{t('nav.epk')}</a>
+              <a href="#shows" className="hover:text-kills-red transition-colors">{t('nav.shows')}</a>
+              <LanguageSwitcher />
               <a 
                 href="https://lourock.com" 
                 className="text-kills-red hover:text-kills-pink transition-colors"
               >
-                ← LOUROCK.COM
+                {t('nav.backToLourock')}
               </a>
             </div>
 
@@ -106,29 +110,32 @@ export default function Home() {
                 onClick={() => setIsMenuOpen(false)}
                 className="block py-2 hover:text-kills-red transition-colors"
               >
-                ABOUT
+                {t('nav.about')}
               </a>
               <a 
                 href="#video" 
                 onClick={() => setIsMenuOpen(false)}
                 className="block py-2 hover:text-kills-red transition-colors"
               >
-                VIDEO
+                {t('nav.video')}
               </a>
               <a 
                 href="#epk" 
                 onClick={() => setIsMenuOpen(false)}
                 className="block py-2 hover:text-kills-red transition-colors"
               >
-                EPK
+                {t('nav.epk')}
               </a>
               <a 
                 href="#shows" 
                 onClick={() => setIsMenuOpen(false)}
                 className="block py-2 hover:text-kills-red transition-colors"
               >
-                SHOWS
+                {t('nav.shows')}
               </a>
+              <div className="py-2">
+                <LanguageSwitcher />
+              </div>
             </div>
           )}
         </div>
@@ -147,25 +154,25 @@ export default function Home() {
         <div className="absolute inset-0 bg-kills-black/40"></div>
         <div className="relative text-center z-10">
           <h1 className="kills-heading text-4xl sm:text-6xl md:text-8xl lg:text-9xl mb-8 px-4">
-            <span className="block text-kills-white">TRIBUTE</span>
-            <span className="block text-kills-red">BAND</span>
-            <span className="block text-kills-white">THE KILLS</span>
+            <span className="block text-kills-white">{t('hero.title1')}</span>
+            <span className="block text-kills-red">{t('hero.title2')}</span>
+            <span className="block text-kills-white">{t('hero.title3')}</span>
           </h1>
           <p className="kills-body text-lg sm:text-xl md:text-2xl text-kills-light-gray max-w-2xl mx-auto mb-12 px-4">
-            Raw garage tribute capturing the minimalist sound and explosive energy of Alison Mosshart and Jamie Hince
+            {t('hero.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 max-w-md sm:max-w-none mx-auto">
             <a 
               href="#about" 
               className="kills-mono uppercase bg-kills-red hover:bg-kills-dark-red text-kills-white px-8 py-4 transition-colors border-2 border-kills-red hover:border-kills-dark-red"
             >
-              Discover
+              {t('hero.discoverBtn')}
             </a>
             <a 
               href="#shows" 
               className="kills-mono uppercase border-2 border-kills-white hover:border-kills-red hover:text-kills-red text-kills-white px-8 py-4 transition-colors"
             >
-              Book Us
+              {t('hero.bookBtn')}
             </a>
           </div>
         </div>
@@ -175,30 +182,30 @@ export default function Home() {
       <section id="about" className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="kills-heading text-4xl md:text-6xl mb-16 text-center">
-            ABOUT THE TRIBUTE
+            {t('about.title')}
           </h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="kills-heading text-2xl mb-6 text-kills-red">
-                TRIBUTE PROFESSIONNEL BASÉ À MONTPELLIER
+                {t('about.subtitle')}
               </h3>
               <p className="kills-body text-lg mb-6 text-kills-light-gray leading-relaxed">
-                Tribute band professionnel The Kills basé à Montpellier, Hérault. Disponible pour concerts et événements dans toute l&apos;Occitanie et au-delà : Montpellier, Nîmes, Toulouse, festivals et clubs. Nous ne reproduisons pas simplement les chansons des Kills - nous ressuscitons leur énergie primale. Chaque performance est un assaut sonique de garage rock minimaliste où deux guitares deviennent une armée et le silence est aussi puissant que le son.
+                {t('about.description1')}
               </p>
               <p className="kills-body text-lg mb-6 text-kills-light-gray leading-relaxed">
-                From the feedback-drenched chaos of their early work to the sophisticated darkness of their later albums, we deliver an authentic experience that goes beyond mere imitation. This is about channeling the spirit of garage rebellion, bringing that same confrontational intimacy that made The Kills one of the most influential acts of the 21st century.
+                {t('about.description2')}
               </p>
             </div>
             <div className="bg-kills-charcoal p-8 border-2 border-kills-dark-gray">
               <h4 className="kills-heading text-xl mb-4 text-kills-red">
-                PERFORMANCE HIGHLIGHTS
+                {t('about.highlightsTitle')}
               </h4>
               <ul className="kills-body space-y-3 text-kills-light-gray">
-                <li>• Authentic recreation of The Kills&apos; minimalist setup</li>
-                <li>• Full repertoire spanning all major albums</li>
-                <li>• Professional grade equipment and sound</li>
-                <li>• High-energy performances across Occitanie</li>
-                <li>• Available for festivals, clubs, and private events</li>
+                <li>• {t('about.highlight1')}</li>
+                <li>• {t('about.highlight2')}</li>
+                <li>• {t('about.highlight3')}</li>
+                <li>• {t('about.highlight4')}</li>
+                <li>• {t('about.highlight5')}</li>
               </ul>
             </div>
           </div>
@@ -218,7 +225,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-kills-black/40"></div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="kills-heading text-4xl md:text-6xl mb-16">
-            LIVE PERFORMANCE
+            {t('video.title')}
           </h2>
           <div className="relative aspect-video bg-kills-black border-2 border-kills-red mb-8">
             <iframe 
@@ -231,7 +238,7 @@ export default function Home() {
             />
           </div>
           <p className="kills-body text-lg text-kills-light-gray">
-            Watch us perform &quot;Whirling Eyes&quot; live at The Black Sheep
+            {t('video.caption')}
           </p>
         </div>
       </section>
@@ -240,7 +247,7 @@ export default function Home() {
       <section id="epk" className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="kills-heading text-4xl md:text-6xl mb-16 text-center">
-            ELECTRONIC PRESS KIT
+            {t('epk.title')}
           </h2>
           
           {/* EPK Navigation */}
@@ -255,7 +262,7 @@ export default function Home() {
                     : 'border-kills-white hover:border-kills-red hover:text-kills-red text-kills-white'
                 }`}
               >
-                {tab}
+                {t(`epk.tabs.${tab}`)}
               </button>
             ))}
           </div>
@@ -264,27 +271,19 @@ export default function Home() {
           <div className="bg-kills-charcoal p-4 sm:p-8 border-2 border-kills-dark-gray">
             {activeTab === 'biography' && (
               <div>
-                <h3 className="kills-heading text-2xl mb-6 text-kills-red">BAND BIOGRAPHY</h3>
+                <h3 className="kills-heading text-2xl mb-6 text-kills-red">{t('epk.biography.title')}</h3>
                 <div className="kills-body text-kills-light-gray space-y-4 leading-relaxed">
-                  <p>
-                    Our story began at an open mic night in Montpellier, where fate brought together three musicians with a shared passion. When Mathieu heard the raw power of Lucie and Francis performing, he knew he&apos;d found something special. That night sparked the formation of Tribute Band The Kills.
-                  </p>
-                  <p>
-                    United by our love for The Kills&apos; minimalist garage sound and a mutual appreciation for sunglasses on stage, we channel the explosive energy and stripped-down aesthetic that made the original duo legendary. From Montpellier to venues across Occitanie, we bring that same raw, unfiltered intensity to every performance.
-                  </p>
-                  <p>
-                    Drawing inspiration from The Kills&apos; entire discography - from the raw energy of &quot;Keep On Your Mean Side&quot; to the refined aggression of &quot;Blood Pressures&quot; - our performances capture both the musical precision and explosive stage presence that made Alison Mosshart and Jamie Hince iconic. We meticulously recreate the stripped-down aesthetic that became The Kills&apos; signature, delivering authentic recreations of their minimalist setup.
-                  </p>
-                  <p>
-                    Available for festivals, club shows, and private events across Occitanie and beyond, Tribute Band The Kills delivers professional, high-energy performances with professional grade equipment and sound. We bring the garage revival to both intimate clubs and festival stages, celebrating one of garage music&apos;s most influential acts.
-                  </p>
+                  <p>{t('epk.biography.paragraph1')}</p>
+                  <p>{t('epk.biography.paragraph2')}</p>
+                  <p>{t('epk.biography.paragraph3')}</p>
+                  <p>{t('epk.biography.paragraph4')}</p>
                 </div>
               </div>
             )}
 
             {activeTab === 'setlist' && (
               <div>
-                <h3 className="kills-heading text-2xl mb-6 text-kills-red">PERFORMANCE SETLIST</h3>
+                <h3 className="kills-heading text-2xl mb-6 text-kills-red">{t('epk.setlist.title')}</h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   {[0, 1].map((colIndex) => (
                     <div key={colIndex}>
@@ -302,17 +301,17 @@ export default function Home() {
                   ))}
                 </div>
                 <p className="kills-body text-sm text-kills-gray mt-8">
-                  * Setlist can be customized for specific venues and event requirements
+                  {t('epk.setlist.note')}
                 </p>
               </div>
             )}
 
             {activeTab === 'technical' && (
               <div>
-                <h3 className="kills-heading text-2xl mb-6 text-kills-red">TECHNICAL REQUIREMENTS</h3>
+                <h3 className="kills-heading text-2xl mb-6 text-kills-red">{t('epk.technical.title')}</h3>
                 <div className="space-y-6">
                   <div>
-                    <h4 className="kills-mono text-lg mb-4 text-kills-white">SOUND REQUIREMENTS</h4>
+                    <h4 className="kills-mono text-lg mb-4 text-kills-white">{t('epk.technical.soundTitle')}</h4>
                     <ul className="kills-body space-y-2 text-kills-light-gray">
                       {technicalRequirements.map((req, index) => (
                         <li key={index} className="flex items-start">
@@ -324,14 +323,14 @@ export default function Home() {
                   </div>
                   <div className="grid md:grid-cols-2 gap-8 pt-6 border-t border-kills-dark-gray">
                     <div>
-                      <h4 className="kills-mono text-lg mb-4 text-kills-white">SETUP TIME</h4>
-                      <p className="kills-body text-kills-light-gray">60 minutes soundcheck + setup</p>
-                      <p className="kills-body text-kills-light-gray">30 minutes breakdown</p>
+                      <h4 className="kills-mono text-lg mb-4 text-kills-white">{t('epk.technical.setupTitle')}</h4>
+                      <p className="kills-body text-kills-light-gray">{t('epk.technical.setupTime1')}</p>
+                      <p className="kills-body text-kills-light-gray">{t('epk.technical.setupTime2')}</p>
                     </div>
                     <div>
-                      <h4 className="kills-mono text-lg mb-4 text-kills-white">PERFORMANCE</h4>
-                      <p className="kills-body text-kills-light-gray">75-minute main set</p>
-                      <p className="kills-body text-kills-light-gray">15-minute encore (optional)</p>
+                      <h4 className="kills-mono text-lg mb-4 text-kills-white">{t('epk.technical.performanceTitle')}</h4>
+                      <p className="kills-body text-kills-light-gray">{t('epk.technical.performanceTime1')}</p>
+                      <p className="kills-body text-kills-light-gray">{t('epk.technical.performanceTime2')}</p>
                     </div>
                   </div>
                 </div>
@@ -340,9 +339,8 @@ export default function Home() {
 
             {activeTab === 'photos' && (
               <div>
-                <h3 className="kills-heading text-2xl mb-6 text-kills-red">PRESS PHOTOS</h3>
+                <h3 className="kills-heading text-2xl mb-6 text-kills-red">{t('epk.photos.title')}</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {/* Stage Photo */}
                   <div className="aspect-square bg-kills-dark-gray border-2 border-kills-gray overflow-hidden">
                     <img 
                       src="/stage.png" 
@@ -350,7 +348,6 @@ export default function Home() {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  {/* Placeholder Photos */}
                   {[2, 3, 4, 5, 6].map((num) => (
                     <div key={num} className="aspect-square bg-kills-dark-gray border-2 border-kills-gray flex items-center justify-center">
                       <span className="kills-mono text-kills-gray">PHOTO {num}</span>
@@ -358,7 +355,7 @@ export default function Home() {
                   ))}
                 </div>
                 <p className="kills-body text-sm text-kills-gray mt-6">
-                  High-resolution press photos available for download. Contact us for media kit access.
+                  {t('epk.photos.note')}
                 </p>
               </div>
             )}
@@ -379,18 +376,18 @@ export default function Home() {
         <div className="absolute inset-0 bg-kills-black/40"></div>
         <div className="max-w-4xl mx-auto relative z-10">
           <h2 className="kills-heading text-4xl md:text-6xl mb-16 text-center">
-            UPCOMING SHOWS
+            {t('shows.title')}
           </h2>
           <div className="bg-kills-black border-2 border-kills-dark-gray p-16 text-center">
-            <h3 className="kills-heading text-3xl text-kills-red mb-6">COMING SOON</h3>
+            <h3 className="kills-heading text-3xl text-kills-red mb-6">{t('shows.comingSoonTitle')}</h3>
             <p className="kills-body text-kills-light-gray text-lg mb-8">
-              New tour dates will be announced soon. Stay tuned for upcoming tribute performances.
+              {t('shows.comingSoonText')}
             </p>
             <a 
               href="mailto:contact@lourock.com" 
               className="kills-mono uppercase bg-kills-red hover:bg-kills-dark-red text-kills-white px-8 py-4 transition-colors border-2 border-kills-red hover:border-kills-dark-red inline-block"
             >
-              CONTACT FOR BOOKINGS
+              {t('shows.contactBtn')}
             </a>
           </div>
         </div>
@@ -400,18 +397,18 @@ export default function Home() {
       <footer className="py-12 px-4 border-t border-kills-dark-gray">
         <div className="max-w-4xl mx-auto text-center">
           <div className="kills-heading text-2xl mb-6">
-            TRIBUTE BAND THE KILLS
+            {t('footer.title')}
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center gap-6 mb-6">
             <a href="mailto:contact@lourock.com" className="kills-body hover:text-kills-red transition-colors">
-              contact@lourock.com
+              {t('footer.email')}
             </a>
           </div>
           <div className="kills-body text-kills-gray text-sm">
             <p>
-              Professional tribute to The Kills • Occitanie, France | 
+              {t('footer.description')}
               <a href="https://lourock.com" className="text-kills-red hover:text-kills-pink ml-1">
-                Powered by LouRock
+                {t('footer.poweredBy')}
               </a>
             </p>
           </div>
