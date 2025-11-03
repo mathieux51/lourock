@@ -1,43 +1,75 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import type { Viewport } from "next";
+import "../globals.css";
+import { TranslationProvider } from '../providers/TranslationProvider'
+import { LanguageSwitcher } from '../components/LanguageSwitcher'
+import frTranslations from '../translations/fr.json'
+import enTranslations from '../translations/en.json'
 
-export const metadata: Metadata = {
-  title: "Les Espanters | Duo World Music Montpellier - Oud, Guitare & Banjo | Concerts Hérault",
-  description: "Les Espanters, duo instrumental basé à Montpellier. Musique méditerranéenne et orientale pour concerts, festivals, mariages et événements privés dans l'Hérault et Occitanie. Oud, guitare électrique, banjo.",
-  keywords: "concert Montpellier, duo musical Hérault, groupe live Occitanie, musicien événement Montpellier, world music Montpellier, oud Montpellier, musique orientale Hérault, concert privé Montpellier, mariage musique live Hérault, festival Montpellier, groupe méditerranéen, musique instrumentale événement",
-  authors: [{ name: "Les Espanters" }],
-  viewport: "width=device-width, initial-scale=1",
-  robots: "index, follow",
-  icons: {
-    icon: [
-      {
-        url: '/favicon.png',
-        sizes: '32x32',
-        type: 'image/png',
+export async function generateStaticParams() {
+  return [{ locale: 'fr' }, { locale: 'en' }]
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const translations = locale === 'fr' ? frTranslations : enTranslations
+
+  return {
+    title: translations.meta.title,
+    description: translations.meta.description,
+    keywords: translations.meta.keywords,
+    authors: [{ name: "Les Espanters" }],
+    robots: "index, follow",
+    icons: {
+      icon: [
+        {
+          url: '/favicon.png',
+          sizes: '32x32',
+          type: 'image/png',
+        },
+        {
+          url: '/favicon.png',
+          sizes: '16x16',
+          type: 'image/png',
+        }
+      ],
+      shortcut: '/favicon.png',
+      apple: '/favicon.png',
+    },
+    openGraph: {
+      title: translations.meta.ogTitle,
+      description: translations.meta.ogDescription,
+      type: "website",
+      locale: locale === 'fr' ? 'fr_FR' : 'en_US',
+      url: `https://lesespanters.lourock.com/${locale}`,
+    },
+    alternates: {
+      canonical: `https://lesespanters.lourock.com/${locale}`,
+      languages: {
+        'fr': 'https://lesespanters.lourock.com/fr',
+        'en': 'https://lesespanters.lourock.com/en',
       },
-      {
-        url: '/favicon.png',
-        sizes: '16x16',
-        type: 'image/png',
-      }
-    ],
-    shortcut: '/favicon.png',
-    apple: '/favicon.png',
-  },
-  openGraph: {
-    title: "Les Espanters | Duo World Music Montpellier",
-    description: "Duo instrumental basé à Montpellier - Concerts, festivals et événements privés dans l'Hérault et Occitanie. Oud, guitare électrique, banjo. Musique méditerranéenne et orientale.",
-    type: "website",
-    locale: "fr_FR",
-    url: "https://lesespanters.lourock.com",
-  },
-};
+    },
+  }
+}
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -134,7 +166,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="fr">
+    <html lang={locale}>
       <head>
         <script
           type="application/ld+json"
@@ -142,7 +174,10 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        {children}
+        <TranslationProvider initialLocale={locale}>
+          <LanguageSwitcher />
+          {children}
+        </TranslationProvider>
       </body>
     </html>
   );

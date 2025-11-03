@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "title": "Les Espanters | World Music Duo Montpellier - Oud, Guitar & Banjo | Concerts Hérault",
+    "description": "Les Espanters, instrumental duo based in Montpellier. Mediterranean and Oriental music for concerts, festivals, weddings and private events in Hérault and Occitanie. Oud, electric guitar, banjo.",
+    "keywords": "concert Montpellier, musical duo Hérault, live band Occitanie, event musician Montpellier, world music Montpellier, oud Montpellier, oriental music Hérault, private concert Montpellier, wedding live music Hérault, festival Montpellier, Mediterranean band, instrumental music event",
+    "ogTitle": "Les Espanters | World Music Duo Montpellier",
+    "ogDescription": "Instrumental duo based in Montpellier - Concerts, festivals and private events in Hérault and Occitanie. Oud, electric guitar, banjo. Mediterranean and Oriental music."
+  },
+  "hero": {
+    "bandName": "LES ESPANTERS",
+    "tagline": "⚡ EXPLOSIVE MEDITERRANEAN MADNESS ⚡"
+  },
+  "music": {
+    "title": "OUR MUSIC",
+    "description": "Electric guitar fused with traditional oud, acoustic guitar married to banjo! A unique soundscape that travels from desert to mountains. Instrumental music composed in Montpellier - perfect as background music in restaurants or explosive on stage with rock sounds!",
+    "tags": "NOMADIC • ORIENTAL • DESERT • MOUNTAIN",
+    "imageAlt": "World music duo live Montpellier oud guitar banjo concert"
+  },
+  "booking": {
+    "title": "FOR WHOM?",
+    "description": "World music festival, private concert, bohemian wedding, corporate event, restaurant or private individual - our musical platform will seduce you! Discover our unique sound universe blending world, arabesque, western, folk and blues.",
+    "tags": "WORLD • ARABESQUE • FOLK • BLUES",
+    "imageAlt": "Private concert Montpellier wedding corporate event live band"
+  },
+  "story": {
+    "title": "BASED IN MONTPELLIER",
+    "locationText": "Professional musical duo based in Montpellier in Hérault. We perform for your events throughout Occitanie: Montpellier, Nîmes, Béziers, Sète, Toulouse, Perpignan and surroundings.",
+    "storyText": "Two musician neighbors who became friends, sharing games, beers and laughter! Music came naturally. Seeking a unique sound born from their opposite musical horizons, they explore rhythms, scales, silences and tensions. On stage, pleasure comes first! 💛"
+  },
+  "listen": {
+    "title": "🎧 LISTEN TO OUR MUSIC 🎧",
+    "link": "@lesespanters on Instagram"
+  },
+  "technical": {
+    "stage": {
+      "title": "STAGE SETUP",
+      "items": [
+        "🎸 2 DI boxes",
+        "🎤 2 microphones",
+        "🔊 2 monitors",
+        "📐 4m x 3m stage"
+      ],
+      "imageAlt": "Professional musical duo Montpellier live concert Hérault Occitanie"
+    },
+    "performance": {
+      "title": "PERFORMANCE",
+      "items": [
+        "⏱️ 45-90 minutes",
+        "🎵 Original compositions",
+        "🌟 Atmosphere guaranteed",
+        "🎭 Captivating show"
+      ]
+    }
+  },
+  "contact": {
+    "email": "CONTACT US!",
+    "epk": "DOWNLOAD EPK!"
+  },
+  "gallery": {
+    "alt": "Live concert Montpellier world folk blues music Hérault"
+  },
+  "footer": {
+    "copyright": "© 2025 LES ESPANTERS - UNLEASH THE MEDITERRANEAN MADNESS! 🎸⚡"
+  },
+  "floatingWords": {
+    "bang": "BANG!",
+    "wow": "WOW!"
+  }
+}

@@ -3,9 +3,10 @@
 import { motion } from "framer-motion";
 import { Music, Mail, Download, Zap, Heart } from "lucide-react";
 import Image from "next/image";
-
+import { useTranslation } from '../hooks/useTranslation'
 
 export default function Home() {
+  const { t } = useTranslation()
   return (
     <div className="min-h-screen p-4 md:p-8 relative overflow-hidden">
       {/* Animated background dots */}
@@ -143,14 +144,14 @@ export default function Home() {
                 repeat: Infinity,
               }}
             >
-              LES ESPANTERS
+              {t('hero.bandName')}
             </motion.h1>
             <div 
               id="tagline"
               className="comic-text text-2xl md:text-4xl -mt-2 mb-4" 
               style={{color: 'white', textShadow: '2px 2px 4px rgba(0,0,0,0.5)', paddingBottom: '1rem'}}
             >
-              ⚡ FOLIE MÉDITERRANÉENNE EXPLOSIVE ⚡
+              {t('hero.tagline')}
             </div>
           </div>
         </div>
@@ -204,7 +205,7 @@ export default function Home() {
           >
             <Image 
               src="/running.png" 
-              alt="Duo world music live Montpellier oud guitare banjo concert" 
+              alt={t('music.imageAlt')}
               width={500}
               height={300}
               className="w-full h-full object-cover"
@@ -221,12 +222,10 @@ export default function Home() {
           >
             <h2 className="comic-text text-4xl mb-3" 
                 style={{color: 'white', textShadow: '2px 2px 0px #CA7625, 4px 4px 0px #0D0E08'}}>
-              NOTRE MUSIQUE
+              {t('music.title')}
             </h2>
             <p className="text-lg leading-relaxed" style={{fontFamily: 'Comic Neue', color: 'white'}}>
-              Guitare électrique fusionnée avec l&apos;oud traditionnel, guitare acoustique mariée au banjo ! 
-              Un paysage sonore unique qui voyage du désert aux montagnes. Musique instrumentale composée à 
-              Montpellier - parfaite en fond sonore au restaurant ou explosive sur scène avec des sonorités rock !
+              {t('music.description')}
             </p>
             <motion.div 
               className="inline-block comic-text text-xl px-3 py-1 mt-3 transform -rotate-2" 
@@ -234,7 +233,8 @@ export default function Home() {
               animate={{ rotate: [-2, 2, -2] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              NOMADE • ORIENTAL • DÉSERT • MONTAGNE             </motion.div>
+              {t('music.tags')}
+            </motion.div>
           </motion.div>
         </div>
 
@@ -281,12 +281,10 @@ export default function Home() {
           >
             <h2 className="comic-text text-4xl mb-3" 
                 style={{color: 'white', textShadow: '2px 2px 0px #385C5F, 4px 4px 0px #0D0E08'}}>
-              POUR QUI ?
+              {t('booking.title')}
             </h2>
             <p className="text-lg leading-relaxed" style={{fontFamily: 'Comic Neue', color: 'white'}}>
-              Festival de musique du monde, concert privé, mariage bohème, événement d&apos;entreprise, 
-              restaurant ou particulier - notre plateforme musicale saura vous séduire ! Découvrez 
-              notre univers sonore unique mêlant world, arabesque, western, folk et blues.
+              {t('booking.description')}
             </p>
             <motion.div 
               className="inline-block comic-text text-xl px-3 py-1 mt-3 transform rotate-2" 
@@ -294,7 +292,7 @@ export default function Home() {
               animate={{ rotate: [2, -2, 2] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              WORLD • ARABESQUE • FOLK • BLUES
+              {t('booking.tags')}
             </motion.div>
           </motion.div>
           
@@ -308,7 +306,7 @@ export default function Home() {
           >
             <Image 
               src="/laugh.png" 
-              alt="Concert privé Montpellier mariage événement entreprise groupe live" 
+              alt={t('booking.imageAlt')}
               width={500}
               height={300}
               className="w-full h-full object-cover"
@@ -361,16 +359,13 @@ export default function Home() {
             <h3 className="comic-text text-3xl mb-4 flex items-center gap-3"
                 style={{color: 'white', textShadow: '2px 2px 0px #CA7625'}}>
               <Music className="w-8 h-8" />
-              BASÉ À MONTPELLIER
+              {t('story.title')}
             </h3>
             <p className="text-lg leading-relaxed mb-3" style={{fontFamily: 'Comic Neue', color: 'white'}}>
-              Duo musical professionnel installé à Montpellier dans l&apos;Hérault. Nous intervenons pour vos événements 
-              dans toute l&apos;Occitanie : Montpellier, Nîmes, Béziers, Sète, Toulouse, Perpignan et alentours.
+              {t('story.locationText')}
             </p>
             <p className="text-lg leading-relaxed" style={{fontFamily: 'Comic Neue', color: 'white'}}>
-              Deux musiciens voisins devenus amis, partageant jeux, bières et fous rires ! La musique est arrivée 
-              naturellement. Cherchant un son unique né de leurs horizons musicaux opposés, ils explorent rythmes, 
-              gammes, silences et tensions. Sur scène, c&apos;est le plaisir qui prime ! 💛
+              {t('story.storyText')}
             </p>
           </div>
         </motion.div>
@@ -386,7 +381,7 @@ export default function Home() {
           <div className="comic-panel h-full flex items-center justify-center p-4" style={{backgroundColor: '#795B1A', padding: '1rem'}}>
             <div className="text-center">
               <h3 className="comic-text text-3xl mb-3" style={{color: 'white'}}>
-                🎧 ÉCOUTEZ NOTRE MUSIQUE 🎧
+                {t('listen.title')}
               </h3>
               <motion.a
                 href="https://www.instagram.com/lesespanters/"
@@ -403,7 +398,7 @@ export default function Home() {
                 whileHover={{ scale: 1.05, rotate: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                @lesespanters sur Instagram
+                {t('listen.link')}
               </motion.a>
             </div>
           </div>
@@ -422,13 +417,13 @@ export default function Home() {
           >
             <Zap id="stage-icon" className="w-8 h-8 mb-2 text-white mx-auto fill-white" stroke="white" />
             <h3 id="stage-title" className="comic-text text-2xl mb-3 text-center" style={{color: 'white'}}>
-              INSTALLATION SCÈNE
+              {t('technical.stage.title')}
             </h3>
             <ul id="stage-list" className="space-y-1 text-left" style={{fontFamily: 'Comic Neue', color: 'white'}}>
-              <li>🎸 2 DI boxes</li>
-              <li>🎤 2 microphones</li>
-              <li>🔊 2 monitors</li>
-              <li>📐 4m x 3m stage</li>
+              <li>{t('technical.stage.items.0')}</li>
+              <li>{t('technical.stage.items.1')}</li>
+              <li>{t('technical.stage.items.2')}</li>
+              <li>{t('technical.stage.items.3')}</li>
             </ul>
           </motion.div>
 
@@ -443,7 +438,7 @@ export default function Home() {
             <Image 
               id="tech-img-element"
               src="/high-five.png" 
-              alt="Duo musical professionnel Montpellier concert live Hérault Occitanie" 
+              alt={t('technical.stage.imageAlt')}
               width={500}
               height={300}
               className="w-full h-full object-cover"
@@ -461,13 +456,13 @@ export default function Home() {
           >
             <Heart id="performance-icon" className="w-8 h-8 mb-2 text-white mx-auto" stroke="white" />
             <h3 id="performance-title" className="comic-text text-2xl mb-3 text-center" style={{color: 'white'}}>
-              SPECTACLE
+              {t('technical.performance.title')}
             </h3>
             <ul id="performance-list" className="space-y-1 text-left" style={{fontFamily: 'Comic Neue', color: 'white'}}>
-              <li>⏱️ 45-90 minutes</li>
-              <li>🎵 Compositions originales</li>
-              <li>🌟 Ambiance garantie</li>
-              <li>🎭 Spectacle captivant</li>
+              <li>{t('technical.performance.items.0')}</li>
+              <li>{t('technical.performance.items.1')}</li>
+              <li>{t('technical.performance.items.2')}</li>
+              <li>{t('technical.performance.items.3')}</li>
             </ul>
           </motion.div>
         </div>
@@ -490,7 +485,7 @@ export default function Home() {
             whileTap={{ scale: 0.95 }}
           >
             <Mail className="w-6 h-6" />
-            CONTACTEZ-NOUS !
+            {t('contact.email')}
           </motion.button>
           
           <motion.button 
@@ -503,7 +498,7 @@ export default function Home() {
             whileTap={{ scale: 0.95 }}
           >
             <Download className="w-6 h-6" />
-            TÉLÉCHARGER EPK !
+            {t('contact.epk')}
           </motion.button>
         </motion.div>
 
@@ -526,7 +521,7 @@ export default function Home() {
             >
               <Image 
                 src={item.src}
-                alt={`Concert live Montpellier musique world folk blues Hérault ${index + 1}`}
+                alt={`${t('gallery.alt')} ${index + 1}`}
                 width={300}
                 height={200}
                 className="w-full h-full object-cover"
@@ -549,7 +544,8 @@ export default function Home() {
                  boxShadow: '5px 5px 0px #3F2E10'
                }}>
             <p className="font-bold text-lg" style={{fontFamily: 'Comic Neue', color: 'white'}}>
-              © 2025 LES ESPANTERS - DÉCHAÎNEZ LA FOLIE MÉDITERRANÉENNE ! 🎸⚡            </p>
+              {t('footer.copyright')}
+            </p>
           </div>
         </motion.div>
       </footer>
@@ -557,10 +553,12 @@ export default function Home() {
       {/* Floating action words */}
       <div id="floating-bang" className="fixed top-20 right-10 comic-text text-4xl transform rotate-12 pointer-events-none hidden lg:block z-20" 
            style={{color: '#CA7625', textShadow: '3px 3px 0px #795B1A, 5px 5px 0px #0D0E08'}}>
-        BANG!       </div>
+        {t('floatingWords.bang')}
+      </div>
       <div id="floating-wow" className="fixed bottom-20 left-10 comic-text text-3xl transform -rotate-6 pointer-events-none hidden lg:block z-20" 
            style={{color: '#385C5F', textShadow: '3px 3px 0px #CA7625, 5px 5px 0px #0D0E08'}}>
-        WOW!       </div>
+        {t('floatingWords.wow')}
+      </div>
     </div>
   );
 }

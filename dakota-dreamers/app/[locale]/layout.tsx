@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { Viewport } from 'next'
 import { Merriweather, Oswald } from 'next/font/google'
 import { TranslationProvider } from '../providers/TranslationProvider'
 import '../globals.css'
@@ -22,6 +23,11 @@ export async function generateStaticParams() {
   ]
 }
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   
@@ -40,7 +46,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description: descriptions[locale] || descriptions.en,
     keywords: ["concert country Montpellier", "duo country Hérault", "groupe country Occitanie", "musique western Montpellier", "concert americana Hérault", "mariage country Montpellier", "événement privé country", "festival country Occitanie", "cowboy music France", "live country music Montpellier", "réserver groupe country Hérault", "Dakota Dreamers"],
     authors: [{ name: "Dakota Dreamers" }],
-    viewport: "width=device-width, initial-scale=1",
     robots: "index, follow",
     icons: {
       icon: "/favicon.png",

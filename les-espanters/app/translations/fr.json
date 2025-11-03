@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "title": "Les Espanters | Duo World Music Montpellier - Oud, Guitare & Banjo | Concerts Hérault",
+    "description": "Les Espanters, duo instrumental basé à Montpellier. Musique méditerranéenne et orientale pour concerts, festivals, mariages et événements privés dans l'Hérault et Occitanie. Oud, guitare électrique, banjo.",
+    "keywords": "concert Montpellier, duo musical Hérault, groupe live Occitanie, musicien événement Montpellier, world music Montpellier, oud Montpellier, musique orientale Hérault, concert privé Montpellier, mariage musique live Hérault, festival Montpellier, groupe méditerranéen, musique instrumentale événement",
+    "ogTitle": "Les Espanters | Duo World Music Montpellier",
+    "ogDescription": "Duo instrumental basé à Montpellier - Concerts, festivals et événements privés dans l'Hérault et Occitanie. Oud, guitare électrique, banjo. Musique méditerranéenne et orientale."
+  },
+  "hero": {
+    "bandName": "LES ESPANTERS",
+    "tagline": "⚡ FOLIE MÉDITERRANÉENNE EXPLOSIVE ⚡"
+  },
+  "music": {
+    "title": "NOTRE MUSIQUE",
+    "description": "Guitare électrique fusionnée avec l'oud traditionnel, guitare acoustique mariée au banjo ! Un paysage sonore unique qui voyage du désert aux montagnes. Musique instrumentale composée à Montpellier - parfaite en fond sonore au restaurant ou explosive sur scène avec des sonorités rock !",
+    "tags": "NOMADE • ORIENTAL • DÉSERT • MONTAGNE",
+    "imageAlt": "Duo world music live Montpellier oud guitare banjo concert"
+  },
+  "booking": {
+    "title": "POUR QUI ?",
+    "description": "Festival de musique du monde, concert privé, mariage bohème, événement d'entreprise, restaurant ou particulier - notre plateforme musicale saura vous séduire ! Découvrez notre univers sonore unique mêlant world, arabesque, western, folk et blues.",
+    "tags": "WORLD • ARABESQUE • FOLK • BLUES",
+    "imageAlt": "Concert privé Montpellier mariage événement entreprise groupe live"
+  },
+  "story": {
+    "title": "BASÉ À MONTPELLIER",
+    "locationText": "Duo musical professionnel installé à Montpellier dans l'Hérault. Nous intervenons pour vos événements dans toute l'Occitanie : Montpellier, Nîmes, Béziers, Sète, Toulouse, Perpignan et alentours.",
+    "storyText": "Deux musiciens voisins devenus amis, partageant jeux, bières et fous rires ! La musique est arrivée naturellement. Cherchant un son unique né de leurs horizons musicaux opposés, ils explorent rythmes, gammes, silences et tensions. Sur scène, c'est le plaisir qui prime ! 💛"
+  },
+  "listen": {
+    "title": "🎧 ÉCOUTEZ NOTRE MUSIQUE 🎧",
+    "link": "@lesespanters sur Instagram"
+  },
+  "technical": {
+    "stage": {
+      "title": "INSTALLATION SCÈNE",
+      "items": [
+        "🎸 2 DI boxes",
+        "🎤 2 microphones",
+        "🔊 2 monitors",
+        "📐 4m x 3m stage"
+      ],
+      "imageAlt": "Duo musical professionnel Montpellier concert live Hérault Occitanie"
+    },
+    "performance": {
+      "title": "SPECTACLE",
+      "items": [
+        "⏱️ 45-90 minutes",
+        "🎵 Compositions originales",
+        "🌟 Ambiance garantie",
+        "🎭 Spectacle captivant"
+      ]
+    }
+  },
+  "contact": {
+    "email": "CONTACTEZ-NOUS !",
+    "epk": "TÉLÉCHARGER EPK !"
+  },
+  "gallery": {
+    "alt": "Concert live Montpellier musique world folk blues Hérault"
+  },
+  "footer": {
+    "copyright": "© 2025 LES ESPANTERS - DÉCHAÎNEZ LA FOLIE MÉDITERRANÉENNE ! 🎸⚡"
+  },
+  "floatingWords": {
+    "bang": "BANG!",
+    "wow": "WOW!"
+  }
+}
