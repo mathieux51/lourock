@@ -117,6 +117,11 @@ for project in "${DEPLOY_PROJECTS[@]}"; do
     
     DEPLOYMENT_URL=$(vercel --prod --yes --token "$NOW_TOKEN" --scope mathieus-projects-19f8bd9f)
     echo -e "${GREEN}✅ ${project} deployed to production${NC}"
+    
+    # Ensure custom domain is added to the project and alias the deployment
+    echo -e "${BLUE}🔗 Assigning domain ${DOMAIN} to deployment...${NC}"
+    vercel alias set "$DEPLOYMENT_URL" "$DOMAIN" --token "$NOW_TOKEN" --scope mathieus-projects-19f8bd9f
+    echo -e "${GREEN}✅ Domain ${DOMAIN} assigned${NC}"
     echo -e "${BLUE}🌐 Production URL: https://${DOMAIN}${NC}"
     
     echo ""
