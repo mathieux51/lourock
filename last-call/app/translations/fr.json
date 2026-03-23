@@ -9,17 +9,17 @@
     "toggleMenu": "Basculer le menu"
   },
   "hero": {
-    "title": "DAKOTA",
-    "titleAccent": "DREAMERS",
+    "title": "LAST",
+    "titleAccent": "CALL",
     "subtitle": "L'Esprit de l'Ouest Américain dans le Sud de la France",
     "ctaEpk": "Dossier de Presse Électronique",
     "ctaTour": "Dates de Tournée"
   },
   "about": {
     "title": "Duo Country Basé à Montpellier",
-    "paragraph1": "Dakota Dreamers est né d'une amitié profonde et d'une passion partagée pour la musique country, la nature et la culture traditionnelle du Sud de la France. Duo country professionnel installé à Montpellier, dans l'Hérault, nous avons découvert notre alchimie musicale à travers notre appréciation mutuelle pour la beauté époustouflante de l'Occitanie.",
+    "paragraph1": "Last Call est né d'une amitié profonde et d'une passion partagée pour la musique country, la nature et la culture traditionnelle du Sud de la France. Duo country professionnel installé à Montpellier, dans l'Hérault, nous avons découvert notre alchimie musicale à travers notre appréciation mutuelle pour la beauté époustouflante de l'Occitanie.",
     "paragraph2": "Né de cette connexion à la fois à la terre et l'un à l'autre, notre duo canalise la narration authentique de l'Ouest à travers le prisme de notre héritage méditerranéen. Disponibles pour vos événements dans toute l'Occitanie : Montpellier, Nîmes, Toulouse, Béziers, Perpignan et alentours. Notre musique parle à ceux qui trouvent l'inspiration dans les grands espaces et les mélodies intemporelles.",
-    "paragraph3": "Des salles intimes de Montpellier aux festivals d'Occitanie, Dakota Dreamers offre des concerts country qui transportent le public vers des autoroutes poussiéreuses et des horizons infinis, prouvant que l'Ouest américain vit dans le cœur de tous ceux qui osent rêver.",
+    "paragraph3": "Des salles intimes de Montpellier aux festivals d'Occitanie, Last Call offre des concerts country qui transportent le public vers des autoroutes poussiéreuses et des horizons infinis, prouvant que l'Ouest américain vit dans le cœur de tous ceux qui osent rêver.",
     "bandMembers": "Membres du Groupe",
     "robRole": "Chant principal, guitare acoustique et piano",
     "mathieuRole": "Chœurs, guitare lead, bouzouki et banjo"
@@ -28,7 +28,7 @@
     "title": "Dossier de Presse Électronique",
     "biography": {
       "title": "Biographie",
-      "paragraph1": "Dakota Dreamers représente la convergence de deux mondes musicaux : la tradition authentique de narration de la musique country américaine et l'héritage artistique passionné du Sud de la France.",
+      "paragraph1": "Last Call représente la convergence de deux mondes musicaux : la tradition authentique de narration de la musique country américaine et l'héritage artistique passionné du Sud de la France.",
       "paragraph2": "Depuis leur formation à Montpellier, le duo a créé un son unique qui honore l'esprit cowboy tout en embrassant leurs racines méditerranéennes. Leurs performances capturent l'essence des vastes paysages et des émotions intimes.",
       "downloadBio": "Télécharger la Bio Complète"
     },
@@ -73,22 +73,22 @@
     "comingSoon": "Bientôt Disponible",
     "comingSoonText": "Les nouvelles dates de tournée seront annoncées bientôt. Restez à l'écoute pour les prochaines performances à travers le Sud de la France.",
     "contactBooking": "Contact pour Réservation",
-    "emailSubject": "Demande de Réservation pour Dakota Dreamers",
-    "emailBody": "Bonjour partenaires !\n\nJe pense que Dakota Dreamers serait parfait pour notre événement. Je serais très reconnaissant si vous pouviez partager quelques détails sur la disponibilité et les tarifs.\n\nDétails de notre événement :\n- Date : \n- Lieu : \n- Assistance attendue : \n\nJ'ai hâte d'avoir de vos nouvelles !\n\nBien cordialement,\n[Votre Nom]"
+    "emailSubject": "Demande de Réservation pour Last Call",
+    "emailBody": "Bonjour partenaires !\n\nJe pense que Last Call serait parfait pour notre événement. Je serais très reconnaissant si vous pouviez partager quelques détails sur la disponibilité et les tarifs.\n\nDétails de notre événement :\n- Date : \n- Lieu : \n- Assistance attendue : \n\nJ'ai hâte d'avoir de vos nouvelles !\n\nBien cordialement,\n[Votre Nom]"
   },
   "contact": {
     "title": "Contact",
     "getInTouch": "Contactez-nous",
     "description": "Pour les réservations, les demandes de presse et toutes autres questions, contactez-nous à :",
     "emailLink": "contact chez lourock point com",
-    "emailSubject": "Demande d'Information pour Dakota Dreamers",
-    "emailBody": "Bonjour partenaires !\n\nJe vous contacte à propos de Dakota Dreamers. Je serais très reconnaissant si vous pouviez m'aider avec quelques informations.\n\n[Votre message ici]\n\nBien à vous,\n[Votre Nom]",
+    "emailSubject": "Demande d'Information pour Last Call",
+    "emailBody": "Bonjour partenaires !\n\nJe vous contacte à propos de Last Call. Je serais très reconnaissant si vous pouviez m'aider avec quelques informations.\n\n[Votre message ici]\n\nBien à vous,\n[Votre Nom]",
     "basedIn": "Basé à Montpellier, Occitanie",
     "performing": "Se produisant à travers le Sud de la France et au-delà"
   },
   "footer": {
     "tagline": "Duo Country • Montpellier, France",
-    "copyright": "© 2025 Dakota Dreamers. Tous droits réservés.",
+    "copyright": "© 2025 Last Call. Tous droits réservés.",
     "poweredBy": "Propulsé par LouRock"
   }
 }

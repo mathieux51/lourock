@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://dakota-dreamers.lourock.com'
+  const baseUrl = 'https://last-call.lourock.com'
   const locales = ['fr', 'en']
 
   const urls = locales.map((locale, index) => ({

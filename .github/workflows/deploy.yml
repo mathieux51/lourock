@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       landing: ${{ steps.filter.outputs.landing }}
-      dakota-dreamers: ${{ steps.filter.outputs.dakota-dreamers }}
+      last-call: ${{ steps.filter.outputs.last-call }}
       tribute-band-the-kills: ${{ steps.filter.outputs.tribute-band-the-kills }}
       mathieu-schmidt: ${{ steps.filter.outputs.mathieu-schmidt }}
       les-espanters: ${{ steps.filter.outputs.les-espanters }}
@@ -26,8 +26,8 @@ jobs:
           filters: |
             landing:
               - 'landing/**'
-            dakota-dreamers:
-              - 'dakota-dreamers/**'
+            last-call:
+              - 'last-call/**'
             tribute-band-the-kills:
               - 'tribute-band-the-kills/**'
             mathieu-schmidt:
@@ -60,9 +60,9 @@ jobs:
           NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
         run: ./deploy.sh landing
 
-  deploy-dakota-dreamers:
+  deploy-last-call:
     needs: changes
-    if: needs.changes.outputs.dakota-dreamers == 'true' || needs.changes.outputs.deploy-script == 'true'
+    if: needs.changes.outputs.last-call == 'true' || needs.changes.outputs.deploy-script == 'true'
     runs-on: ubuntu-latest
     environment: production
     steps:
@@ -77,10 +77,10 @@ jobs:
       - name: Install Vercel CLI
         run: npm install -g vercel@latest
 
-      - name: Deploy Dakota Dreamers
+      - name: Deploy Last Call
         env:
           NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
-        run: ./deploy.sh dakota-dreamers
+        run: ./deploy.sh last-call
 
   deploy-tribute-band-the-kills:
     needs: changes

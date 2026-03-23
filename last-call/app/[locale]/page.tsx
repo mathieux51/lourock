@@ -65,7 +65,7 @@ export default function Home() {
       <nav className="fixed top-0 w-full bg-surface-dark/95 backdrop-blur-sm z-50 border-b border-primary/20">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <h1 className="font-heading text-2xl text-primary">Dakota Dreamers</h1>
+            <h1 className="font-heading text-2xl text-primary">Last Call</h1>
             
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
@@ -158,7 +158,7 @@ export default function Home() {
         <div className="absolute inset-0 flex items-center justify-center md:items-start">
           <img 
             src="/stage.png" 
-            alt="Scène concert country Dakota Dreamers Montpellier Hérault" 
+            alt="Scène concert country Last Call Montpellier Hérault" 
             className="w-full h-auto object-contain object-center"
           />
         </div>
@@ -405,7 +405,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <h3 className="font-heading text-2xl text-primary mb-2">Dakota Dreamers</h3>
+              <h3 className="font-heading text-2xl text-primary mb-2">Last Call</h3>
               <p className="text-ash">{t('footer.tagline')}</p>
             </div>
             

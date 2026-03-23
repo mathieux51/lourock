@@ -6,13 +6,13 @@
 - [x] Les Espanters: Change `lang="en"` to `lang="fr"` in layout.tsx
 - [x] Les Espanters: Add comprehensive French metadata (title, description, keywords)
 - [x] Tribute Band The Kills: Add French-first metadata & locale
-- [x] Dakota Dreamers: Enhanced with Montpellier-specific keywords
+- [x] Last Call: Enhanced with Montpellier-specific keywords
 - [x] All sites: Add viewport, robots meta tags where missing
-- Note: Les Espanters & Tribute Band set to FR default. Bilingual i18n system to be added later (like Dakota Dreamers pattern)
+- Note: Les Espanters & Tribute Band set to FR default. Bilingual i18n system to be added later (like Last Call pattern)
 
 ### 2. **Add Structured Data (JSON-LD) for Local Business + Music Group** 🎯 ✅ COMPLETE
 - [x] Les Espanters: LocalBusiness + MusicGroup schema
-- [x] Dakota Dreamers: LocalBusiness + MusicGroup schema  
+- [x] Last Call: LocalBusiness + MusicGroup schema  
 - [x] Tribute Band The Kills: LocalBusiness + MusicGroup schema
 - [x] All sites: Add geo-coordinates for Montpellier (43.6108, 3.8767)
 - [x] All sites: Add areaServed with Montpellier, Nîmes, Toulouse, Béziers, Sète
@@ -20,7 +20,7 @@
 
 ### 3. **Optimize Meta Titles & Descriptions for French Keywords** 📝
 - [ ] Les Espanters: "Duo Musical Montpellier | Concerts & Événements Hérault"
-- [ ] Dakota Dreamers: "Duo Country Montpellier | Concerts Live Occitanie"
+- [ ] Last Call: "Duo Country Montpellier | Concerts Live Occitanie"
 - [ ] Tribute Band The Kills: "Tribute The Kills Montpellier | Concert Garage Rock Hérault"
 - [ ] Include geo-terms: Montpellier, Hérault, Occitanie
 
@@ -32,18 +32,18 @@
 
 ### 5. **Create French Keywords-Optimized Content** 🔑
 - [ ] Les Espanters: Add H1/H2 with "concert Montpellier", "événement musical"
-- [ ] Dakota Dreamers: Add French landing page variants with Montpellier focus
+- [ ] Last Call: Add French landing page variants with Montpellier focus
 - [ ] Tribute Band The Kills: Create full French version
 - [ ] All sites: Add FAQ section with booking questions
 
 ### 6. **Optimize Images with Location Alt Tags** 🖼️
 - [ ] Les Espanters: Update alt tags with "concert live Montpellier"
-- [ ] Dakota Dreamers: Add location context to image alts
+- [ ] Last Call: Add location context to image alts
 - [ ] Tribute Band The Kills: Add French + location alts
 
 ### 7. **Add Real Tour Dates with Montpellier Venues** 📅
 - [ ] Les Espanters: Add upcoming shows section
-- [ ] Dakota Dreamers: Replace placeholder dates with real/upcoming Montpellier venues
+- [ ] Last Call: Replace placeholder dates with real/upcoming Montpellier venues
 - [ ] Tribute Band The Kills: Add Montpellier venue dates
 - [ ] Use real venue names: Le Rockstore, L'Antirouille, Victoire 2, La Panacée
 
@@ -73,7 +73,7 @@
 - musique méditerranéenne live
 - animation musicale Montpellier
 
-### Dakota Dreamers
+### Last Call
 - groupe country Montpellier
 - concert country Sud France
 - duo country Occitanie

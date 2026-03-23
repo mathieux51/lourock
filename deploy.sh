@@ -15,10 +15,10 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Configuration
-PROJECTS=("landing" "dakota-dreamers" "tribute-band-the-kills" "mathieu-schmidt" "les-espanters")
+PROJECTS=("landing" "last-call" "tribute-band-the-kills" "mathieu-schmidt" "les-espanters")
 DOMAINS=(
     "lourock.com"
-    "dakota-dreamers.lourock.com" 
+    "last-call.lourock.com" 
     "the-kills.lourock.com"
     "mathieu-schmidt.lourock.com"
     "les-espanters.lourock.com"

@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "LouRock - Montpellier & Occitanie Music Scene",
   description: "Discover and book local bands from Montpellier and the Occitanie region. Professional musicians for concerts, events, and festivals across Southern France.",
-  keywords: "bands Montpellier, musicians Occitanie, concert booking, live music France, Dakota Dreamers, The Kills tribute, Mathieu Schmidt",
+  keywords: "bands Montpellier, musicians Occitanie, concert booking, live music France, Last Call, The Kills tribute, Mathieu Schmidt",
   icons: {
     icon: [
       { url: "/icon.png", sizes: "any", type: "image/png" },

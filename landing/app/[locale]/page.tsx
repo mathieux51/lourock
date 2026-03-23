@@ -110,13 +110,13 @@ export default function Home() {
             </h3>
             
             <div id="bands-grid" className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-              <Link href="https://dakota-dreamers.lourock.com" className="group">
-                <div id="band-dakota" className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-slate-700 hover:border-purple-500 transition-all duration-300 transform hover:scale-105">
-                  <div className="h-48 bg-cover bg-center rounded-lg mb-6" style={{backgroundImage: 'url("https://dakota-dreamers.lourock.com/stage.png")'}}></div>
-                  <h4 className="text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors">{t('bands.dakota.name')}</h4>
-                  <p className="text-slate-400 mb-4">{t('bands.dakota.genre')}</p>
+              <Link href="https://last-call.lourock.com" className="group">
+                <div id="band-lastcall" className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-slate-700 hover:border-purple-500 transition-all duration-300 transform hover:scale-105">
+                  <div className="h-48 bg-cover bg-center rounded-lg mb-6" style={{backgroundImage: 'url("https://last-call.lourock.com/stage.png")'}}></div>
+                  <h4 className="text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors">{t('bands.lastcall.name')}</h4>
+                  <p className="text-slate-400 mb-4">{t('bands.lastcall.genre')}</p>
                   <p className="text-sm text-slate-500">
-                    {t('bands.dakota.description')}
+                    {t('bands.lastcall.description')}
                   </p>
                 </div>
               </Link>
@@ -195,7 +195,7 @@ export default function Home() {
                   <span className="font-semibold text-slate-200">{t('contact.availableBands')}</span>
                 </p>
                 <ul id="bands-list" className="text-slate-300 space-y-2">
-                  <li>• {t('bands.dakota.name')} - {t('bands.dakota.genre')}</li>
+                  <li>• {t('bands.lastcall.name')} - {t('bands.lastcall.genre')}</li>
                   <li>• {t('bands.kills.name')} - {t('bands.kills.genre')}</li>
                   <li>• {t('bands.mathieu.name')} - {t('bands.mathieu.genre')}</li>
                   <li>• {t('bands.espanters.name')} - {t('bands.espanters.genre')}</li>

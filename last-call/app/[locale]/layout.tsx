@@ -32,20 +32,20 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params
   
   const titles: Record<string, string> = {
-    en: 'Dakota Dreamers | Country Duo Montpellier - Western & Americana Concerts Hérault',
-    fr: 'Dakota Dreamers | Duo Country Montpellier - Concerts Western & Americana Hérault'
+    en: 'Last Call | Country Duo Montpellier - Western & Americana Concerts Hérault',
+    fr: 'Last Call | Duo Country Montpellier - Concerts Western & Americana Hérault'
   }
 
   const descriptions: Record<string, string> = {
-    en: 'Dakota Dreamers, authentic country duo based in Montpellier. American West spirit meets Southern France. Book country concerts for festivals, private events and weddings in Hérault and Occitanie.',
-    fr: 'Dakota Dreamers, duo country authentique basé à Montpellier. L\'esprit de l\'Ouest américain dans le Sud de la France. Réservez vos concerts country pour festivals, événements privés et mariages dans l\'Hérault et Occitanie.'
+    en: 'Last Call, authentic country duo based in Montpellier. American West spirit meets Southern France. Book country concerts for festivals, private events and weddings in Hérault and Occitanie.',
+    fr: 'Last Call, duo country authentique basé à Montpellier. L\'esprit de l\'Ouest américain dans le Sud de la France. Réservez vos concerts country pour festivals, événements privés et mariages dans l\'Hérault et Occitanie.'
   }
 
   return {
     title: titles[locale] || titles.en,
     description: descriptions[locale] || descriptions.en,
-    keywords: ["concert country Montpellier", "duo country Hérault", "groupe country Occitanie", "musique western Montpellier", "concert americana Hérault", "mariage country Montpellier", "événement privé country", "festival country Occitanie", "cowboy music France", "live country music Montpellier", "réserver groupe country Hérault", "Dakota Dreamers"],
-    authors: [{ name: "Dakota Dreamers" }],
+    keywords: ["concert country Montpellier", "duo country Hérault", "groupe country Occitanie", "musique western Montpellier", "concert americana Hérault", "mariage country Montpellier", "événement privé country", "festival country Occitanie", "cowboy music France", "live country music Montpellier", "réserver groupe country Hérault", "Last Call"],
+    authors: [{ name: "Last Call" }],
     robots: "index, follow",
     icons: {
       icon: "/favicon.png",
@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: descriptions[locale] || descriptions.en,
       type: "website",
       locale: locale === 'fr' ? 'fr_FR' : 'en_US',
-      url: "https://dakotadreamers.lourock.com",
+      url: "https://last-call.lourock.com",
     },
     alternates: {
       languages: {
@@ -80,8 +80,8 @@ export default async function LocaleLayout({
     "@graph": [
       {
         "@type": "MusicGroup",
-        "@id": "https://dakotadreamers.lourock.com/#musicgroup",
-        "name": "Dakota Dreamers",
+        "@id": "https://last-call.lourock.com/#musicgroup",
+        "name": "Last Call",
         "description": locale === 'fr' 
           ? "Duo country de Montpellier apportant l'esprit de l'Ouest américain en Occitanie"
           : "Country duo from Montpellier bringing American West spirit to Southern France",
@@ -119,14 +119,14 @@ export default async function LocaleLayout({
             "name": "Toulouse"
           }
         ],
-        "url": "https://dakotadreamers.lourock.com",
+        "url": "https://last-call.lourock.com",
         "email": "contact@lourock.com"
       },
       {
         "@type": "LocalBusiness",
-        "@id": "https://dakotadreamers.lourock.com/#localbusiness",
-        "name": "Dakota Dreamers",
-        "image": "https://dakotadreamers.lourock.com/favicon.png",
+        "@id": "https://last-call.lourock.com/#localbusiness",
+        "name": "Last Call",
+        "image": "https://last-call.lourock.com/favicon.png",
         "email": "contact@lourock.com",
         "address": {
           "@type": "PostalAddress",

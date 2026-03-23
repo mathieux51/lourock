@@ -4,7 +4,7 @@
 
 This monorepo contains 4 Next.js applications:
 - **landing/** - Main website (lourock.com)
-- **dakota-dreamers/** - Dakota Dreamers band site (dakota-dreamers.lourock.com)
+- **last-call/** - Last Call band site (last-call.lourock.com)
 - **tribute-band-the-kills/** - Tribute Band The Kills site (the-kills.lourock.com)  
 - **mathieu-schmidt/** - Mathieu Schmidt artist site (mathieu-schmidt.lourock.com)
 
@@ -22,7 +22,7 @@ A `deploy.sh` script is provided with intelligent selective deployment:
 ./deploy.sh --all
 
 # Deploy specific projects
-./deploy.sh dakota-dreamers landing
+./deploy.sh last-call landing
 ```
 
 **Smart Change Detection:**
@@ -73,12 +73,12 @@ Automatic selective deployments are configured via GitHub Actions:
    - Set production domain to: `lourock.com`
    - Add alias: `www.lourock.com`
 
-2. **Deploy Dakota Dreamers**
+2. **Deploy Last Call**
    ```bash
-   cd dakota-dreamers
+   cd last-call
    vercel --prod
    ```
-   - Set production domain to: `dakota-dreamers.lourock.com`
+   - Set production domain to: `last-call.lourock.com`
 
 3. **Deploy Tribute Band The Kills**
    ```bash
@@ -100,7 +100,7 @@ Automatic selective deployments are configured via GitHub Actions:
 1. Push the entire repository to GitHub
 2. In Vercel Dashboard, import the repository 4 times as separate projects:
    - Project 1: Set root directory to `landing/`
-   - Project 2: Set root directory to `dakota-dreamers/`
+   - Project 2: Set root directory to `last-call/`
    - Project 3: Set root directory to `tribute-band-the-kills/`
    - Project 4: Set root directory to `mathieu-schmidt/`
 3. Configure domains for each project as listed above
@@ -123,7 +123,7 @@ Value: cname.vercel-dns.com
 For subdomains:
 ```
 Type: CNAME
-Name: dakota-dreamers
+Name: last-call
 Value: cname.vercel-dns.com
 
 Type: CNAME
@@ -185,7 +185,7 @@ npm run dev
 
 Sites will run on:
 - landing: http://localhost:3000
-- dakota-dreamers: http://localhost:3001
+- last-call: http://localhost:3001
 - tribute-band-the-kills: http://localhost:3002
 - mathieu-schmidt: http://localhost:3003
 

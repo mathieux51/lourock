@@ -7,7 +7,7 @@ A multi-site platform showcasing local bands and artists from Montpellier and th
 ### [LouRock Main Site](https://lourock.com)
 The main landing page featuring all artists, booking information, and contact forms for event organizers and venues.
 
-### [Dakota Dreamers](https://dakota-dreamers.lourock.com)
+### [Last Call](https://last-call.lourock.com)
 Country rock duo bringing the spirit of the American West to Southern France. Authentic cowboy ballads meet modern rock energy.
 
 ### [Tribute Band The Kills](https://the-kills.lourock.com)
@@ -21,7 +21,7 @@ Solo artist channeling the lonesome prairie spirit. Introspective folk meets atm
 ```
 lourock/
 ├── landing/                    # Main website (lourock.com)
-├── dakota-dreamers/            # Dakota Dreamers band site
+├── last-call/            # Last Call band site
 ├── tribute-band-the-kills/     # The Kills tribute band site
 ├── mathieu-schmidt/            # Mathieu Schmidt artist site
 ├── vercel.json                 # Root Vercel configuration
@@ -63,7 +63,7 @@ cd lourock
 2. Install dependencies for each site:
 ```bash
 cd landing && npm install
-cd ../dakota-dreamers && npm install
+cd ../last-call && npm install
 cd ../tribute-band-the-kills && npm install
 cd ../mathieu-schmidt && npm install
 ```
@@ -85,7 +85,7 @@ See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions to Ver
 
 Each site has its own design system accessible at:
 - https://lourock.com/design-system
-- https://dakota-dreamers.lourock.com/design-system
+- https://last-call.lourock.com/design-system
 - https://the-kills.lourock.com/design-system
 - https://mathieu-schmidt.lourock.com/design-system
 
