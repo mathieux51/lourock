@@ -14,15 +14,17 @@ Montpellier, Nîmes, Béziers, Sète, Toulouse, Perpignan, and the rest of Occit
 
 - [Home (French)](https://lesespanters.lourock.com/fr)
 - [Home (English)](https://lesespanters.lourock.com/en)
-- [Media page (French)](https://lesespanters.lourock.com/fr/media): Audio tracks and videos
-- [Media page (English)](https://lesespanters.lourock.com/en/media)
+- [Listen section (French)](https://lesespanters.lourock.com/fr#listen): Audio tracks and videos
+- [Listen section (English)](https://lesespanters.lourock.com/en#listen)
 
 ## Original tracks
 
-- [Ballade Lyrique (MP3)](https://lesespanters.lourock.com/media/ballade-lyrique.mp3)
-- [Criquet Cowboy (MP3)](https://lesespanters.lourock.com/media/criquet-cowboy.mp3)
-- [La Jument Maquam (MP3)](https://lesespanters.lourock.com/media/la-jument-maquam.mp3)
-- [Sable Rouge (MP4 video)](https://lesespanters.lourock.com/media/sable-rouge.mp4)
+Direct links to individual tracks (deep links auto-scroll and start playback):
+
+- [Ballade Lyrique](https://lesespanters.lourock.com/fr#ballade-lyrique) ([MP3](https://lesespanters.lourock.com/media/ballade-lyrique.mp3))
+- [Criquet Cowboy](https://lesespanters.lourock.com/fr#criquet-cowboy) ([MP3](https://lesespanters.lourock.com/media/criquet-cowboy.mp3))
+- [La Jument Maquam](https://lesespanters.lourock.com/fr#la-jument-maquam) ([MP3](https://lesespanters.lourock.com/media/la-jument-maquam.mp3))
+- [Sable Rouge](https://lesespanters.lourock.com/fr#sable-rouge) ([MP4 video](https://lesespanters.lourock.com/media/sable-rouge.mp4))
 
 ## Booking and contact
 

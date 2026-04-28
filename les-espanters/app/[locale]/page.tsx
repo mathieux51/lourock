@@ -3,12 +3,41 @@
 import { motion } from "framer-motion";
 import { Music, Mail, Download, Zap, Heart } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import { useEffect, useRef } from "react";
 import { useTranslation } from '../hooks/useTranslation'
 import { AnchorLink } from '../components/AnchorLink'
+import { ShareButton } from '../components/ShareButton'
 
 export default function Home() {
-  const { t, locale } = useTranslation()
+  const { t } = useTranslation()
+  const audioRefs = useRef<Record<string, HTMLAudioElement | null>>({})
+  const videoRefs = useRef<Record<string, HTMLVideoElement | null>>({})
+
+  // On load (and on hashchange), scroll to and auto-play the targeted track
+  // when someone opens a deep link like /#ballade-lyrique.
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash.replace(/^#/, '')
+      if (!hash) return
+
+      const target = document.getElementById(hash)
+      if (!target) return
+
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+
+      const media = audioRefs.current[hash] ?? videoRefs.current[hash]
+      if (media) {
+        // Best-effort autoplay; browsers may block without prior user gesture.
+        media.play().catch(() => {
+          /* user can press play manually */
+        })
+      }
+    }
+
+    handleHash()
+    window.addEventListener('hashchange', handleHash)
+    return () => window.removeEventListener('hashchange', handleHash)
+  }, [])
   return (
     <div className="min-h-screen p-4 md:p-8 relative overflow-hidden">
       {/* Animated background dots */}
@@ -398,39 +427,96 @@ export default function Home() {
               ].map((track) => (
                 <div
                   key={track.file}
-                  className="comic-border p-3"
+                  id={track.file}
+                  className="comic-border p-3 scroll-mt-24"
                   style={{ backgroundColor: '#3F2E10' }}
                 >
                   <p className="comic-text text-xl mb-2 text-center" style={{ color: 'white' }}>
                     {t(track.key)}
                   </p>
                   <audio
+                    ref={(el) => {
+                      audioRefs.current[track.file] = el
+                    }}
                     controls
                     preload="none"
-                    className="w-full"
+                    className="w-full mb-2"
                     src={`/media/${track.file}.mp3`}
                   >
                     <a href={`/media/${track.file}.mp3`}>{t('media.download')}</a>
                   </audio>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    <a
+                      href={`/media/${track.file}.mp3`}
+                      download
+                      className="inline-flex items-center gap-1 comic-text text-sm px-3 py-1"
+                      style={{
+                        backgroundColor: 'white',
+                        color: '#3F2E10',
+                        border: '2px solid black',
+                        boxShadow: '2px 2px 0px #000',
+                        textDecoration: 'none',
+                      }}
+                    >
+                      <Download className="w-3.5 h-3.5" />
+                      {t('media.download')}
+                    </a>
+                    <ShareButton
+                      trackId={track.file}
+                      color="#3F2E10"
+                      shareLabel={t('media.share')}
+                      copiedLabel={t('media.linkCopied')}
+                    />
+                  </div>
                 </div>
               ))}
             </div>
 
             {/* Video */}
-            <div className="comic-border p-3 mb-4" style={{ backgroundColor: '#3F2E10' }}>
+            <div
+              id="sable-rouge"
+              className="comic-border p-3 mb-4 scroll-mt-24"
+              style={{ backgroundColor: '#3F2E10' }}
+            >
               <p className="comic-text text-xl mb-2 text-center" style={{ color: 'white' }}>
                 {t('media.tracks.sable-rouge')}
               </p>
               <video
+                ref={(el) => {
+                  videoRefs.current['sable-rouge'] = el
+                }}
                 controls
                 preload="metadata"
                 playsInline
-                className="w-full max-h-[420px] mx-auto"
+                className="w-full max-h-[420px] mx-auto mb-2"
                 src="/media/sable-rouge.mp4"
               />
+              <div className="flex flex-wrap gap-2 justify-center">
+                <a
+                  href="/media/sable-rouge.mp4"
+                  download
+                  className="inline-flex items-center gap-1 comic-text text-sm px-3 py-1"
+                  style={{
+                    backgroundColor: 'white',
+                    color: '#3F2E10',
+                    border: '2px solid black',
+                    boxShadow: '2px 2px 0px #000',
+                    textDecoration: 'none',
+                  }}
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  {t('media.download')}
+                </a>
+                <ShareButton
+                  trackId="sable-rouge"
+                  color="#3F2E10"
+                  shareLabel={t('media.share')}
+                  copiedLabel={t('media.linkCopied')}
+                />
+              </div>
             </div>
 
-            <div className="text-center flex flex-col md:flex-row gap-3 justify-center items-center">
+            <div className="text-center">
               <motion.a
                 href="https://www.instagram.com/lesespanters/"
                 target="_blank"
@@ -448,19 +534,6 @@ export default function Home() {
               >
                 {t('listen.link')}
               </motion.a>
-              <Link
-                href={`/${locale}/media`}
-                className="inline-block comic-text text-xl px-6 py-2"
-                style={{
-                  backgroundColor: '#CA7625',
-                  color: 'white',
-                  border: '2px solid black',
-                  boxShadow: '3px 3px 0px #000',
-                  textDecoration: 'none'
-                }}
-              >
-                {t('listen.fullPage')}
-              </Link>
             </div>
           </div>
         </motion.div>

@@ -29,20 +29,12 @@
   },
   "listen": {
     "title": "🎧 ÉCOUTEZ NOTRE MUSIQUE 🎧",
-    "link": "@lesespanters sur Instagram",
-    "fullPage": "🎬 OUVRIR LA PAGE MÉDIAS"
+    "link": "@lesespanters sur Instagram"
   },
   "media": {
-    "pageTitle": "Les Espanters Médias | Morceaux & Vidéos",
-    "pageDescription": "Écoutez les morceaux originaux et regardez les vidéos de Les Espanters, duo instrumental méditerranéen de Montpellier.",
-    "heading": "🎶 MORCEAUX & VIDÉOS 🎶",
-    "subheading": "Écoutez ou téléchargez nos morceaux originaux et vidéos",
-    "back": "← Retour à l'accueil",
     "download": "Télécharger",
     "share": "Partager",
     "linkCopied": "Lien copié !",
-    "audio": "Morceaux audio",
-    "video": "Vidéos",
     "tracks": {
       "ballade-lyrique": "Ballade Lyrique",
       "criquet-cowboy": "Criquet Cowboy",

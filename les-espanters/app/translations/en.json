@@ -29,20 +29,12 @@
   },
   "listen": {
     "title": "🎧 LISTEN TO OUR MUSIC 🎧",
-    "link": "@lesespanters on Instagram",
-    "fullPage": "🎬 OPEN MEDIA PAGE"
+    "link": "@lesespanters on Instagram"
   },
   "media": {
-    "pageTitle": "Les Espanters Media | Songs & Videos",
-    "pageDescription": "Listen to original tracks and watch videos from Les Espanters, Mediterranean instrumental duo from Montpellier.",
-    "heading": "🎶 SONGS & VIDEOS 🎶",
-    "subheading": "Stream or download our original tracks and videos",
-    "back": "← Back to home",
     "download": "Download",
     "share": "Share",
     "linkCopied": "Link copied!",
-    "audio": "Audio tracks",
-    "video": "Videos",
     "tracks": {
       "ballade-lyrique": "Ballade Lyrique",
       "criquet-cowboy": "Criquet Cowboy",

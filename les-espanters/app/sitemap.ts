@@ -13,18 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
-    },
-    {
-      url: 'https://lesespanters.lourock.com/fr/media',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://lesespanters.lourock.com/en/media',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
     }
   ]
 }
