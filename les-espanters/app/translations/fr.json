@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Les Espanters | Duo World Music Montpellier - Oud, Guitare & Banjo | Concerts Hérault",
+    "title": "Les Espanters | Duo World Music Montpellier. Oud, Guitare & Banjo | Concerts Hérault",
     "description": "Les Espanters, duo instrumental basé à Montpellier. Musique méditerranéenne et orientale pour concerts, festivals, mariages et événements privés dans l'Hérault et Occitanie. Oud, guitare électrique, banjo.",
     "keywords": "concert Montpellier, duo musical Hérault, groupe live Occitanie, musicien événement Montpellier, world music Montpellier, oud Montpellier, musique orientale Hérault, concert privé Montpellier, mariage musique live Hérault, festival Montpellier, groupe méditerranéen, musique instrumentale événement",
     "ogTitle": "Les Espanters | Duo World Music Montpellier",
-    "ogDescription": "Duo instrumental basé à Montpellier - Concerts, festivals et événements privés dans l'Hérault et Occitanie. Oud, guitare électrique, banjo. Musique méditerranéenne et orientale."
+    "ogDescription": "Duo instrumental basé à Montpellier. Concerts, festivals et événements privés dans l'Hérault et Occitanie. Oud, guitare électrique, banjo. Musique méditerranéenne et orientale."
   },
   "hero": {
     "bandName": "LES ESPANTERS",
@@ -12,13 +12,13 @@
   },
   "music": {
     "title": "NOTRE MUSIQUE",
-    "description": "Guitare électrique fusionnée avec l'oud traditionnel, guitare acoustique mariée au banjo ! Un paysage sonore unique qui voyage du désert aux montagnes. Musique instrumentale composée à Montpellier - parfaite en fond sonore au restaurant ou explosive sur scène avec des sonorités rock !",
+    "description": "Guitare électrique fusionnée avec l'oud traditionnel, guitare acoustique mariée au banjo ! Un paysage sonore unique qui voyage du désert aux montagnes. Musique instrumentale composée à Montpellier, parfaite en fond sonore au restaurant ou explosive sur scène avec des sonorités rock !",
     "tags": "NOMADE • ORIENTAL • DÉSERT • MONTAGNE",
     "imageAlt": "Duo world music live Montpellier oud guitare banjo concert"
   },
   "booking": {
     "title": "POUR QUI ?",
-    "description": "Festival de musique du monde, concert privé, mariage bohème, événement d'entreprise, restaurant ou particulier - notre plateforme musicale saura vous séduire ! Découvrez notre univers sonore unique mêlant world, arabesque, western, folk et blues.",
+    "description": "Festival de musique du monde, concert privé, mariage bohème, événement d'entreprise, restaurant ou particulier : notre plateforme musicale saura vous séduire ! Découvrez notre univers sonore unique mêlant world, arabesque, western, folk et blues.",
     "tags": "WORLD • ARABESQUE • FOLK • BLUES",
     "imageAlt": "Concert privé Montpellier mariage événement entreprise groupe live"
   },
@@ -29,7 +29,24 @@
   },
   "listen": {
     "title": "🎧 ÉCOUTEZ NOTRE MUSIQUE 🎧",
-    "link": "@lesespanters sur Instagram"
+    "link": "@lesespanters sur Instagram",
+    "fullPage": "🎬 OUVRIR LA PAGE MÉDIAS"
+  },
+  "media": {
+    "pageTitle": "Les Espanters Médias | Morceaux & Vidéos",
+    "pageDescription": "Écoutez les morceaux originaux et regardez les vidéos de Les Espanters, duo instrumental méditerranéen de Montpellier.",
+    "heading": "🎶 MORCEAUX & VIDÉOS 🎶",
+    "subheading": "Écoutez ou téléchargez nos morceaux originaux et vidéos",
+    "back": "← Retour à l'accueil",
+    "download": "Télécharger",
+    "audio": "Morceaux audio",
+    "video": "Vidéos",
+    "tracks": {
+      "ballade-lyrique": "Ballade Lyrique",
+      "criquet-cowboy": "Criquet Cowboy",
+      "la-jument-maquam": "La Jument Maquam",
+      "sable-rouge": "Sable Rouge"
+    }
   },
   "technical": {
     "stage": {
@@ -60,7 +77,7 @@
     "alt": "Concert live Montpellier musique world folk blues Hérault"
   },
   "footer": {
-    "copyright": "© 2025 LES ESPANTERS - DÉCHAÎNEZ LA FOLIE MÉDITERRANÉENNE ! 🎸⚡"
+    "copyright": "© 2026 LES ESPANTERS. DÉCHAÎNEZ LA FOLIE MÉDITERRANÉENNE ! 🎸⚡"
   },
   "floatingWords": {
     "bang": "BANG!",

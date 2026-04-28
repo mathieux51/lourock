@@ -55,17 +55,26 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: descriptions[locale] || descriptions.fr,
       type: "website",
       locale: locale === 'fr' ? 'fr_FR' : 'en_US',
-      url: "https://tributethekills.lourock.com",
+      url: `https://the-kills.lourock.com/${locale}`,
+      siteName: "Tribute Band The Kills",
+      images: [
+        {
+          url: "/icon.png",
+          alt: "Tribute Band The Kills",
+        },
+      ],
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary",
       title: titles[locale] || titles.fr,
       description: descriptions[locale] || descriptions.fr,
+      images: ["/icon.png"],
     },
     alternates: {
+      canonical: `https://the-kills.lourock.com/${locale}`,
       languages: {
-        'fr': '/fr',
-        'en': '/en'
+        'fr': 'https://the-kills.lourock.com/fr',
+        'en': 'https://the-kills.lourock.com/en'
       }
     }
   }

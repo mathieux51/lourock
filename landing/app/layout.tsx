@@ -16,6 +16,21 @@ export const metadata: Metadata = {
   title: "LouRock - Montpellier & Occitanie Music Scene",
   description: "Discover and book local bands from Montpellier and the Occitanie region. Professional musicians for concerts, events, and festivals across Southern France.",
   keywords: "bands Montpellier, musicians Occitanie, concert booking, live music France, Last Call, The Kills tribute, Mathieu Schmidt",
+  metadataBase: new URL("https://lourock.com"),
+  alternates: {
+    canonical: "https://lourock.com",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   icons: {
     icon: [
       { url: "/icon.png", sizes: "any", type: "image/png" },
@@ -36,9 +51,15 @@ export const metadata: Metadata = {
         url: "/icon.png",
         width: 200,
         height: 200,
-        alt: "LouRock - Rock meets Occitanie",
+        alt: "LouRock. Rock meets Occitanie",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LouRock - Montpellier & Occitanie Music Scene",
+    description: "Book professional local bands for your events in Southern France",
+    images: ["/icon.png"],
   },
 };
 

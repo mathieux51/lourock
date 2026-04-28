@@ -51,6 +51,21 @@ export async function generateMetadata({
       type: "website",
       locale: locale === 'fr' ? 'fr_FR' : 'en_US',
       url: `https://lesespanters.lourock.com/${locale}`,
+      siteName: "Les Espanters",
+      images: [
+        {
+          url: "/favicon.png",
+          width: 512,
+          height: 512,
+          alt: "Les Espanters. Mediterranean instrumental duo Montpellier",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary",
+      title: translations.meta.ogTitle,
+      description: translations.meta.ogDescription,
+      images: ["/favicon.png"],
     },
     alternates: {
       canonical: `https://lesespanters.lourock.com/${locale}`,

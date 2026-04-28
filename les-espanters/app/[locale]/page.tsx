@@ -3,10 +3,12 @@
 import { motion } from "framer-motion";
 import { Music, Mail, Download, Zap, Heart } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useTranslation } from '../hooks/useTranslation'
+import { AnchorLink } from '../components/AnchorLink'
 
 export default function Home() {
-  const { t } = useTranslation()
+  const { t, locale } = useTranslation()
   return (
     <div className="min-h-screen p-4 md:p-8 relative overflow-hidden">
       {/* Animated background dots */}
@@ -194,7 +196,7 @@ export default function Home() {
         </motion.div>
 
         {/* Row 3: Image + Text panels staggered */}
-        <div id="band-member-mathieu" className="grid grid-cols-5 gap-4 mb-4 h-48">
+        <div id="music" className="grid grid-cols-5 gap-4 mb-4 h-48 scroll-mt-24">
           <motion.div
             id="music-image"
             initial={{ y: 100, opacity: 0 }}
@@ -220,11 +222,12 @@ export default function Home() {
             className="col-span-3 comic-panel flex flex-col justify-center p-4"
             style={{backgroundColor: '#CA7625', padding: '1rem'}}
           >
-            <h2 className="comic-text text-4xl mb-3" 
+            <h2 className="comic-text text-4xl mb-3 group flex items-center" 
                 style={{color: 'white', textShadow: '2px 2px 0px #CA7625, 4px 4px 0px #0D0E08'}}>
               {t('music.title')}
+              <AnchorLink targetId="music" />
             </h2>
-            <p className="text-lg leading-relaxed" style={{fontFamily: 'Comic Neue', color: 'white'}}>
+            <p className="text-lg readable-text" style={{color: 'white'}}>
               {t('music.description')}
             </p>
             <motion.div 
@@ -270,7 +273,7 @@ export default function Home() {
         </motion.div>
 
         {/* Row 5: Text + Image staggered (reverse) */}
-        <div id="booking-info" className="grid grid-cols-5 gap-4 mb-4 h-48">
+        <div id="booking" className="grid grid-cols-5 gap-4 mb-4 h-48 scroll-mt-24">
           <motion.div
             id="booking-text"
             initial={{ x: -100, opacity: 0 }}
@@ -279,11 +282,12 @@ export default function Home() {
             className="col-span-3 comic-panel flex flex-col justify-center p-4"
             style={{backgroundColor: '#385C5F', padding: '1rem'}}
           >
-            <h2 className="comic-text text-4xl mb-3" 
+            <h2 className="comic-text text-4xl mb-3 group flex items-center" 
                 style={{color: 'white', textShadow: '2px 2px 0px #385C5F, 4px 4px 0px #0D0E08'}}>
               {t('booking.title')}
+              <AnchorLink targetId="booking" />
             </h2>
-            <p className="text-lg leading-relaxed" style={{fontFamily: 'Comic Neue', color: 'white'}}>
+            <p className="text-lg readable-text" style={{color: 'white'}}>
               {t('booking.description')}
             </p>
             <motion.div 
@@ -349,40 +353,84 @@ export default function Home() {
 
         {/* Row 7: Story panel */}
         <motion.div
-          id="band-story"
+          id="story"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0 }}
-          className="mb-4 h-40"
+          className="mb-4 h-40 scroll-mt-24"
         >
           <div className="comic-panel h-full flex flex-col justify-center p-4 relative" style={{backgroundColor: '#3F2E10', padding: '1rem'}}>
-            <h3 className="comic-text text-3xl mb-4 flex items-center gap-3"
+            <h3 className="comic-text text-3xl mb-4 flex items-center gap-3 group"
                 style={{color: 'white', textShadow: '2px 2px 0px #CA7625'}}>
               <Music className="w-8 h-8" />
               {t('story.title')}
+              <AnchorLink targetId="story" />
             </h3>
-            <p className="text-lg leading-relaxed mb-3" style={{fontFamily: 'Comic Neue', color: 'white'}}>
+            <p className="text-lg readable-text mb-3" style={{color: 'white'}}>
               {t('story.locationText')}
             </p>
-            <p className="text-lg leading-relaxed" style={{fontFamily: 'Comic Neue', color: 'white'}}>
+            <p className="text-lg readable-text" style={{color: 'white'}}>
               {t('story.storyText')}
             </p>
           </div>
         </motion.div>
 
-        {/* Row 8: Listen to Music section */}
+        {/* Row 8: Listen to Music section with embedded players */}
         <motion.div
-          id="listen-section"
+          id="listen"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.05 }}
-          className="mb-4 h-32"
+          className="mb-4 scroll-mt-24"
         >
-          <div className="comic-panel h-full flex items-center justify-center p-4" style={{backgroundColor: '#795B1A', padding: '1rem'}}>
-            <div className="text-center">
-              <h3 className="comic-text text-3xl mb-3" style={{color: 'white'}}>
-                {t('listen.title')}
-              </h3>
+          <div className="comic-panel p-4 md:p-6" style={{backgroundColor: '#795B1A'}}>
+            <h3 className="comic-text text-3xl md:text-4xl mb-4 text-center group flex items-center justify-center" style={{color: 'white', textShadow: '2px 2px 0px #3F2E10'}}>
+              {t('listen.title')}
+              <AnchorLink targetId="listen" />
+            </h3>
+
+            {/* Audio tracks */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+              {[
+                { file: 'ballade-lyrique', key: 'media.tracks.ballade-lyrique' },
+                { file: 'criquet-cowboy', key: 'media.tracks.criquet-cowboy' },
+                { file: 'la-jument-maquam', key: 'media.tracks.la-jument-maquam' },
+              ].map((track) => (
+                <div
+                  key={track.file}
+                  className="comic-border p-3"
+                  style={{ backgroundColor: '#3F2E10' }}
+                >
+                  <p className="comic-text text-xl mb-2 text-center" style={{ color: 'white' }}>
+                    {t(track.key)}
+                  </p>
+                  <audio
+                    controls
+                    preload="none"
+                    className="w-full"
+                    src={`/media/${track.file}.mp3`}
+                  >
+                    <a href={`/media/${track.file}.mp3`}>{t('media.download')}</a>
+                  </audio>
+                </div>
+              ))}
+            </div>
+
+            {/* Video */}
+            <div className="comic-border p-3 mb-4" style={{ backgroundColor: '#3F2E10' }}>
+              <p className="comic-text text-xl mb-2 text-center" style={{ color: 'white' }}>
+                {t('media.tracks.sable-rouge')}
+              </p>
+              <video
+                controls
+                preload="metadata"
+                playsInline
+                className="w-full max-h-[420px] mx-auto"
+                src="/media/sable-rouge.mp4"
+              />
+            </div>
+
+            <div className="text-center flex flex-col md:flex-row gap-3 justify-center items-center">
               <motion.a
                 href="https://www.instagram.com/lesespanters/"
                 target="_blank"
@@ -400,12 +448,25 @@ export default function Home() {
               >
                 {t('listen.link')}
               </motion.a>
+              <Link
+                href={`/${locale}/media`}
+                className="inline-block comic-text text-xl px-6 py-2"
+                style={{
+                  backgroundColor: '#CA7625',
+                  color: 'white',
+                  border: '2px solid black',
+                  boxShadow: '3px 3px 0px #000',
+                  textDecoration: 'none'
+                }}
+              >
+                {t('listen.fullPage')}
+              </Link>
             </div>
           </div>
         </motion.div>
 
         {/* Row 10: Technical specs grid */}
-        <div id="technical-specs" className="grid grid-cols-3 gap-4 mb-4 h-48">
+        <div id="technical" className="grid grid-cols-3 gap-4 mb-4 h-48 scroll-mt-24">
           <motion.div 
             id="stage-setup"
             className="comic-panel p-4 flex flex-col justify-center" 
@@ -416,10 +477,11 @@ export default function Home() {
             whileHover={{ scale: 1.05, rotate: 2 }}
           >
             <Zap id="stage-icon" className="w-8 h-8 mb-2 text-white mx-auto fill-white" stroke="white" />
-            <h3 id="stage-title" className="comic-text text-2xl mb-3 text-center" style={{color: 'white'}}>
+            <h3 id="stage-title" className="comic-text text-2xl mb-3 text-center group flex items-center justify-center" style={{color: 'white'}}>
               {t('technical.stage.title')}
+              <AnchorLink targetId="technical" />
             </h3>
-            <ul id="stage-list" className="space-y-1 text-left" style={{fontFamily: 'Comic Neue', color: 'white'}}>
+            <ul id="stage-list" className="space-y-1 text-left readable-text" style={{color: 'white'}}>
               <li>{t('technical.stage.items.0')}</li>
               <li>{t('technical.stage.items.1')}</li>
               <li>{t('technical.stage.items.2')}</li>
@@ -458,7 +520,7 @@ export default function Home() {
             <h3 id="performance-title" className="comic-text text-2xl mb-3 text-center" style={{color: 'white'}}>
               {t('technical.performance.title')}
             </h3>
-            <ul id="performance-list" className="space-y-1 text-left" style={{fontFamily: 'Comic Neue', color: 'white'}}>
+            <ul id="performance-list" className="space-y-1 text-left readable-text" style={{color: 'white'}}>
               <li>{t('technical.performance.items.0')}</li>
               <li>{t('technical.performance.items.1')}</li>
               <li>{t('technical.performance.items.2')}</li>
@@ -469,12 +531,15 @@ export default function Home() {
 
         {/* Row 9: Contact buttons */}
         <motion.div
-          id="contact-buttons"
+          id="contact"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 1.8 }}
-          className="grid grid-cols-2 gap-6 mb-8 h-24"
+          className="relative grid grid-cols-2 gap-6 mb-8 h-24 scroll-mt-24 group"
         >
+          <div className="absolute -top-6 right-0 z-10">
+            <AnchorLink targetId="contact" color="#3F2E10" />
+          </div>
           <motion.button 
             className="comic-button flex items-center justify-center gap-3 text-2xl h-full"
             style={{
@@ -543,7 +608,7 @@ export default function Home() {
                  backgroundColor: '#CA7625',
                  boxShadow: '5px 5px 0px #3F2E10'
                }}>
-            <p className="font-bold text-lg" style={{fontFamily: 'Comic Neue', color: 'white'}}>
+            <p className="font-bold text-lg readable-text" style={{color: 'white'}}>
               {t('footer.copyright')}
             </p>
           </div>

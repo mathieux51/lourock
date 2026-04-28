@@ -65,9 +65,9 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
         type: "website",
         images: [
           {
-            url: "/og-mathieu-schmidt.jpg",
-            width: 1200,
-            height: 630,
+            url: "/hero.png",
+            width: 1290,
+            height: 1720,
             alt: "Mathieu Schmidt - Multi-Instrumental Folk Artist",
           },
         ],
@@ -77,7 +77,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
         title: "Mathieu Schmidt | Folk Multi-Instrumental Montpellier",
         description:
           "Artiste folk basé à Montpellier - Guitare, oud, bouzouki. Concerts atmosphériques mêlant traditions occidentales et orientales.",
-        images: ["/og-mathieu-schmidt.jpg"],
+        images: ["/hero.png"],
       },
       robots: {
         index: true,
@@ -149,9 +149,9 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       type: "website",
       images: [
         {
-          url: "/og-mathieu-schmidt.jpg",
-          width: 1200,
-          height: 630,
+          url: "/hero.png",
+          width: 1290,
+          height: 1720,
           alt: "Mathieu Schmidt - Multi-Instrumental Folk Artist",
         },
       ],
@@ -161,7 +161,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       title: "Mathieu Schmidt | Multi-Instrumental Folk Montpellier",
       description:
         "Folk artist based in Montpellier - Guitar, oud, bouzouki. Atmospheric concerts blending Western and Eastern traditions.",
-      images: ["/og-mathieu-schmidt.jpg"],
+      images: ["/hero.png"],
     },
     robots: {
       index: true,

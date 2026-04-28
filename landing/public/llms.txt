@@ -1,0 +1,25 @@
+# LouRock
+
+> LouRock is a music collective and booking platform connecting talented bands and solo artists from Montpellier and the Occitanie region (Southern France) with venues, festivals, and event organizers. The roster blends rock, folk, country, world music, garage, and Mediterranean influences.
+
+LouRock represents a curated group of professional acts based in Hérault and Occitanie. Each act has its own dedicated site with a full Electronic Press Kit (EPK) and booking contact.
+
+## Bands and artists
+
+- [Les Espanters](https://lesespanters.lourock.com): Mediterranean instrumental duo. Oud, electric guitar, banjo. Nomadic, oriental, desert and mountain soundscape. Available for concerts, festivals, weddings, restaurants, and private events.
+- [Last Call](https://last-call.lourock.com): Country duo bringing the spirit of the American West to Southern France. Acoustic guitar, piano, bouzouki, banjo, vocals.
+- [Mathieu Schmidt](https://mathieu-schmidt.lourock.com): Solo folk artist. "Desert Troubadour." Fusion of Saharan desert melodies, cowboy ballads, and Occitan folk. Guitar, oud, bouzouki. Songs in French, English, and Occitan.
+- [Tribute Band The Kills](https://the-kills.lourock.com): Garage rock tribute act recreating the minimalist sound and explosive energy of Alison Mosshart and Jamie Hince. Two guitars, drums, raw and confrontational.
+
+## Service area
+
+Montpellier, Nîmes, Béziers, Sète, Toulouse, Perpignan, and the rest of Occitanie. Available for festivals, private concerts, weddings, corporate events, restaurants, clubs, and venues throughout Southern France.
+
+## Site map
+
+- [Sitemap](https://lourock.com/sitemap.xml)
+- [Robots](https://lourock.com/robots.txt)
+
+## Contact
+
+Booking and inquiries via the contact section on [lourock.com](https://lourock.com).

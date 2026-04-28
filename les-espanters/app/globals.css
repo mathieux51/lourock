@@ -33,6 +33,29 @@ body {
     );
 }
 
+/* Readability: when Comic Neue body text sits on colored comic panels,
+   bump weight, add a soft outline, and improve line-height so it stays
+   legible against busy halftone/gradient backgrounds. */
+.readable-text {
+  font-family: 'Comic Neue', cursive;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  text-shadow:
+    1px 1px 0 rgba(0, 0, 0, 0.55),
+    -1px 1px 0 rgba(0, 0, 0, 0.35),
+    1px -1px 0 rgba(0, 0, 0, 0.35),
+    0 0 6px rgba(0, 0, 0, 0.25);
+}
+
+.readable-text-dark {
+  font-family: 'Comic Neue', cursive;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  color: #1a1a1a;
+}
+
 .comic-border {
   border: 2px solid black;
   box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);

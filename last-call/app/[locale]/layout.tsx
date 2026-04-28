@@ -55,12 +55,28 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: descriptions[locale] || descriptions.en,
       type: "website",
       locale: locale === 'fr' ? 'fr_FR' : 'en_US',
-      url: "https://last-call.lourock.com",
+      url: `https://last-call.lourock.com/${locale}`,
+      siteName: "Last Call",
+      images: [
+        {
+          url: "/favicon.png",
+          width: 512,
+          height: 512,
+          alt: "Last Call. Country duo Montpellier",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary",
+      title: titles[locale] || titles.en,
+      description: descriptions[locale] || descriptions.en,
+      images: ["/favicon.png"],
     },
     alternates: {
+      canonical: `https://last-call.lourock.com/${locale}`,
       languages: {
-        'en': '/en',
-        'fr': '/fr'
+        'en': 'https://last-call.lourock.com/en',
+        'fr': 'https://last-call.lourock.com/fr'
       }
     }
   }

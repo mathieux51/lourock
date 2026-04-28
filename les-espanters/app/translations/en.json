@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Les Espanters | World Music Duo Montpellier - Oud, Guitar & Banjo | Concerts Hérault",
+    "title": "Les Espanters | World Music Duo Montpellier. Oud, Guitar & Banjo | Concerts Hérault",
     "description": "Les Espanters, instrumental duo based in Montpellier. Mediterranean and Oriental music for concerts, festivals, weddings and private events in Hérault and Occitanie. Oud, electric guitar, banjo.",
     "keywords": "concert Montpellier, musical duo Hérault, live band Occitanie, event musician Montpellier, world music Montpellier, oud Montpellier, oriental music Hérault, private concert Montpellier, wedding live music Hérault, festival Montpellier, Mediterranean band, instrumental music event",
     "ogTitle": "Les Espanters | World Music Duo Montpellier",
-    "ogDescription": "Instrumental duo based in Montpellier - Concerts, festivals and private events in Hérault and Occitanie. Oud, electric guitar, banjo. Mediterranean and Oriental music."
+    "ogDescription": "Instrumental duo based in Montpellier. Concerts, festivals and private events in Hérault and Occitanie. Oud, electric guitar, banjo. Mediterranean and Oriental music."
   },
   "hero": {
     "bandName": "LES ESPANTERS",
@@ -12,13 +12,13 @@
   },
   "music": {
     "title": "OUR MUSIC",
-    "description": "Electric guitar fused with traditional oud, acoustic guitar married to banjo! A unique soundscape that travels from desert to mountains. Instrumental music composed in Montpellier - perfect as background music in restaurants or explosive on stage with rock sounds!",
+    "description": "Electric guitar fused with traditional oud, acoustic guitar married to banjo! A unique soundscape that travels from desert to mountains. Instrumental music composed in Montpellier, perfect as background music in restaurants or explosive on stage with rock sounds!",
     "tags": "NOMADIC • ORIENTAL • DESERT • MOUNTAIN",
     "imageAlt": "World music duo live Montpellier oud guitar banjo concert"
   },
   "booking": {
     "title": "FOR WHOM?",
-    "description": "World music festival, private concert, bohemian wedding, corporate event, restaurant or private individual - our musical platform will seduce you! Discover our unique sound universe blending world, arabesque, western, folk and blues.",
+    "description": "World music festival, private concert, bohemian wedding, corporate event, restaurant or private individual: our musical platform will seduce you! Discover our unique sound universe blending world, arabesque, western, folk and blues.",
     "tags": "WORLD • ARABESQUE • FOLK • BLUES",
     "imageAlt": "Private concert Montpellier wedding corporate event live band"
   },
@@ -29,7 +29,24 @@
   },
   "listen": {
     "title": "🎧 LISTEN TO OUR MUSIC 🎧",
-    "link": "@lesespanters on Instagram"
+    "link": "@lesespanters on Instagram",
+    "fullPage": "🎬 OPEN MEDIA PAGE"
+  },
+  "media": {
+    "pageTitle": "Les Espanters Media | Songs & Videos",
+    "pageDescription": "Listen to original tracks and watch videos from Les Espanters, Mediterranean instrumental duo from Montpellier.",
+    "heading": "🎶 SONGS & VIDEOS 🎶",
+    "subheading": "Stream or download our original tracks and videos",
+    "back": "← Back to home",
+    "download": "Download",
+    "audio": "Audio tracks",
+    "video": "Videos",
+    "tracks": {
+      "ballade-lyrique": "Ballade Lyrique",
+      "criquet-cowboy": "Criquet Cowboy",
+      "la-jument-maquam": "La Jument Maquam",
+      "sable-rouge": "Sable Rouge"
+    }
   },
   "technical": {
     "stage": {
@@ -60,7 +77,7 @@
     "alt": "Live concert Montpellier world folk blues music Hérault"
   },
   "footer": {
-    "copyright": "© 2025 LES ESPANTERS - UNLEASH THE MEDITERRANEAN MADNESS! 🎸⚡"
+    "copyright": "© 2026 LES ESPANTERS. UNLEASH THE MEDITERRANEAN MADNESS! 🎸⚡"
   },
   "floatingWords": {
     "bang": "BANG!",
