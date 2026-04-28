@@ -50,7 +50,7 @@ export async function generateMetadata({
       description: translations.meta.ogDescription,
       type: "website",
       locale: locale === 'fr' ? 'fr_FR' : 'en_US',
-      url: `https://lesespanters.lourock.com/${locale}`,
+      url: `https://les-espanters.lourock.com/${locale}`,
       siteName: "Les Espanters",
       images: [
         {
@@ -68,10 +68,10 @@ export async function generateMetadata({
       images: ["/favicon.png"],
     },
     alternates: {
-      canonical: `https://lesespanters.lourock.com/${locale}`,
+      canonical: `https://les-espanters.lourock.com/${locale}`,
       languages: {
-        'fr': 'https://lesespanters.lourock.com/fr',
-        'en': 'https://lesespanters.lourock.com/en',
+        'fr': 'https://les-espanters.lourock.com/fr',
+        'en': 'https://les-espanters.lourock.com/en',
       },
     },
   }
@@ -90,7 +90,7 @@ export default async function RootLayout({
     "@graph": [
       {
         "@type": "MusicGroup",
-        "@id": "https://lesespanters.lourock.com/#musicgroup",
+        "@id": "https://les-espanters.lourock.com/#musicgroup",
         "name": "Les Espanters",
         "description": "Duo instrumental Montpellier - Oud, guitare électrique, banjo et world music",
         "genre": ["World Music", "Mediterranean", "Folk", "Oriental", "Instrumental"],
@@ -135,16 +135,16 @@ export default async function RootLayout({
             "name": "Sète"
           }
         ],
-        "url": "https://lesespanters.lourock.com",
+        "url": "https://les-espanters.lourock.com",
         "sameAs": [
           "https://www.instagram.com/lesespanters/"
         ]
       },
       {
         "@type": "LocalBusiness",
-        "@id": "https://lesespanters.lourock.com/#localbusiness",
+        "@id": "https://les-espanters.lourock.com/#localbusiness",
         "name": "Les Espanters",
-        "image": "https://lesespanters.lourock.com/favicon.png",
+        "image": "https://les-espanters.lourock.com/favicon.png",
         "telephone": "+33-contact-via-website",
         "email": "contact@lourock.com",
         "address": {

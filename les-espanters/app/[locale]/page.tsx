@@ -16,13 +16,12 @@ export default function Home() {
   // On load (and on hashchange), scroll to and auto-play the targeted track
   // when someone opens a deep link like /#ballade-lyrique.
   useEffect(() => {
-    const handleHash = () => {
-      const hash = window.location.hash.replace(/^#/, '')
-      if (!hash) return
-
+    const scrollToHash = (hash: string) => {
       const target = document.getElementById(hash)
       if (!target) return
 
+      // Use the element's full bounding rect so smooth scroll lands precisely,
+      // accounting for `scroll-mt-*` via CSS scroll-margin-top.
       target.scrollIntoView({ behavior: 'smooth', block: 'start' })
 
       const media = audioRefs.current[hash] ?? videoRefs.current[hash]
@@ -34,9 +33,26 @@ export default function Home() {
       }
     }
 
-    handleHash()
-    window.addEventListener('hashchange', handleHash)
-    return () => window.removeEventListener('hashchange', handleHash)
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace(/^#/, '')
+      if (hash) scrollToHash(hash)
+    }
+
+    // Initial load: wait for the framer-motion entrance animations to settle
+    // (header has a ~1s spring, content blocks fade in up to ~1.05s) before
+    // scrolling, otherwise the target moves while we're scrolling to it.
+    const initialHash = window.location.hash.replace(/^#/, '')
+    if (initialHash) {
+      const timer = window.setTimeout(() => scrollToHash(initialHash), 1300)
+      window.addEventListener('hashchange', handleHashChange)
+      return () => {
+        window.clearTimeout(timer)
+        window.removeEventListener('hashchange', handleHashChange)
+      }
+    }
+
+    window.addEventListener('hashchange', handleHashChange)
+    return () => window.removeEventListener('hashchange', handleHashChange)
   }, [])
   return (
     <div className="min-h-screen p-4 md:p-8 relative overflow-hidden">

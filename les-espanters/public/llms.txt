@@ -12,19 +12,19 @@ Montpellier, Nîmes, Béziers, Sète, Toulouse, Perpignan, and the rest of Occit
 
 ## Pages
 
-- [Home (French)](https://lesespanters.lourock.com/fr)
-- [Home (English)](https://lesespanters.lourock.com/en)
-- [Listen section (French)](https://lesespanters.lourock.com/fr#listen): Audio tracks and videos
-- [Listen section (English)](https://lesespanters.lourock.com/en#listen)
+- [Home (French)](https://les-espanters.lourock.com/fr)
+- [Home (English)](https://les-espanters.lourock.com/en)
+- [Listen section (French)](https://les-espanters.lourock.com/fr#listen): Audio tracks and videos
+- [Listen section (English)](https://les-espanters.lourock.com/en#listen)
 
 ## Original tracks
 
 Direct links to individual tracks (deep links auto-scroll and start playback):
 
-- [Ballade Lyrique](https://lesespanters.lourock.com/fr#ballade-lyrique) ([MP3](https://lesespanters.lourock.com/media/ballade-lyrique.mp3))
-- [Criquet Cowboy](https://lesespanters.lourock.com/fr#criquet-cowboy) ([MP3](https://lesespanters.lourock.com/media/criquet-cowboy.mp3))
-- [La Jument Maquam](https://lesespanters.lourock.com/fr#la-jument-maquam) ([MP3](https://lesespanters.lourock.com/media/la-jument-maquam.mp3))
-- [Sable Rouge](https://lesespanters.lourock.com/fr#sable-rouge) ([MP4 video](https://lesespanters.lourock.com/media/sable-rouge.mp4))
+- [Ballade Lyrique](https://les-espanters.lourock.com/fr#ballade-lyrique) ([MP3](https://les-espanters.lourock.com/media/ballade-lyrique.mp3))
+- [Criquet Cowboy](https://les-espanters.lourock.com/fr#criquet-cowboy) ([MP3](https://les-espanters.lourock.com/media/criquet-cowboy.mp3))
+- [La Jument Maquam](https://les-espanters.lourock.com/fr#la-jument-maquam) ([MP3](https://les-espanters.lourock.com/media/la-jument-maquam.mp3))
+- [Sable Rouge](https://les-espanters.lourock.com/fr#sable-rouge) ([MP4 video](https://les-espanters.lourock.com/media/sable-rouge.mp4))
 
 ## Booking and contact
 
@@ -32,5 +32,5 @@ Part of the LouRock collective. Booking inquiries via [lourock.com](https://lour
 
 ## Optional
 
-- [Sitemap](https://lesespanters.lourock.com/sitemap.xml)
+- [Sitemap](https://les-espanters.lourock.com/sitemap.xml)
 - [LouRock collective](https://lourock.com)
