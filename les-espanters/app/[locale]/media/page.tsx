@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Download } from "lucide-react";
+import { Download, Link as LinkIcon, Check } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "../../hooks/useTranslation";
 
 const AUDIO_TRACKS = [
@@ -13,8 +14,99 @@ const AUDIO_TRACKS = [
 
 const VIDEOS = [{ file: "sable-rouge", key: "media.tracks.sable-rouge" }];
 
+type ShareButtonProps = {
+  trackId: string;
+  bgColor: string;
+  shareLabel: string;
+  copiedLabel: string;
+};
+
+function ShareButton({
+  trackId,
+  bgColor,
+  shareLabel,
+  copiedLabel,
+}: ShareButtonProps) {
+  const [copied, setCopied] = useState(false);
+
+  const handleClick = () => {
+    if (typeof window === "undefined") return;
+    const url = `${window.location.origin}${window.location.pathname}#${trackId}`;
+    history.replaceState(null, "", `#${trackId}`);
+
+    if (navigator.clipboard) {
+      navigator.clipboard
+        .writeText(url)
+        .then(() => {
+          setCopied(true);
+          setTimeout(() => setCopied(false), 2000);
+        })
+        .catch(() => {
+          // Silent fallback: URL hash is still updated.
+        });
+    }
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={handleClick}
+      className="inline-flex items-center gap-2 comic-text text-base px-4 py-2 cursor-pointer"
+      style={{
+        backgroundColor: "white",
+        color: bgColor,
+        border: "2px solid black",
+        boxShadow: "3px 3px 0px #000",
+      }}
+      aria-label={copied ? copiedLabel : shareLabel}
+    >
+      {copied ? (
+        <>
+          <Check className="w-4 h-4" />
+          {copiedLabel}
+        </>
+      ) : (
+        <>
+          <LinkIcon className="w-4 h-4" />
+          {shareLabel}
+        </>
+      )}
+    </button>
+  );
+}
+
 export default function MediaPage() {
   const { t, locale } = useTranslation();
+  const audioRefs = useRef<Record<string, HTMLAudioElement | null>>({});
+  const videoRefs = useRef<Record<string, HTMLVideoElement | null>>({});
+
+  // On load (and on hashchange), scroll to and auto-play the targeted track.
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash.replace(/^#/, "");
+      if (!hash) return;
+
+      const target = document.getElementById(hash);
+      if (!target) return;
+
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      // Auto-play the matching media element if available.
+      const audio = audioRefs.current[hash];
+      const video = videoRefs.current[hash];
+      const media = audio ?? video;
+      if (media) {
+        // Best-effort: browsers may block autoplay without user gesture.
+        media.play().catch(() => {
+          /* ignore autoplay block; user can press play */
+        });
+      }
+    };
+
+    handleHash();
+    window.addEventListener("hashchange", handleHash);
+    return () => window.removeEventListener("hashchange", handleHash);
+  }, []);
 
   return (
     <div className="min-h-screen p-4 md:p-8">
@@ -54,7 +146,7 @@ export default function MediaPage() {
         </motion.header>
 
         {/* Audio section */}
-        <section className="mb-6">
+        <section id="audio" className="mb-6 scroll-mt-24">
           <h2
             className="comic-text text-3xl md:text-4xl mb-4"
             style={{
@@ -68,10 +160,11 @@ export default function MediaPage() {
             {AUDIO_TRACKS.map((track) => (
               <motion.div
                 key={track.file}
+                id={track.file}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 whileHover={{ scale: 1.02 }}
-                className="comic-panel p-4"
+                className="comic-panel p-4 scroll-mt-24"
                 style={{ backgroundColor: "#385C5F" }}
               >
                 <p
@@ -84,33 +177,44 @@ export default function MediaPage() {
                   {t(track.key)}
                 </p>
                 <audio
+                  ref={(el) => {
+                    audioRefs.current[track.file] = el;
+                  }}
                   controls
                   preload="none"
                   className="w-full mb-3"
                   src={`/media/${track.file}.mp3`}
                 />
-                <a
-                  href={`/media/${track.file}.mp3`}
-                  download
-                  className="inline-flex items-center gap-2 comic-text text-base px-4 py-2"
-                  style={{
-                    backgroundColor: "white",
-                    color: "#385C5F",
-                    border: "2px solid black",
-                    boxShadow: "3px 3px 0px #000",
-                    textDecoration: "none",
-                  }}
-                >
-                  <Download className="w-4 h-4" />
-                  {t("media.download")}
-                </a>
+                <div className="flex flex-wrap gap-2">
+                  <a
+                    href={`/media/${track.file}.mp3`}
+                    download
+                    className="inline-flex items-center gap-2 comic-text text-base px-4 py-2"
+                    style={{
+                      backgroundColor: "white",
+                      color: "#385C5F",
+                      border: "2px solid black",
+                      boxShadow: "3px 3px 0px #000",
+                      textDecoration: "none",
+                    }}
+                  >
+                    <Download className="w-4 h-4" />
+                    {t("media.download")}
+                  </a>
+                  <ShareButton
+                    trackId={track.file}
+                    bgColor="#385C5F"
+                    shareLabel={t("media.share")}
+                    copiedLabel={t("media.linkCopied")}
+                  />
+                </div>
               </motion.div>
             ))}
           </div>
         </section>
 
         {/* Video section */}
-        <section className="mb-10">
+        <section id="video" className="mb-10 scroll-mt-24">
           <h2
             className="comic-text text-3xl md:text-4xl mb-4"
             style={{
@@ -124,9 +228,10 @@ export default function MediaPage() {
             {VIDEOS.map((v) => (
               <motion.div
                 key={v.file}
+                id={v.file}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="comic-panel p-4"
+                className="comic-panel p-4 scroll-mt-24"
                 style={{ backgroundColor: "#3F2E10" }}
               >
                 <p
@@ -139,27 +244,38 @@ export default function MediaPage() {
                   {t(v.key)}
                 </p>
                 <video
+                  ref={(el) => {
+                    videoRefs.current[v.file] = el;
+                  }}
                   controls
                   preload="metadata"
                   playsInline
                   className="w-full max-h-[600px] mx-auto mb-3"
                   src={`/media/${v.file}.mp4`}
                 />
-                <a
-                  href={`/media/${v.file}.mp4`}
-                  download
-                  className="inline-flex items-center gap-2 comic-text text-base px-4 py-2"
-                  style={{
-                    backgroundColor: "white",
-                    color: "#3F2E10",
-                    border: "2px solid black",
-                    boxShadow: "3px 3px 0px #000",
-                    textDecoration: "none",
-                  }}
-                >
-                  <Download className="w-4 h-4" />
-                  {t("media.download")}
-                </a>
+                <div className="flex flex-wrap gap-2">
+                  <a
+                    href={`/media/${v.file}.mp4`}
+                    download
+                    className="inline-flex items-center gap-2 comic-text text-base px-4 py-2"
+                    style={{
+                      backgroundColor: "white",
+                      color: "#3F2E10",
+                      border: "2px solid black",
+                      boxShadow: "3px 3px 0px #000",
+                      textDecoration: "none",
+                    }}
+                  >
+                    <Download className="w-4 h-4" />
+                    {t("media.download")}
+                  </a>
+                  <ShareButton
+                    trackId={v.file}
+                    bgColor="#3F2E10"
+                    shareLabel={t("media.share")}
+                    copiedLabel={t("media.linkCopied")}
+                  />
+                </div>
               </motion.div>
             ))}
           </div>
