@@ -92,12 +92,32 @@ export default async function RootLayout({
         "@type": "MusicGroup",
         "@id": "https://les-espanters.lourock.com/#musicgroup",
         "name": "Les Espanters",
-        "description": "Duo instrumental Montpellier - Oud, guitare électrique, banjo et world music",
-        "genre": ["World Music", "Mediterranean", "Folk", "Oriental", "Instrumental"],
-        "memberOf": {
-          "@type": "Organization",
-          "name": "LouRock"
+        "description": "Les Espanters est un duo instrumental world music basé à Montpellier, France. Le duo joue de l'oud, de la guitare électrique et de la lapsteel. Leur musique mélange des sonorités méditerranéennes, orientales, folk et blues. Ils sont disponibles pour des concerts, festivals, mariages et événements privés en Occitanie.",
+        "genre": ["World Music", "Mediterranean", "Folk", "Oriental", "Instrumental", "Blues"],
+        "foundingLocation": {
+          "@type": "Place",
+          "name": "Montpellier, France"
         },
+        "member": [
+          {
+            "@type": "OrganizationRole",
+            "member": {
+              "@type": "Person",
+              "name": "Membre 1"
+            },
+            "roleName": ["Oud", "Guitare électrique"]
+          },
+          {
+            "@type": "OrganizationRole",
+            "member": {
+              "@type": "Person",
+              "name": "Membre 2"
+            },
+            "roleName": ["Lapsteel", "Guitare électrique"]
+          }
+        ],
+        "instrument": ["Oud", "Lapsteel", "Guitare électrique"],
+        "numberOfMembers": 2,
         "location": {
           "@type": "Place",
           "address": {
@@ -114,25 +134,39 @@ export default async function RootLayout({
           }
         },
         "areaServed": [
+          { "@type": "City", "name": "Montpellier" },
+          { "@type": "City", "name": "Nîmes" },
+          { "@type": "City", "name": "Toulouse" },
+          { "@type": "City", "name": "Béziers" },
+          { "@type": "City", "name": "Sète" },
+          { "@type": "City", "name": "Perpignan" },
+          { "@type": "AdministrativeArea", "name": "Occitanie" },
+          { "@type": "AdministrativeArea", "name": "Hérault" }
+        ],
+        "makesOffer": [
           {
-            "@type": "City",
-            "name": "Montpellier"
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Concert live world music",
+              "description": "Concert instrumental de 45 à 90 minutes, compositions originales mêlant oud, lapsteel et guitare électrique"
+            }
           },
           {
-            "@type": "City",
-            "name": "Nîmes"
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Musique pour mariage",
+              "description": "Animation musicale live pour mariages et cérémonies en Hérault et Occitanie"
+            }
           },
           {
-            "@type": "City",
-            "name": "Toulouse"
-          },
-          {
-            "@type": "City",
-            "name": "Béziers"
-          },
-          {
-            "@type": "City",
-            "name": "Sète"
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Musique événement privé",
+              "description": "Duo musical pour événements d'entreprise, restaurants et soirées privées à Montpellier"
+            }
           }
         ],
         "url": "https://les-espanters.lourock.com",
@@ -144,6 +178,7 @@ export default async function RootLayout({
         "@type": "LocalBusiness",
         "@id": "https://les-espanters.lourock.com/#localbusiness",
         "name": "Les Espanters",
+        "description": "Duo world music disponible pour concerts et événements à Montpellier et en Occitanie. Instruments : oud, lapsteel, guitare électrique.",
         "image": "https://les-espanters.lourock.com/favicon.png",
         "telephone": "+33-contact-via-website",
         "email": "contact@lourock.com",
@@ -162,20 +197,51 @@ export default async function RootLayout({
         "openingHoursSpecification": {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"
+            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
           ],
           "opens": "00:00",
           "closes": "23:59"
         },
         "priceRange": "€€",
-        "servesCuisine": "Entertainment",
         "areaServed": "Occitanie"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://les-espanters.lourock.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Quels instruments jouent Les Espanters ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Les Espanters jouent de l'oud (instrument à cordes oriental), de la lapsteel et de la guitare électrique. Ce mélange crée un son unique entre musique méditerranéenne, orientale, folk et blues."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Où sont basés Les Espanters ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Les Espanters sont basés à Montpellier dans l'Hérault. Ils jouent dans toute l'Occitanie : Montpellier, Nîmes, Béziers, Sète, Toulouse, Perpignan et au-delà."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Pour quels événements peut-on réserver Les Espanters ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Les Espanters jouent lors de festivals, concerts privés, mariages, événements d'entreprise et dans des restaurants. Leur set dure entre 45 et 90 minutes de compositions originales."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quel style de musique jouent Les Espanters ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Les Espanters jouent de la world music instrumentale mélangeant sonorités méditerranéennes, orientales, folk, western et blues. C'est un duo sans chant, uniquement instrumental."
+            }
+          }
+        ]
       }
     ]
   };

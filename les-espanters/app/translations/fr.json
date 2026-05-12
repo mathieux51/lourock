@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Les Espanters | Duo World Music Montpellier. Oud, Guitare & Banjo | Concerts Hérault",
-    "description": "Les Espanters, duo instrumental basé à Montpellier. Musique méditerranéenne et orientale pour concerts, festivals, mariages et événements privés dans l'Hérault et Occitanie. Oud, guitare électrique, banjo.",
-    "keywords": "concert Montpellier, duo musical Hérault, groupe live Occitanie, musicien événement Montpellier, world music Montpellier, oud Montpellier, musique orientale Hérault, concert privé Montpellier, mariage musique live Hérault, festival Montpellier, groupe méditerranéen, musique instrumentale événement",
+    "title": "Les Espanters | Duo World Music Montpellier. Oud, Guitare & Lapsteel | Concerts Hérault",
+    "description": "Les Espanters, duo world music survolté basé à Montpellier ! Oud, guitare électrique et lapsteel pour concerts, festivals, mariages et événements privés dans l'Hérault et Occitanie. Accrochez-vous.",
+    "keywords": "concert Montpellier, duo world music Hérault, groupe live Occitanie, musicien événement Montpellier, world music Montpellier, oud Montpellier, lapsteel Montpellier, musique orientale Hérault, concert privé Montpellier, mariage musique live Hérault, festival Montpellier, groupe méditerranéen, musique instrumentale événement, duo instrumental mariage Occitanie",
     "ogTitle": "Les Espanters | Duo World Music Montpellier",
-    "ogDescription": "Duo instrumental basé à Montpellier. Concerts, festivals et événements privés dans l'Hérault et Occitanie. Oud, guitare électrique, banjo. Musique méditerranéenne et orientale."
+    "ogDescription": "Duo world music déchaîné à Montpellier. Oud, guitare électrique, lapsteel. Concerts, festivals et événements privés en Hérault et Occitanie. Ça va secouer."
   },
   "hero": {
     "bandName": "LES ESPANTERS",
@@ -12,20 +12,20 @@
   },
   "music": {
     "title": "NOTRE MUSIQUE",
-    "description": "Guitare électrique fusionnée avec l'oud traditionnel, guitare acoustique mariée au banjo ! Un paysage sonore unique qui voyage du désert aux montagnes. Musique instrumentale composée à Montpellier, parfaite en fond sonore au restaurant ou explosive sur scène avec des sonorités rock !",
+    "description": "L'oud qui s'encanaille avec la guitare électrique, la lapsteel qui déraille sur des rythmes du désert ! Un voyage sonore entre dunes et montagnes, composé à Montpellier. En fond au resto ça envoûte, sur scène ça explose !",
     "tags": "NOMADE • ORIENTAL • DÉSERT • MONTAGNE",
-    "imageAlt": "Duo world music live Montpellier oud guitare banjo concert"
+    "imageAlt": "Duo world music live Montpellier oud guitare lapsteel concert"
   },
   "booking": {
     "title": "POUR QUI ?",
-    "description": "Festival de musique du monde, concert privé, mariage bohème, événement d'entreprise, restaurant ou particulier : notre plateforme musicale saura vous séduire ! Découvrez notre univers sonore unique mêlant world, arabesque, western, folk et blues.",
+    "description": "Festival, concert privé, mariage bohème, soirée corpo, restau ou apéro entre potes. On amène l'oud, la lapsteel et toute la folie world-arabesque-western-folk-blues. Vous amenez les oreilles !",
     "tags": "WORLD • ARABESQUE • FOLK • BLUES",
     "imageAlt": "Concert privé Montpellier mariage événement entreprise groupe live"
   },
   "story": {
     "title": "BASÉ À MONTPELLIER",
-    "locationText": "Duo musical professionnel installé à Montpellier dans l'Hérault. Nous intervenons pour vos événements dans toute l'Occitanie : Montpellier, Nîmes, Béziers, Sète, Toulouse, Perpignan et alentours.",
-    "storyText": "Deux musiciens voisins devenus amis, partageant jeux, bières et fous rires ! La musique est arrivée naturellement. Cherchant un son unique né de leurs horizons musicaux opposés, ils explorent rythmes, gammes, silences et tensions. Sur scène, c'est le plaisir qui prime ! 💛"
+    "locationText": "Duo musical installé à Montpellier dans l'Hérault. On joue partout en Occitanie : Montpellier, Nîmes, Béziers, Sète, Toulouse, Perpignan et au-delà si l'aventure est belle.",
+    "storyText": "Deux voisins, des bières, des fous rires, et un jour quelqu'un a branché un ampli. Résultat : un oud qui cause à une lapsteel, des rythmes qui n'ont aucune raison de marcher ensemble mais qui marchent quand même. Sur scène, on s'éclate et ça s'entend ! 💛"
   },
   "listen": {
     "title": "🎧 ÉCOUTEZ NOTRE MUSIQUE 🎧",

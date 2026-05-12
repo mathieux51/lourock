@@ -99,13 +99,33 @@ export default async function LocaleLayout({
         "@id": "https://last-call.lourock.com/#musicgroup",
         "name": "Last Call",
         "description": locale === 'fr' 
-          ? "Duo country de Montpellier apportant l'esprit de l'Ouest américain en Occitanie"
-          : "Country duo from Montpellier bringing American West spirit to Southern France",
+          ? "Last Call est un duo country basé à Montpellier, France. Ils jouent de la guitare acoustique, du piano, du bouzouki et de la guitare lead. Leur musique mélange country américaine, western et americana avec un héritage méditerranéen. Disponibles pour concerts, festivals, mariages et événements privés en Occitanie."
+          : "Last Call is a country duo based in Montpellier, France. They play acoustic guitar, piano, bouzouki and lead guitar. Their music blends American country, western and americana with Mediterranean heritage. Available for concerts, festivals, weddings and private events in Occitanie.",
         "genre": ["Country", "Western", "Americana", "Folk"],
-        "memberOf": {
-          "@type": "Organization",
-          "name": "LouRock"
+        "foundingLocation": {
+          "@type": "Place",
+          "name": "Montpellier, France"
         },
+        "member": [
+          {
+            "@type": "OrganizationRole",
+            "member": {
+              "@type": "Person",
+              "name": "Rob"
+            },
+            "roleName": ["Lead vocals", "Acoustic guitar", "Piano"]
+          },
+          {
+            "@type": "OrganizationRole",
+            "member": {
+              "@type": "Person",
+              "name": "Mathieu"
+            },
+            "roleName": ["Side vocals", "Lead guitar", "Bouzouki", "Banjo"]
+          }
+        ],
+        "instrument": ["Acoustic guitar", "Piano", "Lead guitar", "Bouzouki", "Banjo"],
+        "numberOfMembers": 2,
         "location": {
           "@type": "Place",
           "address": {
@@ -122,17 +142,44 @@ export default async function LocaleLayout({
           }
         },
         "areaServed": [
+          { "@type": "City", "name": "Montpellier" },
+          { "@type": "City", "name": "Nîmes" },
+          { "@type": "City", "name": "Toulouse" },
+          { "@type": "City", "name": "Béziers" },
+          { "@type": "City", "name": "Perpignan" },
+          { "@type": "AdministrativeArea", "name": "Occitanie" },
+          { "@type": "AdministrativeArea", "name": "Hérault" }
+        ],
+        "makesOffer": [
           {
-            "@type": "City",
-            "name": "Montpellier"
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": locale === 'fr' ? "Concert country live" : "Live country concert",
+              "description": locale === 'fr' 
+                ? "Concert country acoustique de 45 à 90 minutes, reprises et compositions originales"
+                : "45 to 90 minute acoustic country concert, covers and original compositions"
+            }
           },
           {
-            "@type": "City",
-            "name": "Nîmes"
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": locale === 'fr' ? "Musique country pour mariage" : "Country music for weddings",
+              "description": locale === 'fr'
+                ? "Animation musicale country pour mariages et cérémonies en Hérault et Occitanie"
+                : "Country music entertainment for weddings and ceremonies in Hérault and Occitanie"
+            }
           },
           {
-            "@type": "City",
-            "name": "Toulouse"
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": locale === 'fr' ? "Événement privé country" : "Private country event",
+              "description": locale === 'fr'
+                ? "Duo country pour événements d'entreprise, restaurants et soirées privées à Montpellier"
+                : "Country duo for corporate events, restaurants and private parties in Montpellier"
+            }
           }
         ],
         "url": "https://last-call.lourock.com",
@@ -142,6 +189,9 @@ export default async function LocaleLayout({
         "@type": "LocalBusiness",
         "@id": "https://last-call.lourock.com/#localbusiness",
         "name": "Last Call",
+        "description": locale === 'fr'
+          ? "Duo country disponible pour concerts et événements à Montpellier et en Occitanie. Country, western, americana."
+          : "Country duo available for concerts and events in Montpellier and Occitanie. Country, western, americana.",
         "image": "https://last-call.lourock.com/favicon.png",
         "email": "contact@lourock.com",
         "address": {
@@ -158,6 +208,52 @@ export default async function LocaleLayout({
         },
         "priceRange": "€€",
         "areaServed": "Occitanie"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://last-call.lourock.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": locale === 'fr' ? "Quel style de musique joue Last Call ?" : "What style of music does Last Call play?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": locale === 'fr'
+                ? "Last Call joue de la musique country, western et americana. Le duo mélange la tradition du storytelling américain avec un héritage méditerranéen, pour un son country authentique ancré dans le Sud de la France."
+                : "Last Call plays country, western and americana music. The duo blends American storytelling tradition with Mediterranean heritage, creating an authentic country sound rooted in Southern France."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": locale === 'fr' ? "Où est basé Last Call ?" : "Where is Last Call based?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": locale === 'fr'
+                ? "Last Call est basé à Montpellier dans l'Hérault. Le duo se produit dans toute l'Occitanie : Montpellier, Nîmes, Toulouse, Béziers, Perpignan et au-delà."
+                : "Last Call is based in Montpellier in Hérault. The duo performs across Occitanie: Montpellier, Nîmes, Toulouse, Béziers, Perpignan and beyond."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": locale === 'fr' ? "Quels instruments joue Last Call ?" : "What instruments does Last Call play?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": locale === 'fr'
+                ? "Last Call joue de la guitare acoustique, du piano, de la guitare lead, du bouzouki et du banjo. Le duo propose aussi du chant en anglais."
+                : "Last Call plays acoustic guitar, piano, lead guitar, bouzouki and banjo. The duo also offers vocals in English."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": locale === 'fr' ? "Pour quels événements peut-on réserver Last Call ?" : "What events can you book Last Call for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": locale === 'fr'
+                ? "Last Call est disponible pour des festivals, concerts privés, mariages, événements d'entreprise et soirées dans des bars ou restaurants. Le set dure entre 45 et 90 minutes."
+                : "Last Call is available for festivals, private concerts, weddings, corporate events and bar/restaurant gigs. Sets last between 45 and 90 minutes."
+            }
+          }
+        ]
       }
     ]
   };
